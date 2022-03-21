@@ -1,45 +1,32 @@
-<!DOCTYPE HTML> 
-<html> 
- 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>
-        mysliLeve
-    </title>
-     
-    <script src=
-"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<script src="https://kit.fontawesome.com/6a82835f2f.js" crossorigin="anonymous"></script>
+	
+	<script type="text/javascript" src="allLeves.lich.json"></script>
+	
+	<link rel="stylesheet" href="main.css">
+
+    <title>mysliLeve</title>
+	
 </head>
- 
-<body style = "text-align:center;"> 
-     
-    <p id = "GFG_UP" style =
-            "font-size: 15px; font-weight: bold;">
-    </p>
- 
-     
-    <button onclick = "GFG_FUN()">
-        click here
-    </button>
-     
-    <br><br>
-     
-    <table id="table" align = "center" border="1px"></table>
-     
+<body>
+    
+		<table id="table" align = "center" border="1px"></table>
+		
+
+
+	
     <script>
-        var el_up = document.getElementById("GFG_UP");
-        
-		const list = await (await fetch('./allLeves.lich.json')).json();
-        
-         
-        el_up.innerHTML = "Click on the button to create the "
-                + "table from the JSON data.<br><br>"
-                + JSON.stringify(list[0]) + "<br>"
-                + JSON.stringify(list[1]) + "<br>"
-                + JSON.stringify(list[2]);  
-         
-        function GFG_FUN() {
-            var cols = [];
+		async function createPriceTable() {
+			const spotsData = await (await fetch('./allLeves.lich.json')).json();
+			for (let spot of spotsData) {
+				var cols = [];
              
             for (var i = 0; i < list.length; i++) {
                 for (var k in list[i]) {
@@ -84,8 +71,25 @@
             var el = document.getElementById("table");
             el.innerHTML = "";
             el.appendChild(table);
-        }   
-    </script>
-</body> 
- 
+				}
+			}
+		
+
+		
+		
+		createPriceTable();
+		
+		
+  
+  
+  
+  
+	</script>
+    <div id="infoBot">
+		<i class="fas fa-code"></i> by <a href="https://linktr.ee/janmuesli" target="_blank" rel="noopener">Jan Müsli</a>. 
+		Prices by <a href="https://universalis.app/" target="_blank" rel="noopener">Universalis</a>. 
+		<a href="https://www.finalfantasy.com/">FINAL FANTASY</a> is a registered trademark of <a href="https://square-enix-games.com/">Square Enix Holdings Co., Ltd</a>.
+		© <a href="https://square-enix-games.com/">SQUARE ENIX CO., LTD</a>. All Rights Reserved.
+	</div>
+</body>
 </html>
