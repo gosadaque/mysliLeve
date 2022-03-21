@@ -37,11 +37,12 @@
 			//.then(res => res.json()) // comment this out for now
 			.then(res => res.text())          // convert to plain text
 			.then(text => console.log(text))  // then log it out	
+			.then(
 			//sleep(20);
 			//console.log(res);
-			for (var i = 0; i < leves.length; i++) {
+			for (var i = 0; i < text.length; i++) {
 				console.log("penis");
-				console.log(leves[i][lv_id]);
+				console.log(text[i][lv_id]);
 				
 				
 				
@@ -49,7 +50,7 @@
 				
 				
 				
-			}
+			})
              
 				//for (var i = 0; i < list.length; i++) {
 					//for (var k in list[i]) {
