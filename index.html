@@ -33,9 +33,13 @@
 			//jQuery.get('./allLeves.lich.json', function(data) {
 				//console.log(data);
 			//});
-			const data = require('./allLeves.lich.json');
-			console.log(data);	
-				
+			//const data = require('./allLeves.lich.json');
+			//console.log(data);	
+			fetch("./employees.json")
+			.then(response => {
+				return response.json();
+			})
+			.then(data => console.log(data));	
 				
 				
 				
