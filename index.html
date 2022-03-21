@@ -22,12 +22,14 @@
 	
     <script>
 		async function createPriceTable() {
-			let list = await (await fetch('./allLeves.lich.json'), {headers : {'Content-Type': 'application/json','Accept': 'application/json'}});
+			//let list = await (await fetch('./allLeves.lich.json'), {headers : {'Content-Type': 'application/json','Accept': 'application/json'}});
 			//list = list.json();
 			//for (let spot of list) {
 				//document.write(spot["lv_item_id"]);
-			console.log(list);
-				
+			//console.log(list);
+			jQuery.get('./allLeves.lich.json', function(data) {
+				alert(data);
+			});
 				
 				
 				
