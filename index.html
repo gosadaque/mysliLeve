@@ -25,20 +25,13 @@
 	
     <script>
 		async function createPriceTable() {
-			//let list = await (await fetch('./allLeves.lich.json'), {headers : {'Content-Type': 'application/json','Accept': 'application/json'}});
-			//list = list.json();
-			//for (let spot of list) {
-				//document.write(spot["lv_item_id"]);
-			//console.log(list);
-			//jQuery.get('./allLeves.lich.json', function(data) {
-				//console.log(data);
-			//});
-			//const data = require('./allLeves.lich.json');
-			//console.log(data);	
+			
 			fetch('./leves/allLeves.lich.json')
 			// .then(res => res.json()) // comment this out for now
 			.then(res => res.text())          // convert to plain text
 			.then(text => console.log(text))  // then log it out	
+			for (var i = 0; i < text.length; i++) {	
+				console.log(text[i][lv_id]);	
 				
 				
 				
@@ -46,9 +39,7 @@
 				
 				
 				
-				
-				
-				//var cols = [];
+			}
              
 				//for (var i = 0; i < list.length; i++) {
 					//for (var k in list[i]) {
