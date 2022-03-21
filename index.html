@@ -11,7 +11,7 @@
 	  crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/6a82835f2f.js" crossorigin="anonymous"></script>
 	
-	<link rel="stylesheet" href="main.css">
+	<!--link rel="stylesheet" href="main.css"!-->
 
     <title>mysliLeve</title>
 	
@@ -30,10 +30,11 @@
 			//for (let spot of list) {
 				//document.write(spot["lv_item_id"]);
 			//console.log(list);
-			jQuery.get('./allLeves.lich.json', function(data) {
-				console.log(data);
-			});
-				
+			//jQuery.get('./allLeves.lich.json', function(data) {
+				//console.log(data);
+			//});
+			const data = require('./allLeves.lich.json');
+			console.log(data);	
 				
 				
 				
