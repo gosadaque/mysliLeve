@@ -26,7 +26,7 @@
     <script>
 		async function createPriceTable() {
 			
-			fetch('./leves/allLeves.lich.json')
+			leves = fetch('./leves/allLeves.lich.json')
 			// .then(res => res.json()) // comment this out for now
 			.then(res => res.text())          // convert to plain text
 			.then(text => console.log(text))  // then log it out	
