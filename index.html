@@ -43,7 +43,11 @@
 			//console.log(allLeves[0]);
 			//console.log(allLeves[0][i]);
 			document.write("<tr><td>"+allLeves[0][i]["lv_job"]+" ("+allLeves[0][i]["lv_lvl"]+")</td>");
-			document.write("<td>"+allLeves[0][i]["lv_name"]+"</td>");
+			if (allLeves[0][i]["lv_item_count"] > 1) {
+				document.write("<td>"+allLeves[0][i]["lv_item_count"]+"x "+allLeves[0][i]["lv_name"]+"</td>");
+			} else {
+				document.write("<td>"+allLeves[0][i]["lv_name"]+"</td>");
+			}
 			document.write("<td>"+allLeves[0][i]["lv_item"]+"</td>");
 			document.write("<td>"+allLeves[0][i]["lv_gil"]+"</td>");
 			document.write("<td>"+allLeves[0][i]["lich"]+"</td>");
