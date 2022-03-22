@@ -27,6 +27,7 @@
 		<tr>
 			<th>Job (Lvl)</th>
 			<th>Item</th>
+			<th>Place</th>
                         <th>Reward</th>
                         <th>Lich MB</th>
                         <th>Profit</th>
@@ -47,6 +48,7 @@
 			} else {
 				document.write("<td>"+allLeves[0][i]["lv_item"]+"</td>");
 			}
+			document.write("<td>"+allLeves[0][i]["lv_place"]+"</td>");
 			document.write("<td>"+allLeves[0][i]["lv_gil"]+"</td>");
 			document.write("<td>"+allLeves[0][i]["lich"]+"</td>");
 			profit=allLeves[0][i]["lv_gil"]-allLeves[0][i]["lich"]*allLeves[0][i]["lv_item_count"]
