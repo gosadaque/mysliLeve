@@ -50,7 +50,11 @@
 			document.write("<td>"+allLeves[0][i]["lv_gil"]+"</td>");
 			document.write("<td>"+allLeves[0][i]["lich"]+"</td>");
 			profit=allLeves[0][i]["lv_gil"]-allLeves[0][i]["lich"]*allLeves[0][i]["lv_item_count"]
-			document.write("<td>"+profit+"</td></tr>");
+			if (allLeves[0][i]["lich"] == 0) {
+				document.write("<td>0</td></tr>");
+			} else {
+				document.write("<td>"+profit+"</td></tr>");
+			}
 		}
 		
 				 
