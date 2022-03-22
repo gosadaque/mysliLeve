@@ -28,7 +28,8 @@
 	
     <script>
 	var allLeves = JSON.parse(allLeves);
-	document.write(allLeves);
+	document.write(allLeves[1][0]);
+	console.log(allLeves[1][0]);
 	var cols=["lv_job", "lv_id", "lv_item", "lv_gil", "lich", "calc"];
 	for (var i = 0; i < allLeves.length; i++) {
 		console.log(allLeves[i]);
