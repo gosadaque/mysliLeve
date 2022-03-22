@@ -19,12 +19,15 @@
 </head>
 <body>
     
-	<table id="table" align = "center" border="1px"></table>
-		
+	<table id="table" class="sortable" align = "center" border="1px"></table>
+	<button onclick = "GFG_FUN()">
+        click here
+    </button>
 
 
 	
     <script>
+	function GFG_FUN() {
 		var allLeves = JSON.parse(allLeves);	
 		//console.log(allLeves);
 		//console.log(allLeves[i]["lv_item"])
@@ -35,7 +38,7 @@
 		// Create table row tr element of a table
 		var tr = table.insertRow(-1);
 		
-		var cols=["lv_job", "lv_id", "lv_item", "lv_gil", "lich", "calc"];
+		var cols={"lv_job", "lv_id", "lv_item", "lv_gil", "lich", "calc"}
 		
 		for (var i = 0; i < cols.length; i++) {
 					 
@@ -71,7 +74,7 @@
 			
 			
 		}
-             
+             }
 
 				 
 
