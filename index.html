@@ -24,38 +24,22 @@
 
 	
     <script>
-		function sleep(milliseconds) {
-			const date = Date.now();
-			let currentDate = null;
-			do {
-				currentDate = Date.now();
-			} while (currentDate - date < milliseconds);
-		}
-
-		function doIt(p) {
-			for (var i = 0; i < p.length; i++) {
-                                console.log("penis");
-                                console.log(p[i][lv_id]);
-
-
-
-
-
-
-
-                        }
-		}
-
-		async function createPriceTable() {
+		console.log(allLeves);
+		for (var i = 0; i < allLeves.length; i++) {
+			console.log(allLeves[i][lv_item]);
 			
-			leves = fetch('./leves/allLeves.lich.json')
-			//.then(res => res.json()) // comment this out for now
-			.then(res => res.text())          // convert to plain text
-			.then(text => console.log(text))  // then log it out	
-			.then(doIt(text))
+			
+			
+			
+			
+			
+		}
+ 			//.then(res => res.json()) // comment this out for now
+			//.then(res => res.text())          // convert to plain text
+			//.then(text => console.log(text))  // then log it out	
+			//.then(doIt(text))
 			//sleep(20);
 			//console.log(res);
-			})
              
 				//for (var i = 0; i < list.length; i++) {
 					//for (var k in list[i]) {
