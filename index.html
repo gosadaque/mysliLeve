@@ -26,7 +26,6 @@
 	<thead>
 		<tr>
 			<th>Job (Lvl)</th>
-			<th>Quest Name</th>
 			<th>Item</th>
                         <th>Reward</th>
                         <th>Lich MB</th>
@@ -44,11 +43,10 @@
 			//console.log(allLeves[0][i]);
 			document.write("<tr><td>"+allLeves[0][i]["lv_job"]+" ("+allLeves[0][i]["lv_lvl"]+")</td>");
 			if (allLeves[0][i]["lv_item_count"] > 1) {
-				document.write("<td>"+allLeves[0][i]["lv_item_count"]+"x "+allLeves[0][i]["lv_name"]+"</td>");
+				document.write("<td>"+allLeves[0][i]["lv_item_count"]+"x "+allLeves[0][i]["lv_item"]+"</td>");
 			} else {
-				document.write("<td>"+allLeves[0][i]["lv_name"]+"</td>");
+				document.write("<td>"+allLeves[0][i]["lv_item"]+"</td>");
 			}
-			document.write("<td>"+allLeves[0][i]["lv_item"]+"</td>");
 			document.write("<td>"+allLeves[0][i]["lv_gil"]+"</td>");
 			document.write("<td>"+allLeves[0][i]["lich"]+"</td>");
 			profit=allLeves[0][i]["lv_gil"]-allLeves[0][i]["lich"]*allLeves[0][i]["lv_item_count"]
