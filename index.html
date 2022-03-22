@@ -21,17 +21,17 @@
     
 	<table id="table" align = "center" border="1px"></table>
 	<button onclick = "GFG_FUN()">
-        click here
-    </button>
+	        click here
+	</button>
 
 
 	
     <script>
 	var allLeves = JSON.parse(allLeves);
 	document.write(allLeves);
-	var cols=["lv_job", "lv_id", "lv_item", "lv_gil", "lich", "calc"]
+	var cols=["lv_job", "lv_id", "lv_item", "lv_gil", "lich", "calc"];
 	for (var i = 0; i < allLeves.length; i++) {
-	
+		document.write(allLeves[i]["lv_item"]);
 	}
 
 				 
