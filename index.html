@@ -24,7 +24,9 @@
 
 	
     <script>
-		console.log(allLeves);
+		var allLeves = JSON.parse(allLeves);	
+		//console.log(allLeves);
+		//console.log(allLeves[i]["lv_item"])
 		for (var i = 0; i < allLeves.length; i++) {
 			console.log(allLeves[i]);
 			console.log(allLeves[i]["lv_item"]);
