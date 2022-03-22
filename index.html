@@ -47,7 +47,8 @@
 			document.write("<td>"+allLeves[0][i]["lv_item"]+"</td>");
 			document.write("<td>"+allLeves[0][i]["lv_gil"]+"</td>");
 			document.write("<td>"+allLeves[0][i]["lich"]+"</td>");
-			document.write("<td>0</td></tr>");
+			profit=allLeves[0][i]["lv_gil"]-allLeves[0][i]["lich"]*allLeves[0][i]["lv_item_count"]
+			document.write("<td>"+profit+"</td></tr>");
 		}
 		
 				 
