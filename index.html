@@ -29,12 +29,12 @@
     <script>
 	var allLeves = JSON.parse(allLeves);
 	//document.write(allLeves[1]["lv_item"]);
-	console.log(allLeves[0][1]);
+	//console.log(allLeves[0][1]);
 	var cols=["lv_job", "lv_id", "lv_item", "lv_gil", "lich", "calc"];
 	for (var i = 0; i < allLeves.length; i++) {
 		//console.log(allLeves[0]);
 		//console.log(allLeves[0][i]);
-		document.write(allLeves[i]);
+		document.write(allLeves[0][i]["lv_item"]);
 	}
 
 				 
