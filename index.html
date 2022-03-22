@@ -25,9 +25,10 @@
 	<table id="tg-3iYbZ" class=”sortable”>
 	<thead>
 		<tr>
-			<th>Job (Lvl)</th>
+			<th>Quest Name</th>
 			<th>Item</th>
 			<th>Place</th>
+			<th>Job (Lvl)</th>
                         <th>Reward</th>
                         <th>Lich MB</th>
                         <th>Profit</th>
@@ -42,13 +43,14 @@
 		for (var i = 0; i <= 1148; i++) {
 			//console.log(allLeves[0]);
 			//console.log(allLeves[0][i]);
-			document.write("<tr><td>"+allLeves[0][i]["lv_job"]+" ("+allLeves[0][i]["lv_lvl"]+")</td>");
+			document.write("<tr><td>"+allLeves[0][i]["lv_id"]+")</td>");
 			if (allLeves[0][i]["lv_item_count"] > 1) {
 				document.write("<td>"+allLeves[0][i]["lv_item_count"]+"x "+allLeves[0][i]["lv_item"]+"</td>");
 			} else {
 				document.write("<td>"+allLeves[0][i]["lv_item"]+"</td>");
 			}
 			document.write("<td>"+allLeves[0][i]["lv_place"]+"</td>");
+                        document.write("<tr><td>"+allLeves[0][i]["lv_job"]+" ("+allLeves[0][i]["lv_lvl"]+")</td>");
 			document.write("<td>"+allLeves[0][i]["lv_gil"]+"</td>");
 			document.write("<td>"+allLeves[0][i]["lich"]+"</td>");
 			profit=allLeves[0][i]["lv_gil"]-allLeves[0][i]["lich"]*allLeves[0][i]["lv_item_count"]
