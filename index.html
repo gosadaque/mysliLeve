@@ -28,56 +28,11 @@
 	
     <script>
 	var allLeves = JSON.parse(allLeves);
-	function GFG_FUN() {
-
-		//var allLeves = JSON.parse(allLeves);	
-		document.write(allLeves);
-		console.log(allLeves);
-		//console.log(allLeves[i]["lv_item"])
-		
-		// Create a table element
-		var table = document.createElement("table");
-				 
-		// Create table row tr element of a table
-		var tr = table.insertRow(-1);
-		
-		var cols=["lv_job", "lv_id", "lv_item", "lv_gil", "lich", "calc"]
-		
-		for (var i = 0; i < cols.length; i++) {
-					 
-			// Create the table header th element
-			var theader = document.createElement("th");
-			theader.innerHTML = cols[i];
-					 
-			// Append columnName to the table row
-			tr.appendChild(theader);
-		}
-		
-		
-		
-		
-		for (var i = 0; i < allLeves.length; i++) {
-			//console.log(allLeves[i]);
-			//console.log(allLeves[i]["lv_item"]);
-			// Create a new row
-			trow = table.insertRow(-1);
-			for (var j = 0; j < cols.length; j++) {
-					if (cols[j] == "calc") {
-						var cell = trow.insertCell(-1);
-						// Inserting the cell at particular place
-						cell.innerHTML = 0;
-					} else {
-						var cell = trow.insertCell(-1);
-						// Inserting the cell at particular place
-						cell.innerHTML = allLeves[i][cols[j]];
-					}
-				}
-			
-			
-			
-			
-		}
-             }
+	document.write(allLeves);
+	var cols=["lv_job", "lv_id", "lv_item", "lv_gil", "lich", "calc"]
+	for (var i = 0; i < allLeves.length; i++) {
+	
+	}
 
 				 
 
