@@ -26,6 +26,13 @@
 	<script src="https://kit.fontawesome.com/6a82835f2f.js" crossorigin="anonymous"></script>
 	
 	<!--link rel="stylesheet" href="main.css"!-->
+	<script>
+		const queryString = window.location.search;
+		console.log(queryString);
+		const urlParams = new URLSearchParams(queryString);
+		const page_type = urlParams.get('dc');
+		console.log(page_type);
+	</script>
 	<script type="text/javascript" src="allLeves.light.js"></script>
 	<script src="sorttable.js"></script>
 	<title>mysliLeve</title>
