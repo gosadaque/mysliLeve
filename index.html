@@ -54,7 +54,8 @@
 			<th>Place</th>
 			<th>Job (Lvl)</th>
                         <th>Reward</th>
-                        <th>Lich MB</th>
+                        <th>MB Price</th>
+			<th>Server</th>
                         <th>Profit</th>
 		</tr>
 	</thead>
@@ -69,6 +70,7 @@
 		//document.write(allLeves[1]["lv_item"]);
 		//console.log(allLeves[0][1]);
 		var cols=["lv_job", "lv_id", "lv_item", "lv_gil", "lich", "calc"];
+		var servers=["lich","zodiark","twintania","phoenix","shiva","odin"];
 		for (var i = 0; i <= 1148; i++) {
 			//console.log(allLeves[0]);
 			//console.log(allLeves[0][i]);
@@ -82,6 +84,7 @@
                         document.write("<td>"+allLeves[i]["lv_job"]+" ("+allLeves[i]["lv_lvl"]+")</td>");
 			document.write("<td>"+allLeves[i]["lv_gil"]+"</td>");
 			document.write("<td>"+allLeves[i]["lich"]+"</td>");
+			document.write("<td>"+servers[0]+"</td>");
 			profit=allLeves[i]["lv_gil"]-allLeves[i]["lich"]*allLeves[i]["lv_item_count"]
 			if (allLeves[i]["lich"] == 0) {
 				document.write("<td>0</td></tr>");
