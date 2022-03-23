@@ -82,8 +82,16 @@
 			}
 			document.write("<td>"+allLeves[i]["lv_place"]+"</td>");
                         document.write("<td>"+allLeves[i]["lv_job"]+" ("+allLeves[i]["lv_lvl"]+")</td>");
-			document.write("<td>"+allLeves[i]["lv_gil"]+"</td>");
-			document.write("<td>"+allLeves[i]["lich"]+"</td>");
+			var lowestServer="lich";
+			var lowestPrice=99999999;
+			for (const server of servers) {
+				if (allLeves[i][server] < lowestPrice) {
+					lowestPrice = allLeves[i][server];
+					lowestServer = server;
+				}
+			}
+			document.write("<td>"+lowestPrice+"</td>");
+			document.write("<td>"+lowestServer+"</td>");
 			document.write("<td>"+servers[0]+"</td>");
 			profit=allLeves[i]["lv_gil"]-allLeves[i]["lich"]*allLeves[i]["lv_item_count"]
 			if (allLeves[i]["lich"] == 0) {
