@@ -33,9 +33,9 @@
                 const page_type = urlParams.get('dc');
                 console.log(page_type);
 
-                let scriptEle = document.createElement("script");
-                scriptEle.setAttribute("src", "allLeves."+page_type+".js");
-                document.head.appendChild(scriptEle);
+                //let scriptEle = document.createElement("script");
+                //scriptEle.setAttribute("src", "allLeves."+page_type+".js");
+                //document.head.appendChild(scriptEle);
 	</script>
 	<script type="text/javascript" src="allLeves.light.js"></script>
 	<title>mysliLeve</title>
@@ -62,7 +62,7 @@
     	<script>
 
 		
-		scriptEle.addEventListener("load", () => {
+		//scriptEle.addEventListener("load", () => {
 		
 		console.log("File loaded")
 		var allLeves = JSON.parse(allLeves);
@@ -90,7 +90,7 @@
 			}
 		}
 		
-		});		 
+		//});		 
 		
 				 
 		
