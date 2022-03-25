@@ -53,12 +53,14 @@
 		<tr>
 			<th class="sorttable_nosort">Quest Name</th>
 			<th class="sorttable_nosort">Item</th>
+			<th class="sorttable_nosort">Allowance</th>
 			<th class="sorttable_nosort">Place</th>
 			<th class="sorttable_nosort">Job (Lvl)</th>
                         <th class="sorttable_nosort">Reward</th>
                         <th class="sorttable_nosort">MB Price</th>
 			<th class="sorttable_nosort">Server</th>
                         <th>Profit</th>
+			<th>Profit per Allowance</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -84,6 +86,7 @@
 			} else {
 				document.write("<td>"+allLeves[i]["lv_item"]+"</td>");
 			}
+			document.write("<td>"+allLeves[i]["lv_allowance"]+"</td>");
 			document.write("<td>"+allLeves[i]["lv_place"]+"</td>");
                         document.write("<td>"+allLeves[i]["lv_job"]+" ("+allLeves[i]["lv_lvl"]+")</td>");
 			var lowestServer="lich";
@@ -98,11 +101,12 @@
 			document.write("<td>"+lowestPrice+"</td>");
 			document.write("<td>"+lowestServer+"</td>");
 			profit=allLeves[i]["lv_gil"]-lowestPrice*allLeves[i]["lv_item_count"]
-			if (allLeves[i]["lich"] == 0) {
+			if (allLeves[i][server] == 0) {
 				document.write("<td>0</td></tr>");
 			} else {
 				document.write("<td>"+profit+"</td></tr>");
 			}
+			document.write("<td>"+profit/allLeves[i]["lv_allowance"]+"</td>");
 		}
 		
 		//});		 
