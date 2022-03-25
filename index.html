@@ -45,7 +45,7 @@
     
 	
 	What dc are you from?<br/>
-	<a href="?dc=aether">Aether</a> | <a href="?dc=primal">Primal</a> | <a href="?dc=crystal">Crystal</a> | <a href="?dc=chaos">Chaos</a> | <a href="?dc=light">Light</a> | <a href="?dc=materia">Materia</a> | <a href="?dc=Elemental">Elemental</a> | <a href="?dc=gaia">Gaia</a> | <a href="?dc=Mana">Mana</a>
+	<a href="?dc=aether">Aether</a> | <a href="?dc=primal">Primal</a> | <a href="?dc=crystal">Crystal</a> | <a href="?dc=chaos">Chaos</a> | <a href="?dc=light">Light</a> | <a href="?dc=materia">Materia</a> | <a href="?dc=elemental">Elemental</a> | <a href="?dc=gaia">Gaia</a> | <a href="?dc=mana">Mana</a>
 	Click on a header to sort the table
 	<table id="tg-3iYbZ" class=”sortable tg”>
 	<thead>
@@ -71,7 +71,7 @@
 		//document.write(allLeves[1]["lv_item"]);
 		//console.log(allLeves[0][1]);
 		var cols=["lv_job", "lv_id", "lv_item", "lv_gil", "lich", "calc"];
-                var dcs=["aether":["adamantoise","cactuar","faerie","gilgamesh","jenova","midgardsormr","sargatanas","siren"],"primal":["behemoth","excalibur","exodus","famfrit","famfrit","lamia","leviathan","ultros"],"crystal":["balmung","brynhildr","coeurl","diabolos","goblin","malboro","mateus","zalera"],"chaos":["cerberus","louisoix","moogle","omega","ragnarok","spriggan"],"light":["lich","zodiark","twintania","phoenix","shiva","odin"],"materia":["bismarck","ravana","sephirot","sophia","zurvan"],"elemental":["aegis","atomos","carbuncle","garuda","gungnir","kujata","ramuh","tonberry","typhon","unicorn"],"gaia":["alexander","bahamut","durandal","fenrir","ifrit","ridill","tiamat","ultima","valefor","yojimbo","zeromus"],"mana":["anima","asura","belias","chocobo","hades","ixion","mandragora","masamune","pandaemonium","shinryu","titan"]]
+		var dcs={"aether":["adamantoise","cactuar","faerie","gilgamesh","jenova","midgardsormr","sargatanas","siren"],"primal":["behemoth","excalibur","exodus","famfrit","famfrit","lamia","leviathan","ultros"],"crystal":["balmung","brynhildr","coeurl","diabolos","goblin","malboro","mateus","zalera"],"chaos":["cerberus","louisoix","moogle","omega","ragnarok","spriggan"],"light":["lich","zodiark","twintania","phoenix","shiva","odin"],"materia":["bismarck","ravana","sephirot","sophia","zurvan"],"elemental":["aegis","atomos","carbuncle","garuda","gungnir","kujata","ramuh","tonberry","typhon","unicorn"],"gaia":["alexander","bahamut","durandal","fenrir","ifrit","ridill","tiamat","ultima","valefor","yojimbo","zeromus"],"mana":["anima","asura","belias","chocobo","hades","ixion","mandragora","masamune","pandaemonium","shinryu","titan"]}
 		var servers=dcs[page_type];
 		for (var i = 0; i <= 1148; i++) {
 			//console.log(allLeves[0]);
