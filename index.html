@@ -79,17 +79,17 @@
 		for (var i = 0; i <= 1148; i++) {
 			//console.log(allLeves[0]);
 			//console.log(allLeves[0][i]);
-			document.write("<tr><td>"+allLeves[i]["lv_id"]+"</td>");
-			//document.write("<tr><td>"+allLeves[i]["lv_name"]["en"]+"</td>");
+			//document.write("<tr><td>"+allLeves[i]["lv_id"]+"</td>");
+			document.write("<tr><td>"+allLeves[i]["lv_name"]["en"]+"</td>");
 			if (allLeves[i]["lv_item_count"] > 1) {
 				document.write("<td>"+allLeves[i]["lv_item_count"]+"x "+allLeves[i]["lv_item"]+"</td>");
 			} else {
-				document.write("<td>"+allLeves[i]["lv_item"]+"</td>");
+				document.write("<td>"+allLeves[i]["lv_item"]["en"]+"</td>");
 			}
 			document.write("<td>"+allLeves[i]["lv_allowance"]+"</td>");
 			document.write("<td>"+allLeves[i]["lv_place"]+"</td>");
                         document.write("<td>"+allLeves[i]["lv_job"]+" ("+allLeves[i]["lv_lvl"]+")</td>");
-			var lowestServer="lich";
+			var lowestServer="-";
 			var lowestPrice=99999999;
 			for (const server of servers) {
 				if (allLeves[i][server] < lowestPrice) {
@@ -98,7 +98,12 @@
 				}
 			}
 			document.write("<td>"+allLeves[i]["lv_gil"]+"</td>");
-			document.write("<td>"+lowestPrice+"</td>");
+			if (lowestPrice == 99999999) {
+				document.write("<td>-</td>");
+			} else {
+                                document.write("<td>"+lowestPrice+"</td>");
+                        }
+
 			document.write("<td>"+lowestServer+"</td>");
 			profit=allLeves[i]["lv_gil"]-lowestPrice*allLeves[i]["lv_item_count"]
 			if (lowestPrice == 99999999) {
