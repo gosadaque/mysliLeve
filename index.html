@@ -96,7 +96,7 @@
 			document.write("<td>"+allLeves[i]["lv_gil"]+"</td>");
 			document.write("<td>"+lowestPrice+"</td>");
 			document.write("<td>"+lowestServer+"</td>");
-			profit=allLeves[i]["lv_gil"]-allLeves[i]["lich"]*allLeves[i]["lv_item_count"]
+			profit=allLeves[i]["lv_gil"]-lowestPrice*allLeves[i]["lv_item_count"]
 			if (allLeves[i]["lich"] == 0) {
 				document.write("<td>0</td></tr>");
 			} else {
