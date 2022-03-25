@@ -102,12 +102,12 @@
 			document.write("<td>"+lowestServer+"</td>");
 			profit=allLeves[i]["lv_gil"]-lowestPrice*allLeves[i]["lv_item_count"]
 			if (lowestPrice == 99999999) {
-				document.write("<td>0</td></tr>");
+				document.write("<td>0</td>");
 			} else {
-				document.write("<td>"+profit+"</td></tr>");
+				document.write("<td>"+profit+"</td>");
 			}
 			var glu=profit/allLeves[i]["lv_allowance"]
-			document.write("<td>"+glu+"</td>");
+			document.write("<td>"+glu+"</td></tr>");
 		}
 		
 		//});		 
