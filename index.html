@@ -36,6 +36,46 @@
                 //let scriptEle = document.createElement("script");
                 //scriptEle.setAttribute("src", "allLeves."+page_type+".js");
                 //document.head.appendChild(scriptEle);
+
+                function UpdateTableHeaders() {
+   $(".persist-area").each(function() {
+   
+       var el             = $(this),
+           offset         = el.offset(),
+           scrollTop      = $(window).scrollTop(),
+           floatingHeader = $(".floatingHeader", this)
+       
+       if ((scrollTop > offset.top) && (scrollTop < offset.top + el.height())) {
+           floatingHeader.css({
+            "visibility": "visible"
+           });
+       } else {
+           floatingHeader.css({
+            "visibility": "hidden"
+           });      
+       };
+   });
+}
+
+// DOM Ready      
+$(function() {
+
+   var clonedHeaderRow;
+
+   $(".persist-area").each(function() {
+       clonedHeaderRow = $(".persist-header", this);
+       clonedHeaderRow
+         .before(clonedHeaderRow.clone())
+         .css("width", clonedHeaderRow.width())
+         .addClass("floatingHeader");
+         
+   });
+   
+   $(window)
+    .scroll(UpdateTableHeaders)
+    .trigger("scroll");
+   
+});
 	</script>
 	<script type="text/javascript" src="allLeves.js"></script>
 	<title>mysliLeve</title>
@@ -48,8 +88,8 @@
 	<a href="?dc=aether">Aether</a> | <a href="?dc=primal">Primal</a> | <a href="?dc=crystal">Crystal</a> | <a href="?dc=chaos">Chaos</a> | <a href="?dc=light">Light</a> | <a href="?dc=materia">Materia</a> | <a href="?dc=elemental">Elemental</a> | <a href="?dc=gaia">Gaia</a> | <a href="?dc=mana">Mana</a>
 	<br/>
 	Click on a header to sort the table
-	<table id="tg-3iYbZ" class=”sortable tg”>
-	<thead>
+	<table id="tg-3iYbZ" class=”sortable tg persist-area”>
+	<thead class="persist-header">
 		<tr>
 			<th class="sorttable_nosort">Quest Name</th>
 			<th class="sorttable_nosort">Item</th>
