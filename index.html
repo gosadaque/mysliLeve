@@ -93,7 +93,8 @@ $(function() {
 		<tr>
 			<th class="sorttable_nosort">Quest Name</th>
 			<th class="sorttable_nosort">Item</th>
-			<th class="sorttable_nosort">Allowance</th>
+			<th class="sorttable_nosort">Allowances</th>
+                        <th class="sorttable_nosort">Repeats</th>
 			<th class="sorttable_nosort">Place</th>
 			<th class="sorttable_nosort">Job (Lvl)</th>
                         <th class="sorttable_nosort">Server</th>
@@ -127,6 +128,7 @@ $(function() {
 				document.write("<td><a href='https://garlandtools.org/db/#item/"+allLeves[i]["lv_item_id"]+"' target='_blank'>"+allLeves[i]["lv_item"]["en"]+"</a></td>");
 			}
 			document.write("<td>"+allLeves[i]["lv_allowance"]+"</td>");
+                        document.write("<td>"+allLeves[i]["lv_time"]+"</td>");
 			document.write("<td>"+allLeves[i]["lv_place"]+"</td>");
                         document.write("<td>"+allLeves[i]["lv_job"]+" ("+allLeves[i]["lv_lvl"]+")</td>");
 			var lowestServer="-";
