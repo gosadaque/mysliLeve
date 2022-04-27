@@ -144,16 +144,16 @@ $(function() {
                                 document.write("<td align='right'><a href='https://universalis.app/market/"+allLeves[i]["lv_item_id"]+"' target='_blank'>"+lowestPrice+"</a></td>");
                         }
 
-			document.write("<td>"+allLeves[i]["lv_gil"]+"</td>");
+			document.write("<td align='right'>"+allLeves[i]["lv_gil"]+"</td>");
 			profit=allLeves[i]["lv_gil"]-lowestPrice*allLeves[i]["lv_item_count"]*allLeves[i]["lv_time"]
 			if (lowestPrice == 9999999999789) {
-				document.write("<td>0</td>");
+				document.write("<td align='right'>0</td>");
 				var glu="-"
 			} else {
 				var glu=profit/allLeves[i]["lv_allowance"]
-				document.write("<td>"+profit+"</td>");
+				document.write("<td align='right'>"+profit+"</td>");
 			}
-			document.write("<td>"+glu+"</td></tr>");
+			document.write("<td align='right'>"+glu+"</td></tr>");
 		}
 		
 		//});		 
