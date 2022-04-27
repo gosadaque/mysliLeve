@@ -96,9 +96,9 @@ $(function() {
 			<th class="sorttable_nosort">Allowance</th>
 			<th class="sorttable_nosort">Place</th>
 			<th class="sorttable_nosort">Job (Lvl)</th>
-                        <th class="sorttable_nosort">Reward</th>
+                        <th class="sorttable_nosort">Server</th>
                         <th class="sorttable_nosort">MB Price</th>
-			<th class="sorttable_nosort">Server</th>
+			<th class="sorttable_nosort">Reward</th>
                         <th>Profit</th>
 			<th>Profit per Allowance</th>
 		</tr>
@@ -137,14 +137,14 @@ $(function() {
 					lowestServer = server;
 				}
 			}
-			document.write("<td>"+allLeves[i]["lv_gil"]+"</td>");
+			document.write("<td>"+lowestServer+"</td>");
 			if (lowestPrice == 99999999) {
 				document.write("<td>-</td>");
 			} else {
                                 document.write("<td>"+lowestPrice+"</td>");
                         }
 
-			document.write("<td>"+lowestServer+"</td>");
+			document.write("<td>"+allLeves[i]["lv_gil"]+"</td>");
 			profit=allLeves[i]["lv_gil"]-lowestPrice*allLeves[i]["lv_item_count"]*allLeves[i]["lv_time"]
 			if (lowestPrice == 99999999) {
 				document.write("<td>0</td>");
