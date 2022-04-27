@@ -130,7 +130,7 @@ $(function() {
 			document.write("<td>"+allLeves[i]["lv_place"]+"</td>");
                         document.write("<td>"+allLeves[i]["lv_job"]+" ("+allLeves[i]["lv_lvl"]+")</td>");
 			var lowestServer="-";
-			var lowestPrice=99999999;
+			var lowestPrice=9999999999789;
 			for (const server of servers) {
 				if (allLeves[i][server] < lowestPrice) {
 					lowestPrice = allLeves[i][server];
@@ -138,15 +138,15 @@ $(function() {
 				}
 			}
 			document.write("<td>"+lowestServer+"</td>");
-			if (lowestPrice == 99999999) {
+			if (lowestPrice == 9999999999789) {
 				document.write("<td>-</td>");
 			} else {
-                                document.write("<td>"+lowestPrice+"<a href='https://universalis.app/market/"+allLeves[i]["lv_item_id"]+"' target='_blank'><i class='fa-solid fa-coins'></i></a></td>");
+                                document.write("<td align='right'><a href='https://universalis.app/market/"+allLeves[i]["lv_item_id"]+"' target='_blank'>"+lowestPrice+"</a></td>");
                         }
 
 			document.write("<td>"+allLeves[i]["lv_gil"]+"</td>");
 			profit=allLeves[i]["lv_gil"]-lowestPrice*allLeves[i]["lv_item_count"]*allLeves[i]["lv_time"]
-			if (lowestPrice == 99999999) {
+			if (lowestPrice == 9999999999789) {
 				document.write("<td>0</td>");
 				var glu="-"
 			} else {
