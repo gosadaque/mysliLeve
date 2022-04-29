@@ -1,192 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<style type="text/css">
-	.tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;}
-	.tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:0px;color:#444;
-	  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-	.tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:0px;color:#fff;
-	  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-	.tg .tg-phtq{background-color:#D2E4FC;border-color:inherit;text-align:left;vertical-align:top}
-	.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-	.tg-sort-header::-moz-selection{background:0 0}
-	.tg-sort-header::selection{background:0 0}.tg-sort-header{cursor:pointer}
-	.tg-sort-header:after{content:'';float:right;margin-top:7px;border-width:0 5px 5px;border-style:solid;
-	  border-color:#404040 transparent;visibility:hidden}
-	.tg-sort-header:hover:after{visibility:visible}
-	.tg-sort-asc:after,.tg-sort-asc:hover:after,.tg-sort-desc:after{visibility:visible;opacity:.4}
-	.tg-sort-desc:after{border-bottom:none;border-width:5px 5px 0}</style>
-    	<meta charset="UTF-8">
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script
-	  src="https://code.jquery.com/jquery-3.6.0.min.js"
-	  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-	  crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/6a82835f2f.js" crossorigin="anonymous"></script>
-	<script src="sorttable.js"></script>	
-	<link rel="stylesheet" href="main.css">
-	<script>	
+	<link href="./tabulator/dist/css/tabulator_midnight.min.css" rel="stylesheet">
+	<script src="./tabulator/dist/js/tabulator.js"></script>
+	<script>
 		const queryString = window.location.search;
-                console.log(queryString);
-                const urlParams = new URLSearchParams(queryString);
-                const page_type = urlParams.get('dc');
-                console.log(page_type);
-
-                //let scriptEle = document.createElement("script");
-                //scriptEle.setAttribute("src", "allLeves."+page_type+".js");
-                //document.head.appendChild(scriptEle);
-
-                function UpdateTableHeaders() {
-   $(".persist-area").each(function() {
-   
-       var el             = $(this),
-           offset         = el.offset(),
-           scrollTop      = $(window).scrollTop(),
-           floatingHeader = $(".floatingHeader", this)
-       
-       if ((scrollTop > offset.top) && (scrollTop < offset.top + el.height())) {
-           floatingHeader.css({
-            "visibility": "visible"
-           });
-       } else {
-           floatingHeader.css({
-            "visibility": "hidden"
-           });      
-       };
-   });
-}
-
-// DOM Ready      
-$(function() {
-
-   var clonedHeaderRow;
-
-   $(".persist-area").each(function() {
-       clonedHeaderRow = $(".persist-header", this);
-       clonedHeaderRow
-         .before(clonedHeaderRow.clone())
-         .css("width", clonedHeaderRow.width())
-         .addClass("floatingHeader");
-         
-   });
-   
-   $(window)
-    .scroll(UpdateTableHeaders)
-    .trigger("scroll");
-   
-});
+		const urlParams = new URLSearchParams(queryString);
+		const dc = urlParams.get('dc');
 	</script>
 	<script type="text/javascript" src="allLeves.js"></script>
-	<title>mysliLeve</title>
-	
+	<link href="./main.css" rel="stylesheet">
+	<title>xivLeve</title>
 </head>
-<body>
-    
-	
-	What dc are you from?<br/>
-	<a href="?dc=aether">Aether</a> | <a href="?dc=primal">Primal</a> | <a href="?dc=crystal">Crystal</a> | <a href="?dc=chaos">Chaos</a> | <a href="?dc=light">Light</a> | <a href="?dc=materia">Materia</a> | <a href="?dc=elemental">Elemental</a> | <a href="?dc=gaia">Gaia</a> | <a href="?dc=mana">Mana</a>
+
+<body> What dc are you from?
+	<br/> <a href="?dc=aether">Aether</a> | <a href="?dc=primal">Primal</a> | <a href="?dc=crystal">Crystal</a> | <a href="?dc=chaos">Chaos</a> | <a href="?dc=light">Light</a> | <a href="?dc=materia">Materia</a> | <a href="?dc=elemental">Elemental</a> | <a href="?dc=gaia">Gaia</a> | <a href="?dc=mana">Mana</a>
+	<br/> 
+	<div id="track-table"></div>
 	<br/>
-	Click on a header to sort the table
-	<table id="tg-3iYbZ" class=”sortable tg persist-area”>
-	<thead class="persist-header">
-		<tr>
-			<th class="sorttable_nosort">Quest Name</th>
-			<th class="sorttable_nosort">Item</th>
-			<th class="sorttable_nosort">Allowances</th>
-                        <th class="sorttable_nosort">Repeats</th>
-			<th class="sorttable_nosort">Place</th>
-			<th class="sorttable_nosort">Job (Lvl)</th>
-                        <th class="sorttable_nosort">Server</th>
-                        <th class="sorttable_nosort">MB Price</th>
-			<th class="sorttable_nosort">Reward</th>
-                        <th>Profit</th>
-			<th>Profit per Allowance</th>
-		</tr>
-	</thead>
-	<tbody>
-    	<script>
-
-		
-		//scriptEle.addEventListener("load", () => {
-		
-		
-		var allLeves = JSON.parse(allLeves);
-		//document.write(allLeves[1]["lv_item"]);
-		//console.log(allLeves[0][1]);
-		var cols=["lv_job", "lv_id", "lv_item", "lv_gil", "lich", "calc"];
-		var dcs={"aether":["adamantoise","cactuar","faerie","gilgamesh","jenova","midgardsormr","sargatanas","siren"],"primal":["behemoth","excalibur","exodus","famfrit","famfrit","lamia","leviathan","ultros"],"crystal":["balmung","brynhildr","coeurl","diabolos","goblin","malboro","mateus","zalera"],"chaos":["cerberus","louisoix","moogle","omega","ragnarok","spriggan"],"light":["lich","zodiark","twintania","phoenix","shiva","odin"],"materia":["bismarck","ravana","sephirot","sophia","zurvan"],"elemental":["aegis","atomos","carbuncle","garuda","gungnir","kujata","ramuh","tonberry","typhon","unicorn"],"gaia":["alexander","bahamut","durandal","fenrir","ifrit","ridill","tiamat","ultima","valefor","yojimbo","zeromus"],"mana":["anima","asura","belias","chocobo","hades","ixion","mandragora","masamune","pandaemonium","shinryu","titan"]}
-		var servers=dcs[page_type];
-		for (var i = 0; i <= 1148; i++) {
-			//console.log(allLeves[0]);
-			//console.log(allLeves[0][i]);
-			//document.write("<tr><td>"+allLeves[i]["lv_id"]+"</td>");
-			document.write("<tr><td>"+allLeves[i]["lv_name"]["en"]+"</td>");
-			if (allLeves[i]["lv_item_count"] > 1) {
-				document.write("<td>"+allLeves[i]["lv_item_count"]+"x <a href='https://garlandtools.org/db/#item/"+allLeves[i]["lv_item_id"]+"' target='_blank'>"+allLeves[i]["lv_item"]["en"]+"</a></td>");
-			} else {
-				document.write("<td><a href='https://garlandtools.org/db/#item/"+allLeves[i]["lv_item_id"]+"' target='_blank'>"+allLeves[i]["lv_item"]["en"]+"</a></td>");
-			}
-			document.write("<td>"+allLeves[i]["lv_allowance"]+"</td>");
-                        document.write("<td>"+allLeves[i]["lv_time"]+"</td>");
-			document.write("<td>"+allLeves[i]["lv_place"]+"</td>");
-                        document.write("<td>"+allLeves[i]["lv_job"]+" ("+allLeves[i]["lv_lvl"]+")</td>");
-			var lowestServer="-";
-			var lowestPrice=9999999999789;
-			for (const server of servers) {
-				if (allLeves[i][server] < lowestPrice) {
-					lowestPrice = allLeves[i][server];
-					lowestServer = server;
-				}
-			}
-			document.write("<td>"+lowestServer+"</td>");
-			if (lowestPrice == 9999999999789) {
-				document.write("<td>-</td>");
-			} else {
-                                document.write("<td align='right'><a href='https://universalis.app/market/"+allLeves[i]["lv_item_id"]+"' target='_blank'>"+lowestPrice+"</a></td>");
-                        }
-
-			document.write("<td align='right'>"+allLeves[i]["lv_gil"]+"</td>");
-			profit=allLeves[i]["lv_gil"]-lowestPrice*allLeves[i]["lv_item_count"]*allLeves[i]["lv_time"]
-			if (lowestPrice == 9999999999789) {
-				document.write("<td align='right'>0</td>");
-				var glu="-"
-			} else {
-				var glu=profit/allLeves[i]["lv_allowance"]
-				document.write("<td align='right'>"+profit+"</td>");
-			}
-			document.write("<td align='right'>"+glu+"</td></tr>");
-		}
-		
-		//});		 
-		
-				 
-		
-				//for (var i = 0; i < list.length; i++) {
-					 
-					// Create a new row
-					//trow = table.insertRow(-1);
-					//for (var j = 0; j < cols.length; j++) {
-						//var cell = trow.insertCell(-1);
-						 
-						// Inserting the cell at particular place
-						//cell.innerHTML = list[i][cols[j]];
-					//}
-				//}
-				 
-				// Add the newly created table containing json data
-				//var el = document.getElementById("table");
-				//el.innerHTML = "";
-				//el.appendChild(table);		
-	</script>
-	</tbody>
-	</table>
+	<div id="leve-table"></div>
+	<script>
 	
-	<div id="infoBot">
-		<i class="fas fa-code"></i> by <a href="https://linktr.ee/janmuesli" target="_blank" rel="noopener">Jan Müsli</a>. 
-		Prices by <a href="https://universalis.app/" target="_blank" rel="noopener">Universalis</a>. 
-		<a href="https://www.finalfantasy.com/">FINAL FANTASY</a> is a registered trademark of <a href="https://square-enix-games.com/">Square Enix Holdings Co., Ltd</a>.
-		© <a href="https://square-enix-games.com/">SQUARE ENIX CO., LTD</a>. All Rights Reserved.
-	</div>
+	//define data array
+	var tabledata = [];
+	
+	var allLeves = JSON.parse(allLeves);
+	var dcs = {
+		"aether": ["adamantoise", "cactuar", "faerie", "gilgamesh", "jenova", "midgardsormr", "sargatanas", "siren"],
+		"primal": ["behemoth", "excalibur", "exodus", "famfrit", "famfrit", "lamia", "leviathan", "ultros"],
+		"crystal": ["balmung", "brynhildr", "coeurl", "diabolos", "goblin", "malboro", "mateus", "zalera"],
+		"chaos": ["cerberus", "louisoix", "moogle", "omega", "ragnarok", "spriggan"],
+		"light": ["lich", "zodiark", "twintania", "phoenix", "shiva", "odin"],
+		"materia": ["bismarck", "ravana", "sephirot", "sophia", "zurvan"],
+		"elemental": ["aegis", "atomos", "carbuncle", "garuda", "gungnir", "kujata", "ramuh", "tonberry", "typhon", "unicorn"],
+		"gaia": ["alexander", "bahamut", "durandal", "fenrir", "ifrit", "ridill", "tiamat", "ultima", "valefor", "yojimbo", "zeromus"],
+		"mana": ["anima", "asura", "belias", "chocobo", "hades", "ixion", "mandragora", "masamune", "pandaemonium", "shinryu", "titan"]
+	}
+	var servers = dcs[dc];
+	for(var i = 0; i <= 1148; i++) {
+		
+		//for adding picture: "<img src='https://garlandtools.org/files/icons/item/" + allLeves[i]["lv_item_id"] + ".png'> " + 
+		
+		tupel={};
+		tupel.name=allLeves[i]["lv_name"]["en"];
+		if(allLeves[i]["lv_item_count"] > 1) {
+			tupel.item=allLeves[i]["lv_item_count"] + "x <a href='https://garlandtools.org/db/#item/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + allLeves[i]["lv_item"]["en"] + "</a>";
+		} else {
+			tupel.item="<a href='https://garlandtools.org/db/#item/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + allLeves[i]["lv_item"]["en"] + "</a>";
+		}
+		tupel.allowance=allLeves[i]["lv_allowance"];
+		tupel.repeats=allLeves[i]["lv_time"];
+		tupel.place=allLeves[i]["lv_place"];
+		tupel.job=allLeves[i]["lv_job"] + " (" + allLeves[i]["lv_lvl"] + ")";
+		var lowestServer = "-";
+		var lowestPrice = 99999999997189;
+		for(const server of servers) {
+			if(allLeves[i][server] < lowestPrice) {
+				lowestPrice = allLeves[i][server];
+				lowestServer = server;
+			}
+		}
+		tupel.server=lowestServer;
+		if(lowestPrice == 99999999997189) {
+			tupel.price="-";
+		} else {
+			tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + lowestPrice + "</a>";
+		}
+		tupel.reward=allLeves[i]["lv_gil"];
+		tupel.profit = allLeves[i]["lv_gil"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"];
+		if(lowestPrice == 99999999997189) {
+			tupel.profit = 0;
+			tupel.ppa = 0;
+		} else {
+			tupel.ppa = tupel.profit / allLeves[i]["lv_allowance"];
+		}
+		tabledata.push(tupel);
+	}
+	
+
+	//initialize table
+	var table = new Tabulator("#leve-table", {
+		data:tabledata, //assign data to table
+		columns:[
+		{rowHandle:true, formatter:"<i class='fa-solid fa-grip-lines'></i>", headerSort:false, frozen:true, width:30, minWidth:30},
+		{title:"Name", field:"name", resizable:true },
+		{title:"Item", field:"item", resizable:true, formatter:function(cell, formatterParams){
+			var value = cell.getValue();
+			return value;
+		}},
+		{title:"Allowances", field:"allowance", resizable:true, hozAlign:"right" },
+		{title:"Repeats", field:"repeats", resizable:true, hozAlign:"right" },
+		{title:"Place", field:"place", resizable:true },
+		{title:"Job (lvl)", field:"job", resizable:true },
+		{title:"Server", field:"server", resizable:true },
+		{title:"Price", field:"price", resizable:true, hozAlign:"right", formatter:function(cell, formatterParams){
+			var value = cell.getValue();
+			return value;
+		} },
+		{title:"Reward", field:"reward", resizable:true, hozAlign:"right"},
+		{title:"Profit", field:"profit", resizable:true, hozAlign:"right" },
+		{title:"PPA", field:"ppa", resizable:true, hozAlign:"right" },
+		],
+		layout:"fitDataTable",
+		pagination:"local",       //paginate the data
+		paginationSize:20,         //allow x rows per page of data
+		
+		movableRows:true,
+		movableRowsConnectedTables:"#track-table",
+		movableRowsReceiver: "add",
+		movableRowsSender: "delete",
+		placeholder:"All Rows Moved",
+
+	});
+	
+	//initialize table
+	var table = new Tabulator("#track-table", {
+		columns:[
+		{title:"Name", field:"name" },
+		{title:"Item", field:"item", formatter:function(cell, formatterParams){
+			var value = cell.getValue();
+			return value;
+		}},
+		{title:"Allowances", field:"allowance", hozAlign:"right" },
+		{title:"Repeats", field:"repeats", hozAlign:"right" },
+		{title:"Place", field:"place" },
+		{title:"Job (lvl)", field:"job" },
+		{title:"Server", field:"server" },
+		{title:"Price", field:"price", hozAlign:"right", formatter:function(cell, formatterParams){
+			var value = cell.getValue();
+			return value;
+		} },
+		{title:"Reward", field:"reward", hozAlign:"right"},
+		{title:"Profit", field:"profit", hozAlign:"right" },
+		{title:"PPA", field:"ppa", hozAlign:"right" },
+		],
+		layout:"fitDataTable",
+		pagination:"local",       //paginate the data
+		paginationSize:20,         //allow x rows per page of data
+		
+		movableRows:true,
+		movableRowsConnectedTables:"#leve-table",
+		movableRowsReceiver: "add",
+		movableRowsSender: "delete",
+		placeholder:"Drag leves here to keep track of them",
+	});
+	</script>
+	<div id="infoBot"> <i class="fas fa-code"></i> by <a href="https://linktr.ee/janmuesli" target="_blank" rel="noopener">Jan Müsli</a>. Prices by <a href="https://universalis.app/" target="_blank" rel="noopener">Universalis</a>. <a href="https://www.finalfantasy.com/">FINAL FANTASY</a> is a registered trademark of <a href="https://square-enix-games.com/">Square Enix Holdings Co., Ltd</a>. © <a href="https://square-enix-games.com/">SQUARE ENIX CO., LTD</a>. All Rights Reserved. </div>
 </body>
+
 </html>

@@ -1,9 +1,8 @@
-table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
-    content: " \25B4\25BE" 
+html {
+	color: #f3f3f3;
+	background-color:#232323;
 }
 
-.floatingHeader {
-  position: fixed;
-  top: 0;
-  visibility: hidden;
+a {
+	color: #8ab4f8;
 }
