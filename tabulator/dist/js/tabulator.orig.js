@@ -16503,6 +16503,85 @@
     }
   }
 
+  function datetime (cell, formatterParams, onRendered) {
+    var DT = window.DateTime || luxon.DateTime;
+    var inputFormat = formatterParams.inputFormat || "yyyy-MM-dd HH:mm:ss";
+    var outputFormat = formatterParams.outputFormat || "dd/MM/yyyy HH:mm:ss";
+    var invalid = typeof formatterParams.invalidPlaceholder !== "undefined" ? formatterParams.invalidPlaceholder : "";
+    var value = cell.getValue();
+
+    if (typeof DT != "undefined") {
+      var newDatetime;
+
+      if (DT.isDateTime(value)) {
+        newDatetime = value;
+      } else if (inputFormat === "iso") {
+        newDatetime = DT.fromISO(String(value));
+      } else {
+        newDatetime = DT.fromFormat(String(value), inputFormat);
+      }
+
+      if (newDatetime.isValid) {
+        if (formatterParams.timezone) {
+          newDatetime = newDatetime.setZone(formatterParams.timezone);
+        }
+
+        return newDatetime.toFormat(outputFormat);
+      } else {
+        if (invalid === true || !value) {
+          return value;
+        } else if (typeof invalid === "function") {
+          return invalid(value);
+        } else {
+          return invalid;
+        }
+      }
+    } else {
+      console.error("Format Error - 'datetime' formatter is dependant on luxon.js");
+    }
+  }
+
+  function datetimediff (cell, formatterParams, onRendered) {
+    var DT = window.DateTime || luxon.DateTime;
+    var inputFormat = formatterParams.inputFormat || "yyyy-MM-dd HH:mm:ss";
+    var invalid = typeof formatterParams.invalidPlaceholder !== "undefined" ? formatterParams.invalidPlaceholder : "";
+    var suffix = typeof formatterParams.suffix !== "undefined" ? formatterParams.suffix : false;
+    var unit = typeof formatterParams.unit !== "undefined" ? formatterParams.unit : "days";
+    var humanize = typeof formatterParams.humanize !== "undefined" ? formatterParams.humanize : false;
+    var date = typeof formatterParams.date !== "undefined" ? formatterParams.date : DT.now();
+    var value = cell.getValue();
+
+    if (typeof DT != "undefined") {
+      var newDatetime;
+
+      if (DT.isDateTime(value)) {
+        newDatetime = value;
+      } else if (inputFormat === "iso") {
+        newDatetime = DT.fromISO(String(value));
+      } else {
+        newDatetime = DT.fromFormat(String(value), inputFormat);
+      }
+
+      if (newDatetime.isValid) {
+        if (humanize) {
+          return newDatetime.diff(date, unit).toHuman() + (suffix ? " " + suffix : "");
+        } else {
+          return parseInt(newDatetime.diff(date, unit)[unit]) + (suffix ? " " + suffix : "");
+        }
+      } else {
+        if (invalid === true) {
+          return value;
+        } else if (typeof invalid === "function") {
+          return invalid(value);
+        } else {
+          return invalid;
+        }
+      }
+    } else {
+      console.error("Format Error - 'datetimediff' formatter is dependant on luxon.js");
+    }
+  }
+
   function lookup (cell, formatterParams, onRendered) {
     var value = cell.getValue();
 
@@ -16847,6 +16926,8 @@
     link: link,
     image: image,
     tickCross: tickCross$1,
+    datetime: datetime,
+    datetimediff: datetimediff,
     lookup: lookup,
     star: star$1,
     traffic: traffic,
@@ -25345,6 +25426,66 @@
     return emptyAlign;
   }
 
+  //sort datetime
+  function datetime$1 (a, b, aRow, bRow, column, dir, params) {
+    var DT = window.DateTime || luxon.DateTime;
+    var format = params.format || "dd/MM/yyyy HH:mm:ss",
+        alignEmptyValues = params.alignEmptyValues,
+        emptyAlign = 0;
+
+    if (typeof DT != "undefined") {
+      if (DT.isDateTime(a)) {
+        a = a;
+      } else if (format === "iso") {
+        a = DT.fromISO(String(a));
+      } else {
+        a = DT.fromFormat(String(a), format);
+      }
+
+      if (DT.isDateTime(b)) {
+        b = b;
+      } else if (format === "iso") {
+        b = DT.fromISO(String(b));
+      } else {
+        b = DT.fromFormat(String(b), format);
+      }
+
+      if (!a.isValid) {
+        emptyAlign = !b.isValid ? 0 : -1;
+      } else if (!b.isValid) {
+        emptyAlign = 1;
+      } else {
+        //compare valid values
+        return a - b;
+      } //fix empty values in position
+
+
+      if (alignEmptyValues === "top" && dir === "desc" || alignEmptyValues === "bottom" && dir === "asc") {
+        emptyAlign *= -1;
+      }
+
+      return emptyAlign;
+    } else {
+      console.error("Sort Error - 'datetime' sorter is dependant on luxon.js");
+    }
+  }
+
+  function date (a, b, aRow, bRow, column, dir, params) {
+    if (!params.format) {
+      params.format = "dd/MM/yyyy";
+    }
+
+    return datetime$1.call(this, a, b, aRow, bRow, column, dir, params);
+  }
+
+  function time (a, b, aRow, bRow, column, dir, params) {
+    if (!params.format) {
+      params.format = "HH:mm";
+    }
+
+    return datetime$1.call(this, a, b, aRow, bRow, column, dir, params);
+  }
+
   //sort booleans
   function _boolean (a, b, aRow, bRow, column, dir, params) {
     var el1 = a === true || a === "true" || a === "True" || a === 1 ? 1 : 0;
@@ -25464,6 +25605,9 @@
   var defaultSorters = {
     number: number$1,
     string: string,
+    date: date,
+    time: time,
+    datetime: datetime$1,
     "boolean": _boolean,
     array: array,
     exists: exists,
