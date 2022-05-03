@@ -42,9 +42,9 @@
 			<div class="box">
 			</div>
 			<div class="box">
-				Every two hours new easy FFXIV leves!
+				Every hour new easy FFXIV leves!
 				<br/>
-				<!--progress value="70" max="100">70 %</progress!-->
+				<!--progress value="70" max="100">70 %</progress            https://stackoverflow.com/questions/53711744/progress-bar-between-two-dates-fetch-var-from-script-html                  !-->
 			</div>
 			<div class="box">
 				Which datacenter are you from?
@@ -78,9 +78,6 @@
 				</div>
 				<div class="box">
 					Class Icons
-				</div>
-				<div class="box">
-					Hourly Updates
 				</div>
 				<div class="box">
 					Update Progress Bar
@@ -139,6 +136,10 @@
 				lowestServer = server;
 			}
 		}
+		lowestServerFirstLetter=lowestServer.charAt(0)
+		lowestServerFirstLetter=lowestServerFirstLetter.toUpperCase()
+		lowestServer=lowestServer.slice(1);
+		lowestServer=lowestServerFirstLetter+lowestServer
 		tupel.server=lowestServer;
 		if(lowestPrice == 99999999997189) {
 			tupel.price="-";
