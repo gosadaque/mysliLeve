@@ -163,16 +163,16 @@
 		data:tabledata, //assign data to table
 		columns:[
 		{rowHandle:true, formatter:"handle", headerSort:false, frozen:true, width:30, minWidth:30},
-		{title:"Name", field:"name", resizable:true },
-		{title:"Item", field:"item", resizable:true, formatter:function(cell, formatterParams){
+		{title:"Name", field:"name", resizable:true, headerFilter:"input" },
+		{title:"Item", field:"item", resizable:true, headerFilter:"input", formatter:function(cell, formatterParams){
 			var value = cell.getValue();
 			return value;
 		}},
-		{title:"Allowances", field:"allowance", resizable:true, hozAlign:"right" },
-		{title:"Repeats", field:"repeats", resizable:true, hozAlign:"right" },
-		{title:"Place", field:"place", resizable:true },
-		{title:"Job (lvl)", field:"job", resizable:true },
-		{title:"Server", field:"server", resizable:true },
+		{title:"Allowances", field:"allowance", resizable:true, hozAlign:"right", headerFilter:"input" },
+		{title:"Repeats", field:"repeats", resizable:true, hozAlign:"right", headerFilter:"input" },
+		{title:"Place", field:"place", resizable:true, headerFilter:"input" },
+		{title:"Job (lvl)", field:"job", resizable:true, headerFilter:"input" },
+		{title:"Server", field:"server", resizable:true, headerFilter:"input" },
 		{title:"Price", field:"price", resizable:true, hozAlign:"right", formatter:function(cell, formatterParams){
 			var value = cell.getValue();
 			return value;
