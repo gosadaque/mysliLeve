@@ -128,9 +128,11 @@
 		tupel={};
 		tupel.name=allLeves[i]["lv_name"]["en"];
 		if(allLeves[i]["lv_item_count"] > 1) {
-			tupel.item=allLeves[i]["lv_item_count"] + "x <a href='https://garlandtools.org/db/#item/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + "<img src='https://garlandtools.org/files/icons/item/" + allLeves[i]["lv_item_id"] + ".webp'> " + allLeves[i]["lv_item"]["en"] + "</a>";
+			//tupel.item=allLeves[i]["lv_item_count"] + "x <a href='https://garlandtools.org/db/#item/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + "<img src='https://garlandtools.org/files/icons/item/" + allLeves[i]["lv_item_id"] + ".webp'> " + allLeves[i]["lv_item"]["en"] + "</a>";
+			tupel.item=allLeves[i]["lv_item_count"] + "x <a href='https://garlandtools.org/db/#item/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + allLeves[i]["lv_item"]["en"] + "</a>";
 		} else {
-			tupel.item="<a href='https://garlandtools.org/db/#item/" +  allLeves[i]["lv_item_id"] + "' target='_blank'>" + "<img src='https://garlandtools.org/files/icons/item/" + allLeves[i]["lv_item_id"] + ".png' width='15' height='15'> " + allLeves[i]["lv_item"]["en"] + "</a>";
+			tupel.item="<a href='https://garlandtools.org/db/#item/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + allLeves[i]["lv_item"]["en"] + "</a>";
+			//tupel.item="<a href='https://garlandtools.org/db/#item/" +  allLeves[i]["lv_item_id"] + "' target='_blank'>" + "<img src='https://garlandtools.org/files/icons/item/" + allLeves[i]["lv_item_id"] + ".png' width='15' height='15'> " + allLeves[i]["lv_item"]["en"] + "</a>";
 		}
 		tupel.allowance=allLeves[i]["lv_allowance"];
 		tupel.repeats=allLeves[i]["lv_time"];
