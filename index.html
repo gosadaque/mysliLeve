@@ -137,7 +137,8 @@
 		tupel.allowance=allLeves[i]["lv_allowance"];
 		tupel.repeats=allLeves[i]["lv_time"];
 		tupel.place=allLeves[i]["lv_place"];
-		tupel.job="<img src='img/" + allLeves[i]["lv_job"] + ".webp' width='15' height='15'> "+ allLeves[i]["lv_job"] + " (" + allLeves[i]["lv_lvl"] + ")";
+		tupel.job="<img src='img/" + allLeves[i]["lv_job"] + ".webp' width='15' height='15'> "+ allLeves[i]["lv_job"];
+		tupel.lvl=allLeves[i]["lv_lvl"]
 		var lowestServer = "-";
 		var lowestPrice = 99999999997189;
 		for(const server of servers) {
@@ -181,10 +182,11 @@
 		{title:"Allowances", field:"allowance", resizable:true, hozAlign:"right", headerFilter:"input" },
 		{title:"Repeats", field:"repeats", resizable:true, hozAlign:"right", headerFilter:"input" },
 		{title:"Place", field:"place", resizable:true, headerFilter:"input" },
-		{title:"Job (lvl)", field:"job", resizable:true, headerFilter:"input", formatter:function(cell, formatterParams){
+		{title:"Job", field:"job", resizable:true, headerFilter:"input", formatter:function(cell, formatterParams){
 			var value = cell.getValue();
 			return value;
 		}},
+		{title:"Job Level", field:"lvl", resizable:true, hozAlign:"right"},
 		{title:"Server", field:"server", resizable:true, headerFilter:"input" },
 		{title:"Price", field:"price", resizable:true, hozAlign:"right", formatter:function(cell, formatterParams){
 			var value = cell.getValue();
@@ -219,6 +221,7 @@
 		{title:"Repeats", field:"repeats", hozAlign:"right" },
 		{title:"Place", field:"place" },
 		{title:"Job (lvl)", field:"job" },
+		{title:"Job Level", field:"lvl" },
 		{title:"Server", field:"server" },
 		{title:"Price", field:"price", hozAlign:"right", formatter:function(cell, formatterParams){
 			var value = cell.getValue();
