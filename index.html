@@ -5,9 +5,9 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<script>
-		//if(document.location.href.indexOf('pages.dev') > -1) { 
-		//	document.location.href = 'https://xivleve.org/';
-		//}
+		if(document.location.href.indexOf('pages.dev') > -1) { 
+			document.location.href = 'https://xivleve.org/';
+		}
 	</script>
 	<script src="./tabulator/dist/js/tabulator.js"></script>
 	<script type="text/javascript" src="allLeves.js"></script>
@@ -21,6 +21,7 @@
 			"primal": ["behemoth", "excalibur", "exodus", "famfrit", "famfrit", "lamia", "leviathan", "ultros"],
 			"crystal": ["balmung", "brynhildr", "coeurl", "diabolos", "goblin", "malboro", "mateus", "zalera"],
 			"chaos": ["cerberus", "louisoix", "moogle", "phantom", "omega", "ragnarok", "sagittarius", "spriggan"],
+			"dynamis":["halicarnassus","maduin","marilith","seraph"],
 			"light": ["alpha", "lich", "zodiark", "twintania", "phoenix", "raiden", "shiva", "odin"],
 			"materia": ["bismarck", "ravana", "sephirot", "sophia", "zurvan"],
 			"elemental": ["aegis", "atomos", "carbuncle", "garuda", "gungnir", "kujata", "tonberry", "typhon"],
@@ -40,14 +41,14 @@
 			<div class="box">
 				<h2>xivLeves</h2>
 			</div>
-			<div class="box">
+			<div class="box" id="progress-container">
+				<progress id="hourlyProgress" value="0" max="100"></progress>
 			</div>
 			<div class="box">
 				Every hour new easy FFXIV leves!
 				<br/>
 				The easiest to buy items from the market board to maximize profit doing levequests.
 				<br/>
-				<!--progress value="70" max="100">70 %</progress            https://stackoverflow.com/questions/53711744/progress-bar-between-two-dates-fetch-var-from-script-html                  !-->
 			</div>
 			<div class="box">
 				Which datacenter are you from?
@@ -55,7 +56,7 @@
 				<div class="home">
 					<div class="box">
 						North America
-						<br/><a href="?dc=aether">Aether</a> | <a href="?dc=primal">Primal</a> | <a href="?dc=crystal">Crystal</a> <br/><br/>
+						<br/><a href="?dc=aether">Aether</a> | <a href="?dc=primal">Primal</a> | <a href="?dc=crystal">Crystal</a> <br/> <a href="?dc=dynamis">Dynamis</a> <br/><br/>
 					</div>
 					<div class="box">
 						Europe
@@ -67,7 +68,7 @@
 					</div>
 					<div class="box">
 						Japan
-						<br/><a href="?dc=elemental">Elemental</a> | <a href="?dc=gaia">Gaia</a> | <a href="?dc=mana">Mana</a>
+						<br/><a href="?dc=elemental">Elemental</a> | <a href="?dc=gaia">Gaia</a> | <a href="?dc=mana">Mana</a> <br/> <a href="?dc=meteor">Meteor</a>
 					</div>
 				</div>
 			</div>
@@ -85,10 +86,13 @@
 			<div class="box">
 				Soon Coming:
 				<div class="box">
-					Item Icon Optimization
+					Update Progress Bar
 				</div>
 				<div class="box">
-					Update Progress Bar
+					Language Support for De, Fr, Jp
+				</div>
+				<div class="box">
+					Chinese Servers
 				</div>
 			</div>
 			<div class="box">
@@ -153,7 +157,7 @@
 		lowestServer=lowestServerFirstLetter+lowestServer
 		tupel.server=lowestServer;
 		if(lowestPrice == 99999999997189) {
-			tupel.price="-";
+			tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>-</a>";;
 		} else {
 			tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + lowestPrice + "</a>";
 		}
@@ -244,6 +248,34 @@
 		movableRowsSender: "delete",
 		placeholder:"Drag leves here to keep track of them",
 	});
+	
+	
+	
+	
+	function updateProgressBar() {
+		const now = new Date();
+		const minutes = now.getMinutes();
+		const seconds = now.getSeconds();
+		
+		// Calculate the fraction of the hour that has passed
+		// and convert it to a percentage for the progress bar.
+		// This includes seconds for a smoother progress bar movement.
+		const fractionOfHour = ((minutes * 60) + seconds) / (60 * 60);
+		const percentage = fractionOfHour * 100;
+		
+		// Update the progress bar's value
+		const progressBar = document.getElementById('hourlyProgress');
+		progressBar.value = percentage;
+		
+		// Update the progress bar's text (for browsers that support it)
+		progressBar.textContent = `${percentage.toFixed(2)} %`;
+	}
+
+	// Update the progress bar immediately when the page loads
+	updateProgressBar();
+
+	// Then, update the progress bar every second to reflect the passage of time smoothly
+	setInterval(updateProgressBar, 60000);
 </script>
 	
 
