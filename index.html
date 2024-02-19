@@ -132,7 +132,7 @@
 			//tupel.item=allLeves[i]["lv_item_count"] + "x <a href='https://garlandtools.org/db/#item/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + "<img src='https://garlandtools.org/files/icons/item/" + allLeves[i]["lv_item_id"] + ".webp'> " + allLeves[i]["lv_item"]["en"] + "</a>";
 			tupel.item=allLeves[i]["lv_item_count"] + "x ";
 		}
-		tupel.item=tupel.item+"<a href='https://garlandtools.org/db/#item/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + allLeves[i]["lv_item"]["en"] + "</a>";
+		tupel.item=tupel.item+"<a href='https://garlandtools.org/db/#item/" + allLeves[i]["d"] + "' target='_blank'>" + allLeves[i]["lv_item"]["en"] + "</a>";
 		
 		tupel.allowance=allLeves[i]["lv_allowance"];
 		tupel.repeats=allLeves[i]["lv_time"];
@@ -155,7 +155,7 @@
 		if(lowestPrice == 99999999997189) {
 			tupel.price="-";
 		} else {
-			tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + lowestPrice + "</a>";
+			tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["d"] + "' target='_blank'>" + lowestPrice + "</a>";
 		}
 		tupel.reward=allLeves[i]["lv_gil"];
 		tupel.profit = allLeves[i]["lv_gil"] * allLeves[i]["lv_time"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"];
