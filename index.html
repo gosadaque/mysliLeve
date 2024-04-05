@@ -85,8 +85,8 @@
 			<div class="box">
 				Click <a href='https://garlandtools.org/' target='_blank'><img src='./img/garland.webp'/></a> to open Garlandtools.<br/>
 				Click <svg height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill='#FFFFFF' d='M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z'/></svg> to copy the item name to your clipboard.<br/>
-				Drag and drop <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="3" x2="16" y2="3" stroke="white" stroke-width="3"/><line x1="1" y1="8" x2="16" y2="8" stroke="white" stroke-width="3"/><line x1="1" y1="13" x2="16" y2="13" stroke="white" stroke-width="3"/></svg> to move a leve to your tracked leves.
-
+				Drag and drop <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="3" x2="16" y2="3" stroke="white" stroke-width="3"/><line x1="1" y1="8" x2="16" y2="8" stroke="white" stroke-width="3"/><line x1="1" y1="13" x2="16" y2="13" stroke="white" stroke-width="3"/></svg> to move a leve to your tracked leves.<br/>
+<button onclick="saveTrackedLevesToCookie()">Click here to save tracked leves</button> in your cookies.
 		
 				
 			</div>
@@ -264,6 +264,31 @@
 	}
 
 
+
+function saveTrackedLevesToCookie() {
+    // Hole die Daten von der "tracked" Tabelle
+    var trackedData = table.getData(); // Stellen Sie sicher, dass 'table' korrekt auf Ihre "tracked" Tabelle verweist
+    // Konvertiere die Daten in einen String
+    var trackedDataString = JSON.stringify(trackedData);
+    // Speichere den String in einem Cookie
+    document.cookie = "trackedLeves=" + encodeURIComponent(trackedDataString) + ";path=/;max-age=31536000"; // Gültig für 1 Jahr
+}
+function loadTrackedLevesFromCookie() {
+    // Hole den Cookie-Wert
+    var trackedLevesCookie = document.cookie.split('; ').find(row => row.startsWith('trackedLeves='));
+    if(trackedLevesCookie) {
+        var trackedDataString = decodeURIComponent(trackedLevesCookie.split('=')[1]);
+        // Konvertiere den String zurück in ein Objekt
+        var trackedData = JSON.parse(trackedDataString);
+        // Füge die Daten in die "tracked" Tabelle ein
+        table.setData(trackedData); // Stellen Sie sicher, dass 'table' korrekt auf Ihre "tracked" Tabelle verweist
+    }
+}
+
+// Rufe die Funktion auf, wenn die Seite geladen wird
+window.onload = function() {
+    loadTrackedLevesFromCookie();
+}
 
 
 
