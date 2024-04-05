@@ -73,9 +73,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="box">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/wygC8PnOjpc?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			</div>
+			
 			<div class="box">
 				Choose your datacenter.<br/>
 				Sort by PPA (Profit per allowance).	<br/>
@@ -85,18 +83,12 @@
 				Repeat
 			</div>
 			<div class="box">
-				<!--img id="optional" src="./img/levesplate.webp" alt="Levequest Plates" width="400" height="330" loading="lazy"/-->
-				<!-- 
-					<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-					<ins id="1051341" data-width="308" data-height="528"></ins>
-					<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1051341});</script>
-				<!--JuicyAds END-->
-				<br/>
-				<!-- 
-					<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-					<ins id="1051371" data-width="178" data-height="58"></ins>
-					<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1051371});</script>
-				<!--JuicyAds END-->
+				Click <a href='https://garlandtools.org/' target='_blank'><img src='./img/garland.webp'/></a> to open Garlandtools.<br/>
+				Click <svg height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill='#FFFFFF' d='M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z'/></svg> to copy the item name to your clipboard.<br/>
+				Drag and drop <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="3" x2="16" y2="3" stroke="white" stroke-width="3"/><line x1="1" y1="8" x2="16" y2="8" stroke="white" stroke-width="3"/><line x1="1" y1="13" x2="16" y2="13" stroke="white" stroke-width="3"/></svg> to move a leve to your tracked leves.
+
+		
+				
 			</div>
 			<div class="box">
 				Soon Coming:
@@ -145,10 +137,9 @@
 		tupel.name=allLeves[i]["lv_name"]["en"];
 		tupel.item="";
 		if(allLeves[i]["lv_item_count"] > 1) {
-			//tupel.item=allLeves[i]["lv_item_count"] + "x <a href='https://garlandtools.org/db/#item/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + "<img src='https://garlandtools.org/files/icons/item/" + allLeves[i]["lv_item_id"] + ".webp'> " + allLeves[i]["lv_item"]["en"] + "</a>";
 			tupel.item=allLeves[i]["lv_item_count"] + "x ";
 		}
-		tupel.item=tupel.item+"<a href='https://garlandtools.org/db/#item/" + allLeves[i]["d"] + "' target='_blank'>" + allLeves[i]["lv_item"]["en"] + "</a>";
+		tupel.item=tupel.item+"<a href='https://garlandtools.org/db/#item/" + allLeves[i]["d"] + "' target='_blank'><img src='./img/garland.webp'/></a> <span class='item-link'>" + allLeves[i]["lv_item"]["en"] + "</span> <svg onclick='copyToClipboard(this)'height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill='#FFFFFF' d='M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z'/></svg>";
 		
 		tupel.allowance=allLeves[i]["lv_allowance"];
 		tupel.repeats=allLeves[i]["lv_time"];
@@ -224,7 +215,7 @@
 
 	});
 	
-	//initialize table
+	//initialize track table
 	var table = new Tabulator("#track-table", {
 		columns:[
 		{rowHandle:true, formatter:"handle", headerSort:false, frozen:true, width:30, minWidth:30},
@@ -261,7 +252,21 @@
 		placeholder:"Drag leves here to keep track of them",
 	});
 	
-	
+	function copyToClipboard(svgElement) {
+		const itemName = svgElement.previousElementSibling.textContent;
+		
+		const tempInput = document.createElement('textarea');
+		tempInput.value = itemName;
+		document.body.appendChild(tempInput);
+		tempInput.select();
+		document.execCommand('copy');
+		document.body.removeChild(tempInput);
+	}
+
+
+
+
+
 	
 	
 	function updateProgressBar() {

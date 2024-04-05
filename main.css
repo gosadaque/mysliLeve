@@ -26,6 +26,22 @@ a {
     box-shadow: 0 1px 3px #000;
 }
 
+.copy-icon {
+  cursor: pointer;
+}
+
+.job-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; /* Abstand zwischen den Gruppen */
+}
+
+.job {
+  flex: 1; /* Ermöglicht, dass alle Jobs innerhalb einer Gruppe den gleichen Platz einnehmen */
+}
+
+
+
 @media (max-width:629px) {
   img#optional {
     display: none;
