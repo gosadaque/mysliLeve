@@ -73,7 +73,62 @@
 					</div>
 				</div>
 			</div>
-			
+			<div class="box">
+				<form id="ffxivForm">
+				Saved levels will be loaded once you choose a datacenter
+				<div class="job-group">
+				<div class="job">
+				  <label for="CRP"><img src='./img/CRP.webp'/> CRP</label><br/>
+				  <input type="number" id="CRP" name="CRP" min="1" max="100"><br>
+				  </div>
+    <div class="job">
+				  <label for="BSM"><img src='./img/BSM.webp'/> BSM</label><br/>
+				  <input type="number" id="BSM" name="BSM" min="1" max="100"><br>
+				  </div>
+    <div class="job">
+				  <label for="ARM"><img src='./img/ARM.webp'/> ARM</label><br/>
+				  <input type="number" id="ARM" name="ARM" min="1" max="100"><br>
+				  </div>
+    <div class="job">
+				  <label for="GSM"><img src='./img/GSM.webp'/> GSM</label><br/>
+				  <input type="number" id="GSM" name="GSM" min="1" max="100"><br>
+				  </div>
+				  </div>
+				  <div class="job-group">
+    <div class="job">
+				  <label for="LTW"><img src='./img/LTW.webp'/> LTW</label><br/>
+				  <input type="number" id="LTW" name="LTW" min="1" max="100"><br>
+				  </div>
+    <div class="job">
+				  <label for="WVR"><img src='./img/WVR.webp'/> WVR</label><br/>
+				  <input type="number" id="WVR" name="WVR" min="1" max="100"><br>
+				  </div>
+    <div class="job">
+				  <label for="ALC"><img src='./img/ALC.webp'/> ALC</label><br/>
+				  <input type="number" id="ALC" name="ALC" min="1" max="100"><br>
+				  </div>
+    <div class="job">
+				  <label for="CUL"><img src='./img/CUL.webp'/> CUL</label><br/>
+				  <input type="number" id="CUL" name="CUL" min="1" max="100"><br>
+				  </div>
+				  </div>
+				  <div class="job-group">
+    <div class="job">
+				  <label for="MIN"><img src='./img/MIN.webp'/> MIN</label><br/>
+				  <input type="number" id="MIN" name="MIN" min="1" max="100"><br>
+				  </div>
+    <div class="job">
+				  <label for="BTN"><img src='./img/BTN.webp'/> BTN</label><br/>
+				  <input type="number" id="BTN" name="BTN" min="1" max="100"><br>
+				  </div>
+    <div class="job">
+				  <label for="FSH"><img src='./img/FSH.webp'/> FSH</label><br/>
+				  <input type="number" id="FSH" name="FSH" min="1" max="100"><br>
+				  </div>
+				</div>
+				  <button type="button" onclick="saveValues()">Save levels for 30 days</button>
+				</form>
+			</div>
 			<div class="box">
 				Choose your datacenter.<br/>
 				Sort by PPA (Profit per allowance).	<br/>
@@ -262,6 +317,35 @@
 		document.execCommand('copy');
 		document.body.removeChild(tempInput);
 	}
+
+
+
+// Funktion zum Speichern der Werte in einem Cookie
+function saveValues() {
+  const formValues = {};
+  document.querySelectorAll('#ffxivForm input').forEach(input => {
+    formValues[input.name] = input.value;
+  });
+  document.cookie = "ffxivValues=" + JSON.stringify(formValues) + ";path=/;max-age=" + 60*60*24*30; // 30 Tage Gültigkeit
+}
+
+// Funktion zum Laden und Setzen der Werte aus dem Cookie
+function loadValues() {
+  const cookieValue = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('ffxivValues='))
+    ?.split('=')[1];
+  if (cookieValue) {
+    const formValues = JSON.parse(decodeURIComponent(cookieValue));
+    for (const [key, value] of Object.entries(formValues)) {
+      const input = document.querySelector(`#ffxivForm input[name="${key}"]`);
+      if (input) input.value = value;
+    }
+  }
+}
+
+// Rufen Sie loadValues auf, wenn die Seite geladen wird
+window.onload = loadValues;
 
 
 
