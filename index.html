@@ -43,14 +43,14 @@
     <button class="spoiler-btn" onclick="toggleSpoiler('spoiler1')">Datacenter</button>
     <button class="spoiler-btn" onclick="toggleSpoiler('spoiler2')">FAQ</button>
     <button class="spoiler-btn" onclick="toggleSpoiler('spoiler3')">Credits</button>
-    <div id="spoiler0" class="spoiler-content">
+    <div id="spoiler0" class="spoiler-content" style="display: none;">
         <p><a href="#" onclick="event.preventDefault(); updateLanguage('en')">English EN</a> |
             <a href="#" onclick="event.preventDefault(); updateLanguage('de')">Deutsch DE</a> |
             <a href="#" onclick="event.preventDefault(); updateLanguage('fr')">Français FR</a> |
             <a href="#" onclick="event.preventDefault(); updateLanguage('ja')">日本語 JA</a>
         </p>
     </div>
-    <div id="spoiler1" class="spoiler-content">
+    <div id="spoiler1" class="spoiler-content" style="display: none;">
         <div class="home">
             <div class="box">
                 Which datacenter are you from?
@@ -85,7 +85,7 @@
             </div>
         </div>
     </div>
-    <div id="spoiler2" class="spoiler-content">
+    <div id="spoiler2" class="spoiler-content" style="display: none;">
         <div class="home">
             <div class="box">
                 <b>What is this?</b>
@@ -106,8 +106,12 @@
             </div>
             <div class="box">
                 Click
-                <a href='https://garlandtools.org/' target='_blank'><img src='./img/garland.webp' /></a> to open Garlandtools.
-                <br/> Click
+                <a href='https://garlandtools.org/' target='_blank'><img src='./img/garland.webp' alt="Garlandtools"/></a> to open Garlandtools.
+                <br/>
+				Click
+                <a href='https://universalis.app/' target='_blank'><img src='./img/universalis.webp' width='16' alt="Universalis"/></a> to open Garlandtools.
+                <br/> 
+				Click
                 <svg height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'>
                     <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path fill='#FFFFFF' d='M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z'
@@ -129,7 +133,7 @@
             </div>
         </div>
     </div>
-    <div id="spoiler3" class="spoiler-content">
+    <div id="spoiler3" class="spoiler-content" style="display: none;">
         Code by <a href="https://69.mg" target="_blank" rel="noopener">Jan Müsli</a>. Prices by <a href="https://universalis.app/" target="_blank" rel="noopener">Universalis</a>. Tables by <a href="https://tabulator.info/" target="_blank" rel="noopener">tabulator</a>.
         <br/> FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.
         <br/>
