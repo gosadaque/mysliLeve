@@ -2,318 +2,399 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script src="./tabulator/dist/js/tabulator.js"></script>
-	<script type="text/javascript" src="allLeves.js"></script>
-	<link href="./main.css" rel="stylesheet" async>
-	<script>
-		const queryString = window.location.search;
-		const urlParams = new URLSearchParams(queryString);
-		const dc = urlParams.get('dc');
-		const dcs = {
-			"aether": ["adamantoise", "cactuar", "faerie", "gilgamesh", "jenova", "midgardsormr", "sargatanas", "siren"],
-			"primal": ["behemoth", "excalibur", "exodus", "famfrit", "famfrit", "lamia", "leviathan", "ultros"],
-			"crystal": ["balmung", "brynhildr", "coeurl", "diabolos", "goblin", "malboro", "mateus", "zalera"],
-			"chaos": ["cerberus", "louisoix", "moogle", "phantom", "omega", "ragnarok", "sagittarius", "spriggan"],
-			"dynamis":["halicarnassus","maduin","marilith","seraph"],
-			"light": ["alpha", "lich", "zodiark", "twintania", "phoenix", "raiden", "shiva", "odin"],
-			"materia": ["bismarck", "ravana", "sephirot", "sophia", "zurvan"],
-			"elemental": ["aegis", "atomos", "carbuncle", "garuda", "gungnir", "kujata", "tonberry", "typhon"],
-			"gaia": ["alexander", "bahamut", "durandal", "fenrir", "ifrit", "ridill", "tiamat", "ultima"],
-			"mana": ["anima", "asura", "chocobo", "hades", "ixion", "masamune", "pandaemonium", "titan"],
-			"meteor": ["belias", "mandragora", "ramuh", "shinryu", "unicorn", "valefor", "yojimbo", "zeromus"]
-		};
-		const servers = dcs[dc];
-		
-	</script>
-	<title>xivLeve</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <script src="./tabulator/dist/js/tabulator.js"></script>
+    <script type="text/javascript" src="allLeves.js"></script>
+    <link href="./main.css" rel="stylesheet" async>
+    <script id="dynamic-script-loader-prices"></script>
+    <script id="dynamic-script-loader-lang"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+         const dc = urlParams.get('dc');
+         const lang = urlParams.get('lang');
+         
+         const dcs = {
+         	"aether": ["adamantoise", "cactuar", "faerie", "gilgamesh", "jenova", "midgardsormr", "sargatanas", "siren"],
+         	"primal": ["behemoth", "excalibur", "exodus", "famfrit", "famfrit", "lamia", "leviathan", "ultros"],
+         	"crystal": ["balmung", "brynhildr", "coeurl", "diabolos", "goblin", "malboro", "mateus", "zalera"],
+         	"chaos": ["cerberus", "louisoix", "moogle", "phantom", "omega", "ragnarok", "sagittarius", "spriggan"],
+         	"dynamis":["halicarnassus","maduin","marilith","seraph"],
+         	"light": ["alpha", "lich", "zodiark", "twintania", "phoenix", "raiden", "shiva", "odin"],
+         	"materia": ["bismarck", "ravana", "sephirot", "sophia", "zurvan"],
+         	"elemental": ["aegis", "atomos", "carbuncle", "garuda", "gungnir", "kujata", "tonberry", "typhon"],
+         	"gaia": ["alexander", "bahamut", "durandal", "fenrir", "ifrit", "ridill", "tiamat", "ultima"],
+         	"mana": ["anima", "asura", "chocobo", "hades", "ixion", "masamune", "pandaemonium", "titan"],
+         	"meteor": ["belias", "mandragora", "ramuh", "shinryu", "unicorn", "valefor", "yojimbo", "zeromus"]
+         };
+         function toggleSpoiler(spoilerId) {
+           var spoilers = document.getElementsByClassName('spoiler-content');
+           for (var i = 0; i < spoilers.length; i++) {
+               if (spoilers[i].id === spoilerId) {
+                   spoilers[i].style.display = spoilers[i].style.display === 'none' ? 'block' : 'none';
+               } else {
+                   spoilers[i].style.display = 'none';
+               }
+           }
+         }
+    </script>
+    <title>xivLeve</title>
 </head>
 
-<body> 
-	<div class="home">
-		<div class="centr">
-			<div class="box">
-				<a href="https://xivleve.org" target="_blank" rel="noopener">xivLeve</a>
-			</div>
-			<div class="box" id="progress-container">
-				<progress id="hourlyProgress" value="0" max="100"></progress>
-			</div>
-			<div class="box">
-				Every hour new easy FFXIV leves!
-				<br/>
-				The easiest to buy items from the market board to maximize profit doing levequests.
-				<br/>
-			</div>
-			<div class="box">
-				Which datacenter are you from?
-				<br/><br/>
-				<div class="home">
-					<div class="box">
-						North America
-						<br/><a href="?dc=aether">Aether</a> | <a href="?dc=primal">Primal</a> | <a href="?dc=crystal">Crystal</a> <br/> <a href="?dc=dynamis">Dynamis</a> <br/><br/>
-					</div>
-					<div class="box">
-						Europe
-						<br/><a href="?dc=chaos">Chaos</a> | <a href="?dc=light">Light</a> <br/><br/>
-					</div>
-					<div class="box">
-						Oceanian
-						<br/><a href="?dc=materia">Materia</a><br/><br/>
-					</div>
-					<div class="box">
-						Japan
-						<br/><a href="?dc=elemental">Elemental</a> | <a href="?dc=gaia">Gaia</a> | <a href="?dc=mana">Mana</a> <br/> <a href="?dc=meteor">Meteor</a>
-					</div>
-				</div>
-			</div>
-			
-			<div class="box">
-				Choose your datacenter.<br/>
-				Sort by PPA (Profit per allowance).	<br/>
-				Buy cheap crafted items.<br/>
-				Accept levequest.<br/>
-				...<br/>
-				Repeat<br/>
-				...<br/>
-				<a href='https://www.patreon.com/janmuesli' target='_blank'>Support me</a>
-			</div>
-			<div class="box">
-				Click <a href='https://garlandtools.org/' target='_blank'><img src='./img/garland.webp'/></a> to open Garlandtools.<br/>
-				Click <svg height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill='#FFFFFF' d='M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z'/></svg> to copy the item name to your clipboard.<br/>
-				Drag and drop <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="3" x2="16" y2="3" stroke="white" stroke-width="3"/><line x1="1" y1="8" x2="16" y2="8" stroke="white" stroke-width="3"/><line x1="1" y1="13" x2="16" y2="13" stroke="white" stroke-width="3"/></svg> to move a leve to your tracked leves.<br/>
-<button onclick="saveTrackedLevesToCookie()">Click here to save tracked leves</button> in your cookies.
-		
-				
-			</div>
-			<div class="box">
-				Soon Coming:
-				<div class="box">
-					Language Support for De, Fr, Jp
-				</div>
-				<div class="box">
-					Chinese Servers
-				</div>
-			</div>
-			<div class="box">
-			</div>
-			<div class="box">
-				Code by <a href="https://69.mg" target="_blank" rel="noopener">Jan Müsli</a>. 
-				Prices by <a href="https://universalis.app/" target="_blank" rel="noopener">Universalis</a>. 
-				<br/><br/>
-				FINAL FANTASY is a registered trademark of 
-				<br/>
-				Square Enix Holdings Co., Ltd. 
-				<br/>
-				<a href="https://xivleve.org" target="_blank" rel="noopener">xivLeve</a> is not affiliated with Square Enix.
-			</div>
-		</div>
-		
-		<div class="centr">
-			<div class="box"><div id="track-table"></div></div>
-			<div class="box">
-			</div>
-			<div class="box"><div id="leve-table"></div></div>
-		</div>	
-	</div>
-	
-	
+<body>
+    <div class="spoiler-btn">
+        <a href="https://xivleve.org" target="_blank" rel="noopener">xivLeve</a></progress>
+    </div>
+    <div class="spoiler-btn" id="progress-container">
+        <progress id="hourlyProgress" value="0" max="100"></progress>
+    </div>
+    <button class="spoiler-btn" onclick="toggleSpoiler('spoiler0')">Language</button>
+    <button class="spoiler-btn" onclick="toggleSpoiler('spoiler1')">Datacenter</button>
+    <button class="spoiler-btn" onclick="toggleSpoiler('spoiler2')">FAQ</button>
+    <button class="spoiler-btn" onclick="toggleSpoiler('spoiler3')">Credits</button>
+    <div id="spoiler0" class="spoiler-content">
+        <p><a href="#" onclick="event.preventDefault(); updateLanguage('en')">English EN</a> |
+            <a href="#" onclick="event.preventDefault(); updateLanguage('de')">Deutsch DE</a> |
+            <a href="#" onclick="event.preventDefault(); updateLanguage('fr')">Français FR</a> |
+            <a href="#" onclick="event.preventDefault(); updateLanguage('ja')">日本語 JA</a>
+        </p>
+    </div>
+    <div id="spoiler1" class="spoiler-content">
+        <div class="home">
+            <div class="box">
+                Which datacenter are you from?
+                <br/> Not sure? Check a full list <a href="https://is.xivup.com/" target='_blank'>here</a>
+            </div>
+            <div class="box">
+                North America
+                <br/>
+                <a href="#" onclick="event.preventDefault(); updateUrl('aether')">Aether</a> |
+                <a href="#" onclick="event.preventDefault(); updateUrl('primal')">Primal</a> |
+                <a href="#" onclick="event.preventDefault(); updateUrl('crystal')">Crystal</a> |
+                <a href="#" onclick="event.preventDefault(); updateUrl('dynamis')">Dynamis</a>
+            </div>
+            <div class="box">
+                Europe
+                <br/>
+                <a href="#" onclick="event.preventDefault(); updateUrl('chaos')">Chaos</a> |
+                <a href="#" onclick="event.preventDefault(); updateUrl('light')">Light</a>
+            </div>
+            <div class="box">
+                Oceanian
+                <br/>
+                <a href="#" onclick="event.preventDefault(); updateUrl('materia')">Materia</a>
+            </div>
+            <div class="box">
+                Japan
+                <br/>
+                <a href="#" onclick="event.preventDefault(); updateUrl('elemental')">Elemental</a> |
+                <a href="#" onclick="event.preventDefault(); updateUrl('gaia')">Gaia</a> |
+                <a href="#" onclick="event.preventDefault(); updateUrl('mana')">Mana</a> |
+                <a href="#" onclick="event.preventDefault(); updateUrl('meteor')">Meteor</a>
+            </div>
+        </div>
+    </div>
+    <div id="spoiler2" class="spoiler-content">
+        <div class="home">
+            <div class="box">
+                <b>What is this?</b>
+                <br/>Optimize your FFXIV Levequests and strategy with xivLeve - the essential tool
+                <br/>that uses real-time market data to highlight profit opportunities for gil gain.
+                <br/> Every hour new easy FFXIV leves!
+                <br/> The easiest to buy items from the market board to maximize profit doing levequests.
+            </div>
+            <div class="box">
+                <b>How do I use this?</b>
+                <br/>Choose your datacenter.
+                <br/> Sort by PPA (Profit per allowance).
+                <br/> Buy cheap crafted items.
+                <br/> Accept levequest.
+                <br/> ...
+                <br/> Repeat
+                <br/>
+            </div>
+            <div class="box">
+                Click
+                <a href='https://garlandtools.org/' target='_blank'><img src='./img/garland.webp' /></a> to open Garlandtools.
+                <br/> Click
+                <svg height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'>
+                    <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path fill='#FFFFFF' d='M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z'
+                    />
+                </svg>
+                to copy the item name to your clipboard.
+                <br/> Drag and drop
+                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="1" y1="3" x2="16" y2="3" stroke="white" stroke-width="3" />
+                    <line x1="1" y1="8" x2="16" y2="8" stroke="white" stroke-width="3" />
+                    <line x1="1" y1="13" x2="16" y2="13" stroke="white" stroke-width="3" />
+                </svg>
+                to move a leve to your tracked leves.
+                <br/>
+                <button onclick="saveTrackedLevesToCookie()">Click here to save tracked leves</button> in your cookies.
+            </div>
+            <div class="box">
+                <a href='https://www.patreon.com/janmuesli' target='_blank'>Support me</a>
+            </div>
+        </div>
+    </div>
+    <div id="spoiler3" class="spoiler-content">
+        Code by <a href="https://69.mg" target="_blank" rel="noopener">Jan Müsli</a>. Prices by <a href="https://universalis.app/" target="_blank" rel="noopener">Universalis</a>. Tables by <a href="https://tabulator.info/" target="_blank" rel="noopener">tabulator</a>.
+        <br/> FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.
+        <br/>
+        <a href="https://xivleve.org" target="_blank" rel="noopener">xivLeve</a> is not affiliated with Square Enix.
+    </div>
+    <div class="centr">
+        <div class="box">
+            <div id="track-table"></div>
+        </div>
+        <div class="box">
+        </div>
+        <div class="box">
+            <div id="leve-table"></div>
+        </div>
+    </div>
 </body>
-
 <script async>
-	
-	//define data array
-	var tabledata = [];
-	var allLeves = JSON.parse(allLeves);
-	for(var i = 0; i <= 1148; i++) {
-		
-		//for adding picture: "<img src='https://garlandtools.org/files/icons/item/" + allLeves[i]["lv_item_id"] + ".webp'> " + 
-		
-		tupel={};
-		tupel.name=allLeves[i]["lv_name"]["en"];
-		tupel.item="";
-		if(allLeves[i]["lv_item_count"] > 1) {
-			tupel.item=allLeves[i]["lv_item_count"] + "x ";
-		}
-		tupel.item=tupel.item+"<a href='https://garlandtools.org/db/#item/" + allLeves[i]["d"] + "' target='_blank'><img src='./img/garland.webp'/></a> <span class='item-link'>" + allLeves[i]["lv_item"]["en"] + "</span> <svg onclick='copyToClipboard(this)'height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill='#FFFFFF' d='M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z'/></svg>";
-		
-		tupel.allowance=allLeves[i]["lv_allowance"];
-		tupel.repeats=allLeves[i]["lv_time"];
-		tupel.place=allLeves[i]["lv_place"];
-		tupel.job="<img src='img/" + allLeves[i]["lv_job"] + ".webp' width='15' height='15'> "+ allLeves[i]["lv_job"];
-		tupel.lvl=allLeves[i]["lv_lvl"]
-		var lowestServer = "-";
-		var lowestPrice = 99999999997189;
-		for(const server of servers) {
-			if(allLeves[i][server] < lowestPrice) {
-				lowestPrice = allLeves[i][server];
-				lowestServer = server;
-			}
-		}
-		lowestServerFirstLetter=lowestServer.charAt(0)
-		lowestServerFirstLetter=lowestServerFirstLetter.toUpperCase()
-		lowestServer=lowestServer.slice(1);
-		lowestServer=lowestServerFirstLetter+lowestServer
-		tupel.server=lowestServer;
-		if(lowestPrice == 99999999997189) {
-			tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["d"] + "' target='_blank'>-</a>";;
-		} else {
-			tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["d"] + "' target='_blank'>" + lowestPrice + "</a>";
-		}
-		tupel.reward=allLeves[i]["lv_gil"];
-		tupel.profit = allLeves[i]["lv_gil"] * allLeves[i]["lv_time"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"];
-		if(lowestPrice == 99999999997189) {
-			tupel.profit = 0;
-			tupel.ppa = 0;
-		} else {
-			tupel.ppa = tupel.profit / allLeves[i]["lv_allowance"];
-		}
-		tabledata.push(tupel);
-	}
-	
-
-	//initialize table
-	var table = new Tabulator("#leve-table", {
-		data:tabledata, //assign data to table
-		columns:[
-		{rowHandle:true, formatter:"handle", headerSort:false, frozen:true, width:30, minWidth:30},
-		{title:"Name", field:"name", resizable:true, headerFilter:"input" },
-		{title:"Item", field:"item", resizable:true, headerFilter:"input", formatter:function(cell, formatterParams){
-			var value = cell.getValue();
-			return value;
-		}},
-		{title:"Allowances", field:"allowance", resizable:true, hozAlign:"right", headerFilter:"input" },
-		{title:"Repeats", field:"repeats", resizable:true, hozAlign:"right", headerFilter:"input" },
-		{title:"Place", field:"place", resizable:true, headerFilter:"input" },
-		{title:"Job", field:"job", resizable:true, headerFilter:"input", formatter:function(cell, formatterParams){
-			var value = cell.getValue();
-			return value;
-		}},
-		{title:"Job Level", field:"lvl", resizable:true, headerFilter:"input", hozAlign:"right"},
-		{title:"Server", field:"server", resizable:true, headerFilter:"input" },
-		{title:"Price", field:"price", resizable:true, hozAlign:"right", formatter:function(cell, formatterParams){
-			var value = cell.getValue();
-			return value;
-		} },
-		{title:"Ø Reward", field:"reward", resizable:true, hozAlign:"right"},
-		{title:"Profit", field:"profit", resizable:true, hozAlign:"right" },
-		{title:"PPA", field:"ppa", resizable:true, hozAlign:"right" },
-		],
-		layout:"fitDataTable",
-		pagination:"local",       //paginate the data
-		paginationSize:20,         //allow x rows per page of data
-		layoutColumnsOnNewData:true,
-		movableRows:true,
-		movableRowsConnectedTables:"#track-table",
-		movableRowsReceiver: "add",
-		movableRowsSender: "delete",
-		placeholder:"All Rows Moved",
-
-	});
-	
-	//initialize track table
-	var table = new Tabulator("#track-table", {
-		columns:[
-		{rowHandle:true, formatter:"handle", headerSort:false, frozen:true, width:30, minWidth:30},
-		{title:"Name", field:"name" },
-		{title:"Item", field:"item", formatter:function(cell, formatterParams){
-			var value = cell.getValue();
-			return value;
-		}},
-		{title:"Allowances", field:"allowance", hozAlign:"right" },
-		{title:"Repeats", field:"repeats", hozAlign:"right" },
-		{title:"Place", field:"place" },
-		{title:"Job", field:"job", resizable:true, formatter:function(cell, formatterParams){
-			var value = cell.getValue();
-			return value;
-		}},
-		{title:"Job Level", field:"lvl" },
-		{title:"Server", field:"server" },
-		{title:"Price", field:"price", hozAlign:"right", formatter:function(cell, formatterParams){
-			var value = cell.getValue();
-			return value;
-		} },
-		{title:"Ø Reward", field:"reward", hozAlign:"right"},
-		{title:"Profit", field:"profit", hozAlign:"right" },
-		{title:"PPA", field:"ppa", sorter:"number", hozAlign:"right" },
-		],
-		layout:"fitDataTable",
-		pagination:"local",       //paginate the data
-		paginationSize:20,         //allow x rows per page of data
-		layoutColumnsOnNewData:true,
-		movableRows:true,
-		movableRowsConnectedTables:"#leve-table",
-		movableRowsReceiver: "add",
-		movableRowsSender: "delete",
-		placeholder:"Drag leves here to keep track of them",
-	});
-	
-	function copyToClipboard(svgElement) {
-		const itemName = svgElement.previousElementSibling.textContent;
-		
-		const tempInput = document.createElement('textarea');
-		tempInput.value = itemName;
-		document.body.appendChild(tempInput);
-		tempInput.select();
-		document.execCommand('copy');
-		document.body.removeChild(tempInput);
-	}
-
-
-
-function saveTrackedLevesToCookie() {
-    // Hole die Daten von der "tracked" Tabelle
-    var trackedData = table.getData(); // Stellen Sie sicher, dass 'table' korrekt auf Ihre "tracked" Tabelle verweist
-    // Konvertiere die Daten in einen String
-    var trackedDataString = JSON.stringify(trackedData);
-    // Speichere den String in einem Cookie
-    document.cookie = "trackedLeves=" + encodeURIComponent(trackedDataString) + ";path=/;max-age=31536000"; // Gültig für 1 Jahr
-}
-function loadTrackedLevesFromCookie() {
-    // Hole den Cookie-Wert
-    var trackedLevesCookie = document.cookie.split('; ').find(row => row.startsWith('trackedLeves='));
-    if(trackedLevesCookie) {
-        var trackedDataString = decodeURIComponent(trackedLevesCookie.split('=')[1]);
-        // Konvertiere den String zurück in ein Objekt
-        var trackedData = JSON.parse(trackedDataString);
-        // Füge die Daten in die "tracked" Tabelle ein
-        table.setData(trackedData); // Stellen Sie sicher, dass 'table' korrekt auf Ihre "tracked" Tabelle verweist
-    }
-}
-
-// Rufe die Funktion auf, wenn die Seite geladen wird
-window.onload = function() {
-    loadTrackedLevesFromCookie();
-}
-
-
-
-	
-	
-	function updateProgressBar() {
-		const now = new Date();
-		const minutes = now.getMinutes();
-		const seconds = now.getSeconds();
-		
-		// Calculate the fraction of the hour that has passed
-		// and convert it to a percentage for the progress bar.
-		// This includes seconds for a smoother progress bar movement.
-		const fractionOfHour = ((minutes * 60) + seconds) / (60 * 60);
-		const percentage = fractionOfHour * 100;
-		
-		// Update the progress bar's value
-		const progressBar = document.getElementById('hourlyProgress');
-		progressBar.value = percentage;
-		
-		// Update the progress bar's text (for browsers that support it)
-		progressBar.textContent = `${percentage.toFixed(2)} %`;
-	}
-
-	// Update the progress bar immediately when the page loads
-	updateProgressBar();
-
-	// Then, update the progress bar every second to reflect the passage of time smoothly
-	setInterval(updateProgressBar, 60000);
+    //define data array
+      var tabledata = [];
+      var allLeves = JSON.parse(allLeves);
+      
+      
+      var allowedLangs = ['de', 'en', 'ja', 'fr'];
+        if (!allowedLangs.includes(lang)) {
+            lang = 'en'; // Standard auf Englisch setzen, falls keine gültige Sprache angegeben wurde
+        }
+      
+        // Der Pfad zur JavaScript-Datei, die die Variable enthält
+        var scriptPath = lang + '_tasks.js';
+      
+        // Setze die Quelle des Skript-Tags, um das Skript dynamisch zu laden
+        var scriptTag = document.getElementById('dynamic-script-loader-lang');
+        scriptTag.src = scriptPath;
+      
+        // Sobald das Skript geladen ist, kann die Variable verwendet werden
+        scriptTag.onload = function() {
+            // Annahme: Die geladene JS-Datei definiert eine Variable namens 'a'
+            //console.log('Tasks loaded:', a);
+      var langtable = JSON.parse(a);
+	  
+	  
+	  
+	  
+      for(var i = 0; i <= 1148; i++) {
+      	
+      	
+      	
+      	tupel={};
+      	tupel.name=langtable[i]["n"];
+      	tupel.item="";
+      	if(allLeves[i]["lv_item_count"] > 1) {
+      		tupel.item=allLeves[i]["lv_item_count"] + "x ";
+      	}
+      	tupel.item=tupel.item+"<a href='https://garlandtools.org/db/#item/" + allLeves[i]["d"] + "' target='_blank'><img src='./img/garland.webp' alt='GarlandTools'/></a> <span class='item-link'>" + langtable[i]["i"] + "</span> <svg onclick='copyToClipboard(this)'height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill='#FFFFFF' d='M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z'/></svg>";
+      	
+      	tupel.allowance=allLeves[i]["lv_allowance"];
+      	tupel.repeats=allLeves[i]["lv_time"];
+      	tupel.place=allLeves[i]["lv_place"];
+      	tupel.job="<img src='img/" + allLeves[i]["lv_job"] + ".webp' width='15' height='15' alt='" + allLeves[i]["lv_job"] + "'> "+ allLeves[i]["lv_job"];
+      	tupel.lvl=allLeves[i]["lv_lvl"]
+      	var lowestServer = "-";
+      	var lowestPrice = 99999999997189;
+      	for(const server of dcs[dc]) {
+      		if(allLeves[i][server] < lowestPrice) {
+      			lowestPrice = allLeves[i][server];
+      			lowestServer = server;
+      		}
+      	}
+      	lowestServer=lowestServer.charAt(0).toUpperCase()+lowestServer.slice(1);
+      	tupel.server=lowestServer;
+      	if(lowestPrice == 99999999997189) {
+      		tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["d"] + "' target='_blank'>- <img src='img/universalis.webp' width='16' alt='Universalis'></a>";;
+      	} else {
+      		tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["d"] + "' target='_blank'>" + lowestPrice + " <img src='img/universalis.webp' width='15' height='15' alt='Universalis'></a>";
+      	}
+      	tupel.reward=allLeves[i]["lv_gil"];
+      	tupel.profit = allLeves[i]["lv_gil"] * allLeves[i]["lv_time"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"];
+      	if(lowestPrice == 99999999997189) {
+      		tupel.profit = 0;
+      		tupel.ppa = 0;
+      	} else {
+      		tupel.ppa = tupel.profit / allLeves[i]["lv_allowance"];
+      	}
+      	tabledata.push(tupel);
+      }
+      
+      
+      //initialize table
+      var table = new Tabulator("#leve-table", {
+      	data:tabledata, //assign data to table
+      	columns:[
+      	{rowHandle:true, formatter:"handle", headerSort:false, frozen:true, width:30, minWidth:30},
+      	{title:"Name", field:"name", resizable:true, headerFilter:"input" },
+      	{title:"Item", field:"item", resizable:true, headerFilter:"input", formatter:function(cell, formatterParams){
+      		var value = cell.getValue();
+      		return value;
+      	}},
+      	{title:"Allowances", field:"allowance", resizable:true, hozAlign:"right", headerFilter:"input" },
+      	{title:"Repeats", field:"repeats", resizable:true, hozAlign:"right", headerFilter:"input" },
+      	{title:"Place", field:"place", resizable:true, headerFilter:"input" },
+      	{title:"Job", field:"job", resizable:true, headerFilter:"input", formatter:function(cell, formatterParams){
+      		var value = cell.getValue();
+      		return value;
+      	}},
+      	{title:"Job Level", field:"lvl", resizable:true, headerFilter:"input", hozAlign:"right"},
+      	{title:"Server", field:"server", resizable:true, headerFilter:"input" },
+      	{title:"Price", field:"price", resizable:true, hozAlign:"right", formatter:function(cell, formatterParams){
+      		var value = cell.getValue();
+      		return value;
+      	} },
+      	{title:"Ø Reward", field:"reward", resizable:true, hozAlign:"right"},
+      	{title:"Profit", field:"profit", resizable:true, hozAlign:"right" },
+      	{title:"PPA", field:"ppa", resizable:true, hozAlign:"right" },
+      	],
+      	layout:"fitDataTable",
+      	pagination:"local",       //paginate the data
+      	paginationSize:20,         //allow x rows per page of data
+      	layoutColumnsOnNewData:true,
+      	movableRows:true,
+      	movableRowsConnectedTables:"#track-table",
+      	movableRowsReceiver: "add",
+      	movableRowsSender: "delete",
+      	placeholder:"All Rows Moved",
+      
+      });
+      
+      
+      
+        };
+      
+      
+      
+      
+      //initialize track table
+      var table = new Tabulator("#track-table", {
+      	columns:[
+      	{rowHandle:true, formatter:"handle", headerSort:false, frozen:true, width:30, minWidth:30},
+      	{title:"Name", field:"name" },
+      	{title:"Item", field:"item", formatter:function(cell, formatterParams){
+      		var value = cell.getValue();
+      		return value;
+      	}},
+      	{title:"Allowances", field:"allowance", hozAlign:"right" },
+      	{title:"Repeats", field:"repeats", hozAlign:"right" },
+      	{title:"Place", field:"place" },
+      	{title:"Job", field:"job", resizable:true, formatter:function(cell, formatterParams){
+      		var value = cell.getValue();
+      		return value;
+      	}},
+      	{title:"Job Level", field:"lvl" },
+      	{title:"Server", field:"server" },
+      	{title:"Price", field:"price", hozAlign:"right", formatter:function(cell, formatterParams){
+      		var value = cell.getValue();
+      		return value;
+      	} },
+      	{title:"Ø Reward", field:"reward", hozAlign:"right"},
+      	{title:"Profit", field:"profit", hozAlign:"right" },
+      	{title:"PPA", field:"ppa", sorter:"number", hozAlign:"right" },
+      	],
+      	layout:"fitDataTable",
+      	pagination:"local",       //paginate the data
+      	paginationSize:20,         //allow x rows per page of data
+      	layoutColumnsOnNewData:true,
+      	movableRows:true,
+      	movableRowsConnectedTables:"#leve-table",
+      	movableRowsReceiver: "add",
+      	movableRowsSender: "delete",
+      	placeholder:"Drag leves here to keep track of them",
+      });
+      
+      function copyToClipboard(svgElement) {
+      	const itemName = svgElement.previousElementSibling.textContent;
+      	
+      	const tempInput = document.createElement('textarea');
+      	tempInput.value = itemName;
+      	document.body.appendChild(tempInput);
+      	tempInput.select();
+      	document.execCommand('copy');
+      	document.body.removeChild(tempInput);
+      }
+      
+      
+      
+      function saveTrackedLevesToCookie() {
+         // Hole die Daten von der "tracked" Tabelle
+         var trackedData = table.getData(); // Stellen Sie sicher, dass 'table' korrekt auf Ihre "tracked" Tabelle verweist
+         // Konvertiere die Daten in einen String
+         var trackedDataString = JSON.stringify(trackedData);
+         // Speichere den String in einem Cookie
+         document.cookie = "trackedLeves=" + encodeURIComponent(trackedDataString) + ";path=/;max-age=31536000"; // Gültig für 1 Jahr
+      }
+      function loadTrackedLevesFromCookie() {
+         // Hole den Cookie-Wert
+         var trackedLevesCookie = document.cookie.split('; ').find(row => row.startsWith('trackedLeves='));
+         if(trackedLevesCookie) {
+             var trackedDataString = decodeURIComponent(trackedLevesCookie.split('=')[1]);
+             // Konvertiere den String zurück in ein Objekt
+             var trackedData = JSON.parse(trackedDataString);
+             // Füge die Daten in die "tracked" Tabelle ein
+             table.setData(trackedData); // Stellen Sie sicher, dass 'table' korrekt auf Ihre "tracked" Tabelle verweist
+         }
+      }
+      
+      // Rufe die Funktion auf, wenn die Seite geladen wird
+      window.onload = function() {
+         loadTrackedLevesFromCookie();
+      }
+      
+      
+      
+      function updateUrl(datacenter) {
+        const baseUrl = window.location.href.split('?')[0];
+        const searchParams = new URLSearchParams(window.location.search);
+      
+        // Setzen oder aktualisieren des `dc`-Parameters.
+        searchParams.set('dc', datacenter);
+      
+      
+        window.location.href = baseUrl + '?' + searchParams.toString();
+      }
+      function updateLanguage(lang) {
+        const baseUrl = window.location.href.split('?')[0];
+        const searchParams = new URLSearchParams(window.location.search);
+      
+        // Setze oder aktualisiere den `lang`-Parameter
+        searchParams.set('lang', lang);
+      
+        // Entferne alle anderen `lang`-Einträge und setze den aktuellen Wert neu.
+        window.location.href = baseUrl + '?' + searchParams.toString();
+      }
+      
+      function updateProgressBar() {
+      	const now = new Date();
+      	const minutes = now.getMinutes();
+      	const seconds = now.getSeconds();
+      	
+      	// Calculate the fraction of the hour that has passed
+      	// and convert it to a percentage for the progress bar.
+      	// This includes seconds for a smoother progress bar movement.
+      	const fractionOfHour = ((minutes * 60) + seconds) / (60 * 60);
+      	const percentage = fractionOfHour * 100;
+      	
+      	// Update the progress bar's value
+      	const progressBar = document.getElementById('hourlyProgress');
+      	progressBar.value = percentage;
+      	
+      	// Update the progress bar's text (for browsers that support it)
+      	progressBar.textContent = `${percentage.toFixed(2)} %`;
+      }
+      
+      // Update the progress bar immediately when the page loads
+      updateProgressBar();
+      
+      // Then, update the progress bar every second to reflect the passage of time smoothly
+      setInterval(updateProgressBar, 60000);
 </script>
 
 </html>
