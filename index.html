@@ -5,29 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
+	<meta name="description" content="Optimize your FFXIV Levequests and strategy with xivLeve - the essential tool that uses real-time market data to highlight profit opportunities for gil gain.">
+	<meta name="theme-color" content="#232323"/>
     <script src="./tabulator/dist/js/tabulator.js"></script>
-    <script type="text/javascript" src="allLeves.js"></script>
     <link href="./main.css" rel="stylesheet" async>
-    <script id="dynamic-script-loader-prices"></script>
     <script id="dynamic-script-loader-lang"></script>
+    <script id="dynamic-script-loader-prices"></script>
+    <script id="dynamic-script-loader-ainfo"></script>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
          const dc = urlParams.get('dc');
-         const lang = urlParams.get('lang');
+         var lang = urlParams.get('lang');
          
-         const dcs = {
-         	"aether": ["adamantoise", "cactuar", "faerie", "gilgamesh", "jenova", "midgardsormr", "sargatanas", "siren"],
-         	"primal": ["behemoth", "excalibur", "exodus", "famfrit", "famfrit", "lamia", "leviathan", "ultros"],
-         	"crystal": ["balmung", "brynhildr", "coeurl", "diabolos", "goblin", "malboro", "mateus", "zalera"],
-         	"chaos": ["cerberus", "louisoix", "moogle", "phantom", "omega", "ragnarok", "sagittarius", "spriggan"],
-         	"dynamis":["halicarnassus","maduin","marilith","seraph"],
-         	"light": ["alpha", "lich", "zodiark", "twintania", "phoenix", "raiden", "shiva", "odin"],
-         	"materia": ["bismarck", "ravana", "sephirot", "sophia", "zurvan"],
-         	"elemental": ["aegis", "atomos", "carbuncle", "garuda", "gungnir", "kujata", "tonberry", "typhon"],
-         	"gaia": ["alexander", "bahamut", "durandal", "fenrir", "ifrit", "ridill", "tiamat", "ultima"],
-         	"mana": ["anima", "asura", "chocobo", "hades", "ixion", "masamune", "pandaemonium", "titan"],
-         	"meteor": ["belias", "mandragora", "ramuh", "shinryu", "unicorn", "valefor", "yojimbo", "zeromus"]
-         };
+         const dcs = [ "aether", "primal", "crystal", "chaos", "dynamis", "light","materia","elemental","gaia","mana","meteor"];
          function toggleSpoiler(spoilerId) {
            var spoilers = document.getElementsByClassName('spoiler-content');
            for (var i = 0; i < spoilers.length; i++) {
@@ -64,7 +54,7 @@
         <div class="home">
             <div class="box">
                 Which datacenter are you from?
-                <br/> Not sure? Check a full list <a href="https://is.xivup.com/" target='_blank'>here</a>
+                <br/> Not sure? Check a full list <a href="https://is.xivup.com/" target='_blank'>at xivup</a>
             </div>
             <div class="box">
                 North America
@@ -157,9 +147,14 @@
     </div>
 </body>
 <script async>
+document.addEventListener("DOMContentLoaded", function() {
+  if (dc === null) {
+    var div = document.getElementById('leve-table');
+    div.textContent = 'Choose a datacenter at the top!';
+  }
+});
     //define data array
       var tabledata = [];
-      var allLeves = JSON.parse(allLeves);
       
       
       var allowedLangs = ['de', 'en', 'ja', 'fr'];
@@ -168,7 +163,7 @@
         }
       
         // Der Pfad zur JavaScript-Datei, die die Variable enthält
-        var scriptPath = lang + '_tasks.js';
+        var scriptPath = 'jsons/' + lang + '_tasks.js';
       
         // Setze die Quelle des Skript-Tags, um das Skript dynamisch zu laden
         var scriptTag = document.getElementById('dynamic-script-loader-lang');
@@ -178,96 +173,112 @@
         scriptTag.onload = function() {
             // Annahme: Die geladene JS-Datei definiert eine Variable namens 'a'
             //console.log('Tasks loaded:', a);
-      var langtable = JSON.parse(a);
-	  
-	  
-	  
-	  
-      for(var i = 0; i <= 1148; i++) {
-      	
-      	
-      	
-      	tupel={};
-      	tupel.name=langtable[i]["n"];
-      	tupel.item="";
-      	if(allLeves[i]["lv_item_count"] > 1) {
-      		tupel.item=allLeves[i]["lv_item_count"] + "x ";
-      	}
-      	tupel.item=tupel.item+"<a href='https://garlandtools.org/db/#item/" + allLeves[i]["d"] + "' target='_blank'><img src='./img/garland.webp' alt='GarlandTools'/></a> <span class='item-link'>" + langtable[i]["i"] + "</span> <svg onclick='copyToClipboard(this)'height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill='#FFFFFF' d='M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z'/></svg>";
-      	
-      	tupel.allowance=allLeves[i]["lv_allowance"];
-      	tupel.repeats=allLeves[i]["lv_time"];
-      	tupel.place=allLeves[i]["lv_place"];
-      	tupel.job="<img src='img/" + allLeves[i]["lv_job"] + ".webp' width='15' height='15' alt='" + allLeves[i]["lv_job"] + "'> "+ allLeves[i]["lv_job"];
-      	tupel.lvl=allLeves[i]["lv_lvl"]
-      	var lowestServer = "-";
-      	var lowestPrice = 99999999997189;
-      	for(const server of dcs[dc]) {
-      		if(allLeves[i][server] < lowestPrice) {
-      			lowestPrice = allLeves[i][server];
-      			lowestServer = server;
-      		}
-      	}
-      	lowestServer=lowestServer.charAt(0).toUpperCase()+lowestServer.slice(1);
-      	tupel.server=lowestServer;
-      	if(lowestPrice == 99999999997189) {
-      		tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["d"] + "' target='_blank'>- <img src='img/universalis.webp' width='16' alt='Universalis'></a>";;
-      	} else {
-      		tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["d"] + "' target='_blank'>" + lowestPrice + " <img src='img/universalis.webp' width='15' height='15' alt='Universalis'></a>";
-      	}
-      	tupel.reward=allLeves[i]["lv_gil"];
-      	tupel.profit = allLeves[i]["lv_gil"] * allLeves[i]["lv_time"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"];
-      	if(lowestPrice == 99999999997189) {
-      		tupel.profit = 0;
-      		tupel.ppa = 0;
-      	} else {
-      		tupel.ppa = tupel.profit / allLeves[i]["lv_allowance"];
-      	}
-      	tabledata.push(tupel);
-      }
+		  var langtable = JSON.parse(a);
+		  
+		  // Der Pfad zur JavaScript-Datei, die die Variable enthält
+			var scriptPath = 'jsons/' + dc + '_prices.js';
+		  
+			// Setze die Quelle des Skript-Tags, um das Skript dynamisch zu laden
+			var scriptTag2 = document.getElementById('dynamic-script-loader-prices');
+			scriptTag2.src = scriptPath;
+		  scriptTag2.onload = function() {
+			var prices = JSON.parse(p);
+			// Der Pfad zur JavaScript-Datei, die die Variable enthält
+			var scriptPath = 'jsons/ainfo.js';
+		  
+			// Setze die Quelle des Skript-Tags, um das Skript dynamisch zu laden
+			var scriptTag3 = document.getElementById('dynamic-script-loader-ainfo');
+			scriptTag3.src = scriptPath;
+			  scriptTag3.onload = function() {
+				var allLeves = JSON.parse(ai);
+			  
+				  
+				  for(var i = 0; i <= 1148; i++) {
+					
+					
+					
+					tupel={};
+					tupel.name=langtable[i]["n"];
+					tupel.item="";
+					if(allLeves[i]["lv_item_count"] > 1) {
+						tupel.item=allLeves[i]["lv_item_count"] + "x ";
+					}
+					tupel.item=tupel.item+"<a href='https://garlandtools.org/db/#item/" + allLeves[i]["lv_item_id"] + "' target='_blank'><img src='./img/garland.webp' alt='GarlandTools'/></a> <span class='item-link'>" + langtable[i]["i"] + "</span> <svg onclick='copyToClipboard(this)'height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill='#FFFFFF' d='M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z'/></svg>";
+					
+					tupel.allowance=allLeves[i]["lv_allowance"];
+					tupel.repeats=allLeves[i]["lv_time"];
+					tupel.place=allLeves[i]["lv_place"];
+					tupel.job="<img src='img/" + allLeves[i]["lv_job"] + ".webp' width='15' height='15' alt='" + allLeves[i]["lv_job"] + "'> "+ allLeves[i]["lv_job"];
+					tupel.lvl=allLeves[i]["lv_lvl"];
+					var lowestServer = "-";
+					var lowestPrice = 99999999997189;
+					if (prices[i]) {
+						lowestPrice = prices[i]["price"];
+						lowestServer = prices[i]["server"];
+					} else {
+						//console.log("Preisdaten sind zum Index " + i + " nicht verfügbar.");
+					}
+					lowestServer=lowestServer.charAt(0).toUpperCase()+lowestServer.slice(1);
+					tupel.server=lowestServer;
+					if(lowestPrice == 99999999997189) {
+						tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>- <img src='img/universalis.webp' width='16' alt='Universalis'></a>";;
+					} else {
+						tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + lowestPrice + " <img src='img/universalis.webp' width='15' height='15' alt='Universalis'></a>";
+					}
+					tupel.reward=allLeves[i]["lv_gil"];
+					tupel.profit = allLeves[i]["lv_gil"] * allLeves[i]["lv_time"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"];
+					if(lowestPrice == 99999999997189) {
+						tupel.profit = 0;
+						tupel.ppa = 0;
+					} else {
+						tupel.ppa = tupel.profit / allLeves[i]["lv_allowance"];
+					}
+					tabledata.push(tupel);
+				  }
+				  
+				  
+				  //initialize table
+				  var table = new Tabulator("#leve-table", {
+					data:tabledata, //assign data to table
+					columns:[
+					{rowHandle:true, formatter:"handle", headerSort:false, frozen:true, width:30, minWidth:30},
+					{title:"Name", field:"name", resizable:true, headerFilter:"input" },
+					{title:"Item", field:"item", resizable:true, headerFilter:"input", formatter:function(cell, formatterParams){
+						var value = cell.getValue();
+						return value;
+					}},
+					{title:"Allowances", field:"allowance", resizable:true, hozAlign:"right", headerFilter:"input" },
+					{title:"Repeats", field:"repeats", resizable:true, hozAlign:"right", headerFilter:"input" },
+					{title:"Place", field:"place", resizable:true, headerFilter:"input" },
+					{title:"Job", field:"job", resizable:true, headerFilter:"input", formatter:function(cell, formatterParams){
+						var value = cell.getValue();
+						return value;
+					}},
+					{title:"Job Level", field:"lvl", resizable:true, headerFilter:"input", hozAlign:"right"},
+					{title:"Server", field:"server", resizable:true, headerFilter:"input" },
+					{title:"Price", field:"price", resizable:true, hozAlign:"right", formatter:function(cell, formatterParams){
+						var value = cell.getValue();
+						return value;
+					} },
+					{title:"Ø Reward", field:"reward", resizable:true, hozAlign:"right"},
+					{title:"Profit", field:"profit", resizable:true, hozAlign:"right" },
+					{title:"PPA", field:"ppa", resizable:true, hozAlign:"right" },
+					],
+					layout:"fitDataTable",
+					pagination:"local",       //paginate the data
+					paginationSize:20,         //allow x rows per page of data
+					layoutColumnsOnNewData:true,
+					movableRows:true,
+					movableRowsConnectedTables:"#track-table",
+					movableRowsReceiver: "add",
+					movableRowsSender: "delete",
+					placeholder:"All Rows Moved",
+				  
+				  });
       
       
-      //initialize table
-      var table = new Tabulator("#leve-table", {
-      	data:tabledata, //assign data to table
-      	columns:[
-      	{rowHandle:true, formatter:"handle", headerSort:false, frozen:true, width:30, minWidth:30},
-      	{title:"Name", field:"name", resizable:true, headerFilter:"input" },
-      	{title:"Item", field:"item", resizable:true, headerFilter:"input", formatter:function(cell, formatterParams){
-      		var value = cell.getValue();
-      		return value;
-      	}},
-      	{title:"Allowances", field:"allowance", resizable:true, hozAlign:"right", headerFilter:"input" },
-      	{title:"Repeats", field:"repeats", resizable:true, hozAlign:"right", headerFilter:"input" },
-      	{title:"Place", field:"place", resizable:true, headerFilter:"input" },
-      	{title:"Job", field:"job", resizable:true, headerFilter:"input", formatter:function(cell, formatterParams){
-      		var value = cell.getValue();
-      		return value;
-      	}},
-      	{title:"Job Level", field:"lvl", resizable:true, headerFilter:"input", hozAlign:"right"},
-      	{title:"Server", field:"server", resizable:true, headerFilter:"input" },
-      	{title:"Price", field:"price", resizable:true, hozAlign:"right", formatter:function(cell, formatterParams){
-      		var value = cell.getValue();
-      		return value;
-      	} },
-      	{title:"Ø Reward", field:"reward", resizable:true, hozAlign:"right"},
-      	{title:"Profit", field:"profit", resizable:true, hozAlign:"right" },
-      	{title:"PPA", field:"ppa", resizable:true, hozAlign:"right" },
-      	],
-      	layout:"fitDataTable",
-      	pagination:"local",       //paginate the data
-      	paginationSize:20,         //allow x rows per page of data
-      	layoutColumnsOnNewData:true,
-      	movableRows:true,
-      	movableRowsConnectedTables:"#track-table",
-      	movableRowsReceiver: "add",
-      	movableRowsSender: "delete",
-      	placeholder:"All Rows Moved",
-      
-      });
-      
-      
-      
+				};
+			};
         };
       
       
