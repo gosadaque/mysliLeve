@@ -13,21 +13,7 @@
     <script id="dynamic-script-loader-prices"></script>
     <script id="dynamic-script-loader-ainfo"></script>
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-         const dc = urlParams.get('dc');
-         var lang = urlParams.get('lang');
-         
-         const dcs = [ "aether", "primal", "crystal", "chaos", "dynamis", "light","materia","elemental","gaia","mana","meteor"];
-         function toggleSpoiler(spoilerId) {
-           var spoilers = document.getElementsByClassName('spoiler-content');
-           for (var i = 0; i < spoilers.length; i++) {
-               if (spoilers[i].id === spoilerId) {
-                   spoilers[i].style.display = spoilers[i].style.display === 'none' ? 'block' : 'none';
-               } else {
-                   spoilers[i].style.display = 'none';
-               }
-           }
-         }
+        
     </script>
     <title>xivLeve</title>
 </head>
@@ -96,12 +82,12 @@
             </div>
             <div class="box">
                 <b>How do I use this?</b>
-                <br/>Choose your datacenter.
-                <br/> Sort by PPA (Profit per allowance).
-                <br/> Buy cheap crafted items.
-                <br/> Accept levequest.
+                <br/>- Choose your datacenter.
+                <br/>- Sort by PPA (Profit per allowance).
+                <br/>- Buy cheap crafted items.
+                <br/>- Accept levequest.
                 <br/> ...
-                <br/> Repeat
+                <br/>- Repeat
                 <br/>
             </div>
             <div class="box">
@@ -126,7 +112,7 @@
                 </svg>
                 to move a leve to your tracked leves.
                 <br/>
-                <button onclick="saveTrackedLevesToCookie()">Click here to save tracked leves</button> in your cookies.
+                <!--button onclick="saveTrackedLevesToCookie()">Click here to save tracked leves</button> in your cookies.<!-->
             </div>
             <div class="box">
                 <a href='https://www.patreon.com/janmuesli' target='_blank'>Support me</a>
@@ -151,6 +137,21 @@
     </div>
 </body>
 <script async>
+const urlParams = new URLSearchParams(window.location.search);
+         const dc = urlParams.get('dc');
+         var lang = urlParams.get('lang');
+         
+         const dcs = [ "aether", "primal", "crystal", "chaos", "dynamis", "light","materia","elemental","gaia","mana","meteor"];
+         function toggleSpoiler(spoilerId) {
+           var spoilers = document.getElementsByClassName('spoiler-content');
+           for (var i = 0; i < spoilers.length; i++) {
+               if (spoilers[i].id === spoilerId) {
+                   spoilers[i].style.display = spoilers[i].style.display === 'none' ? 'block' : 'none';
+               } else {
+                   spoilers[i].style.display = 'none';
+               }
+           }
+         }
 document.addEventListener("DOMContentLoaded", function() {
   if (dc === null) {
     var div = document.getElementById('leve-table');
@@ -227,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					if(lowestPrice == 99999999997189) {
 						tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>- <img src='img/universalis.webp' width='16' alt='Universalis'></a>";;
 					} else {
-						tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + lowestPrice + " <img src='img/universalis.webp' width='15' height='15' alt='Universalis'></a>";
+						tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + lowestPrice + " <img src='img/universalis.webp' width='13' alt='Universalis'></a>";
 					}
 					tupel.reward=allLeves[i]["lv_gil"];
 					tupel.profit = allLeves[i]["lv_gil"] * allLeves[i]["lv_time"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"];
