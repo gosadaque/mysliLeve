@@ -11,6 +11,28 @@ a {
 	color: #8ab4f8;
 }
 
+.home {
+    display: flex;
+    width: 100%;
+    max-width: 1900px;
+}
+
+button {
+    color: #f3f3f3;
+    text-shadow: 1px 0 #4e4e4e;
+    background-color: #3D3935;
+    border: 1px solid #423E3A;
+    border-radius: 6px;
+    font-weight: inherit;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    padding: 5px 9px 6px 9px;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 8px;
+}
+
 .box {
     background-color: #333333;
     border-radius: 5px;
