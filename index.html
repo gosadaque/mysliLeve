@@ -13,7 +13,13 @@
     <script id="dynamic-script-loader-prices"></script>
     <script id="dynamic-script-loader-ainfo"></script>
     <script>
-        
+	//redirect for dev page to prod
+        window.onload = function() {
+            var currentUrl = window.location.href;
+            if (currentUrl.includes("myslileve.pages.de")) {
+                window.location.replace("https://xivleve.org");
+            }
+        };
     </script>
     <title>xivLeve</title>
 </head>
