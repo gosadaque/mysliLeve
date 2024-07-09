@@ -92,10 +92,10 @@
             </div>
             <div class="box">
                 Click
-                <a href='https://garlandtools.org/' target='_blank'><img src='./img/garland.webp' alt="Garlandtools"/></a> to open Garlandtools.
+                <a href='https://garlandtools.org/' target='_blank'><img src='./img/garland.webp' width='15' height='15' alt="Garlandtools"/></a> to open Garlandtools.
                 <br/>
 				Click
-                <a href='https://universalis.app/' target='_blank'><img src='./img/universalis.webp' width='16' alt="Universalis"/></a> to open Universalis.
+                <a href='https://universalis.app/' target='_blank'><img src='./img/universalis.webp' width='19' height='28' alt="Universalis"/></a> to open Universalis.
                 <br/> 
 				Click
                 <svg height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'>
@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					if(allLeves[i]["lv_item_count"] > 1) {
 						tupel.item=allLeves[i]["lv_item_count"] + "x ";
 					}
-					tupel.item=tupel.item+"<a href='https://garlandtools.org/db/#item/" + allLeves[i]["lv_item_id"] + "' target='_blank'><img src='./img/garland.webp' alt='GarlandTools'/></a> <span class='item-link'>" + langtable[i]["i"] + "</span> <svg onclick='copyToClipboard(this)'height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill='#FFFFFF' d='M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z'/></svg>";
+					tupel.item=tupel.item+"<a href='https://garlandtools.org/db/#item/" + allLeves[i]["lv_item_id"] + "' target='_blank'><img src='./img/garland.webp' width='15' height='15' alt='GarlandTools'/></a> <span class='item-link'>" + langtable[i]["i"] + "</span> <svg onclick='copyToClipboard(this)'height='16' width='16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='copy-icon'><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill='#FFFFFF' d='M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z'/></svg>";
 					
 					tupel.allowance=allLeves[i]["lv_allowance"];
 					tupel.repeats=allLeves[i]["lv_time"];
@@ -227,9 +227,9 @@ document.addEventListener("DOMContentLoaded", function() {
 					lowestServer=lowestServer.charAt(0).toUpperCase()+lowestServer.slice(1);
 					tupel.server=lowestServer;
 					if(lowestPrice == 99999999997189) {
-						tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>- <img src='img/universalis.webp' width='16' alt='Universalis'></a>";;
+						tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>- <img src='img/universalis.webp'  width='19' height='28' alt='Universalis'></a>";;
 					} else {
-						tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + lowestPrice + " <img src='img/universalis.webp' width='13' alt='Universalis'></a>";
+						tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + lowestPrice + " <img src='img/universalis.webp'  width='19' height='28' alt='Universalis'></a>";
 					}
 					tupel.reward=allLeves[i]["lv_gil"];
 					tupel.profit = allLeves[i]["lv_gil"] * allLeves[i]["lv_time"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"];
