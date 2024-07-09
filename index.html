@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +11,7 @@
     <script id="dynamic-script-loader-lang"></script>
     <script id="dynamic-script-loader-prices"></script>
     <script id="dynamic-script-loader-ainfo"></script>
+<<<<<<< Updated upstream
     <script>
 	//redirect for dev page to prod
         window.onload = function() {
@@ -21,9 +21,10 @@
             }
         };
     </script>
+=======
+>>>>>>> Stashed changes
     <title>xivLeve</title>
 </head>
-
 <body>
     <div class="spoiler-btn">
         <a href="https://xivleve.org" target="_blank" rel="noopener">xivLeve</a></progress>
@@ -203,12 +204,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			scriptTag3.src = scriptPath;
 			  scriptTag3.onload = function() {
 				var allLeves = JSON.parse(ai);
-			  
-				  
 				  for(var i = 0; i <= 1238; i++) {
-					
-					
-					
 					tupel={};
 					tupel.name=langtable[i]["n"];
 					tupel.item="";
@@ -227,16 +223,16 @@ document.addEventListener("DOMContentLoaded", function() {
 					if (prices[i]) {
 						lowestPrice = prices[i]["price"];
 						lowestServer = prices[i]["server"];
-					} else {
-						//console.log("Preisdaten sind zum Index " + i + " nicht verfügbar.");
 					}
 					lowestServer=lowestServer.charAt(0).toUpperCase()+lowestServer.slice(1);
 					tupel.server=lowestServer;
+					tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>"
 					if(lowestPrice == 99999999997189) {
-						tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>- <img src='img/universalis.webp'  width='19' height='28' alt='Universalis'></a>";;
+						tupel.price=tupel.price + "-";
 					} else {
-						tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>" + lowestPrice + " <img src='img/universalis.webp'  width='19' height='28' alt='Universalis'></a>";
+						tupel.price=tupel.price + lowestPrice;
 					}
+					tupel.price=tupel.price + " <img src='img/universalis.webp'  width='19' height='28' alt='Universalis'></a>";
 					tupel.reward=allLeves[i]["lv_gil"];
 					tupel.profit = allLeves[i]["lv_gil"] * allLeves[i]["lv_time"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"];
 					if(lowestPrice == 99999999997189) {
