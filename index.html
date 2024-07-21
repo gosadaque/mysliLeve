@@ -33,6 +33,7 @@
     <button class="spoiler-btn" onclick="toggleSpoiler('spoiler1')">Datacenter</button>
     <button class="spoiler-btn" onclick="toggleSpoiler('spoiler2')">FAQ</button>
     <button class="spoiler-btn" onclick="toggleSpoiler('spoiler3')">Credits</button>
+	<button class="spoiler-btn" onclick="toggleAdvancedColumns()">Advanced</button>
     <div id="spoiler0" class="spoiler-content" style="display: none;">
         <p><a href="#" onclick="event.preventDefault(); updateLanguage('en')">English EN</a> |
             <a href="#" onclick="event.preventDefault(); updateLanguage('de')">Deutsch DE</a> |
@@ -81,7 +82,7 @@
                 <b>What is this?</b>
                 <br/>Optimize your FFXIV Levequests and strategy with xivLeve - the essential tool
                 <br/>that uses real-time market data to highlight profit opportunities for gil gain.
-                <br/> Every hour new easy FFXIV leves!
+                <br/> Every 5 minutes new easy FFXIV leves!
                 <br/> The easiest to buy items from the market board to maximize profit doing levequests.
             </div>
             <div class="box">
@@ -147,6 +148,16 @@ const urlParams = new URLSearchParams(window.location.search);
          var lang = urlParams.get('lang');
          
          const dcs = [ "aether", "primal", "crystal", "chaos", "dynamis", "light","materia","elemental","gaia","mana","meteor"];
+		 function toggleAdvancedColumns() {
+			var table = Tabulator.findTable("#leve-table")[0]; // Annahme, dass dies Ihre Haupt-Tabelle ist
+			var columns = table.getColumns();
+			
+			columns.forEach(function(column) {
+				if (["allowance", "repeats", "reward"].includes(column.getField())) {
+					column.toggle();
+				}
+			});
+		}
          function toggleSpoiler(spoilerId) {
            var spoilers = document.getElementsByClassName('spoiler-content');
            for (var i = 0; i < spoilers.length; i++) {
@@ -157,16 +168,16 @@ const urlParams = new URLSearchParams(window.location.search);
                }
            }
          }
-document.addEventListener("DOMContentLoaded", function() {
-  if (dc === null) {
-    var div = document.getElementById('leve-table');
-    div.textContent = 'Choose a datacenter at the top!';
-  }
-});
-    //define data array
+		 
+		document.addEventListener("DOMContentLoaded", function() {
+		  if (dc === null) {
+			var div = document.getElementById('leve-table');
+			div.textContent = 'Choose a datacenter at the top!';
+		  }
+		});
+		
+      //define data array
       var tabledata = [];
-      
-      
       var allowedLangs = ['de', 'en', 'ja', 'fr'];
         if (!allowedLangs.includes(lang)) {
             lang = 'en'; // Standard auf Englisch setzen, falls keine gültige Sprache angegeben wurde
@@ -252,8 +263,8 @@ document.addEventListener("DOMContentLoaded", function() {
 						var value = cell.getValue();
 						return value;
 					}},
-					{title:"Allowances", field:"allowance", resizable:true, hozAlign:"right", headerFilter:"input" },
-					{title:"Repeats", field:"repeats", resizable:true, hozAlign:"right", headerFilter:"input" },
+					{title:"Allowances", field:"allowance", resizable:true, hozAlign:"right", headerFilter:"input", visible:false  },
+					{title:"Repeats", field:"repeats", resizable:true, hozAlign:"right", headerFilter:"input", visible:false  },
 					{title:"Place", field:"place", resizable:true, headerFilter:"input" },
 					{title:"Job", field:"job", resizable:true, headerFilter:"input", formatter:function(cell, formatterParams){
 						var value = cell.getValue();
@@ -265,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function() {
 						var value = cell.getValue();
 						return value;
 					} },
-					{title:"Ø Reward", field:"reward", resizable:true, hozAlign:"right"},
+					{title:"Ø Reward", field:"reward", resizable:true, hozAlign:"right", visible:false },
 					{title:"Profit", field:"profit", resizable:true, hozAlign:"right" },
 					{title:"PPA", field:"ppa", resizable:true, hozAlign:"right" },
 					],
@@ -298,8 +309,8 @@ document.addEventListener("DOMContentLoaded", function() {
       		var value = cell.getValue();
       		return value;
       	}},
-      	{title:"Allowances", field:"allowance", hozAlign:"right" },
-      	{title:"Repeats", field:"repeats", hozAlign:"right" },
+      	{title:"Allowances", field:"allowance", hozAlign:"right", visible:false  },
+      	{title:"Repeats", field:"repeats", hozAlign:"right", visible:false  },
       	{title:"Place", field:"place" },
       	{title:"Job", field:"job", resizable:true, formatter:function(cell, formatterParams){
       		var value = cell.getValue();
@@ -311,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function() {
       		var value = cell.getValue();
       		return value;
       	} },
-      	{title:"Ø Reward", field:"reward", hozAlign:"right"},
+      	{title:"Ø Reward", field:"reward", hozAlign:"right", visible:false },
       	{title:"Profit", field:"profit", hozAlign:"right" },
       	{title:"PPA", field:"ppa", sorter:"number", hozAlign:"right" },
       	],
@@ -388,29 +399,29 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       
       function updateProgressBar() {
-      	const now = new Date();
-      	const minutes = now.getMinutes();
-      	const seconds = now.getSeconds();
-      	
-      	// Calculate the fraction of the hour that has passed
-      	// and convert it to a percentage for the progress bar.
-      	// This includes seconds for a smoother progress bar movement.
-      	const fractionOfHour = ((minutes * 60) + seconds) / (60 * 60);
-      	const percentage = fractionOfHour * 100;
-      	
-      	// Update the progress bar's value
-      	const progressBar = document.getElementById('hourlyProgress');
-      	progressBar.value = percentage;
-      	
-      	// Update the progress bar's text (for browsers that support it)
-      	progressBar.textContent = `${percentage.toFixed(2)} %`;
-      }
-      
-      // Update the progress bar immediately when the page loads
-      updateProgressBar();
-      
-      // Then, update the progress bar every second to reflect the passage of time smoothly
-      setInterval(updateProgressBar, 60000);
+		const now = new Date();
+		const minutes = now.getMinutes();
+		const seconds = now.getSeconds();
+
+		// Calculate the fraction of the 5-minute interval that has passed
+		const totalSecondsPassed = (minutes % 5) * 60 + seconds;
+		const fractionOfFiveMinutes = totalSecondsPassed / (5 * 60);
+		const percentage = fractionOfFiveMinutes * 100;
+
+		// Update the progress bar's value
+		const progressBar = document.getElementById('hourlyProgress');
+		progressBar.value = percentage;
+
+		// Update the progress bar's text (for browsers that support it)
+		progressBar.textContent = `${percentage.toFixed(2)} %`;
+	}
+
+	// Update the progress bar immediately when the page loads
+	updateProgressBar();
+
+	// Then, update the progress bar every second to reflect the passage of time smoothly
+	setInterval(updateProgressBar, 1000); // Update every second
+
 </script>
 
 </html>
