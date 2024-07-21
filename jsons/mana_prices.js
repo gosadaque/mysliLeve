@@ -1,1 +1,1 @@
-p='{}';
+p='{"1084": {"price": 600, "server": "masamune"}, "1202": {"price": 2200, "server": "masamune"}, "1174": {"price": 5614, "server": "chocobo"}, "1135": {"price": 460, "server": "masamune"}}';
