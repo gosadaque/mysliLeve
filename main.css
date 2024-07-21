@@ -41,6 +41,12 @@ button {
     box-shadow: 0 1px 3px #000;
 }
 
+.warning {
+            background-color: #B22222; /* Setzt die Hintergrundfarbe auf ein gräuliches Rot */
+            color: white; /* Setzt die Textfarbe auf weiß */
+            border: 1px solid #8B0000; /* Optional: fügt eine dunklere Grenze hinzu */
+        }
+		
 .copy-icon {
   cursor: pointer;
 }
