@@ -157,6 +157,14 @@ const urlParams = new URLSearchParams(window.location.search);
 					column.toggle();
 				}
 			});
+			var table = Tabulator.findTable("#track-table")[0]; // Annahme, dass dies Ihre Haupt-Tabelle ist
+			var columns = table.getColumns();
+			
+			columns.forEach(function(column) {
+				if (["allowance", "repeats", "reward"].includes(column.getField())) {
+					column.toggle();
+				}
+			});
 		}
          function toggleSpoiler(spoilerId) {
            var spoilers = document.getElementsByClassName('spoiler-content');
