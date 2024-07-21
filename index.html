@@ -25,12 +25,21 @@
     <title>xivLeve</title>
 </head>
 <body>
-    <div class="spoiler-btn">
-        <a href="https://xivleve.org" target="_blank" rel="noopener">xivLeve</a></progress>
-    </div>
-    <div class="spoiler-btn" id="progress-container">
-        <progress id="hourlyProgress" value="0" max="100"></progress>
-    </div>
+	<div class="sidebar">
+		<nav>
+			<ul>
+				<li><a href="https://xivleve.org">xivLeve</a></li>
+				<div class="spoiler-btn" id="progress-container">
+					<progress id="hourlyProgress" value="0" max="100"></progress>
+				</div>
+				
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="content">
     <button class="spoiler-btn" onclick="toggleSpoiler('spoiler0')">Language</button>
     <button class="spoiler-btn" onclick="toggleSpoiler('spoiler1')">Datacenter</button>
     <button class="spoiler-btn" onclick="toggleSpoiler('spoiler2')">FAQ</button>
@@ -134,7 +143,6 @@
     </div>
     <div class="centr">
 		<div class="box">
-		<a href="https://choonsumi.net/4/7760055" target="_blank" rel="noopener">Click me!</a> <- This is an ad and give me a fraction of a cent if you click it. Ty.
 		<a href="https://choonsumi.net/4/7760055" target="_blank" rel="noopener">Click me!</a> <- This is an ad and gives me a fraction of a cent if you click it. Ty.
 		</div>
         <!--div class="box">
@@ -146,6 +154,7 @@
         <div class="box">
             <div id="leve-table"></div>
         </div>
+    </div>
     </div>
 </body>
 <script async>

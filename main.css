@@ -1,4 +1,32 @@
+body {
+    display: flex;
+}
 
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: #f3f3f3;
+    padding: 20px;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar nav ul li a {
+    color: #f3f3f3;
+    text-decoration: none;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
 
 html {
     touch-action: manipulation;
