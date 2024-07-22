@@ -1,1 +1,833 @@
-p='{"1823": {"price": 5000, "server": "pandaemonium"}, "2457": {"price": 150, "server": "anima"}, "2233": {"price": 5, "server": "ixion"}, "3017": {"price": 500, "server": "masamune"}, "3772": {"price": 3000, "server": "titan"}, "2229": {"price": 700, "server": "pandaemonium"}, "2703": {"price": 1000, "server": "masamune"}, "1895": {"price": 10011, "server": "ixion"}, "4097": {"price": 1000, "server": "masamune"}, "3774": {"price": 1000, "server": "asura"}, "3547": {"price": 5000, "server": "chocobo"}, "2408": {"price": 2000, "server": "pandaemonium"}, "1825": {"price": 2000, "server": "anima"}, "5371": {"price": 280, "server": "titan"}, "3576": {"price": 8000, "server": "titan"}, "1688": {"price": 400, "server": "ixion"}, "3043": {"price": 15, "server": "hades"}, "1998": {"price": 200, "server": "anima"}, "2406": {"price": 709, "server": "masamune"}, "5364": {"price": 20, "server": "anima"}, "2000": {"price": 999, "server": "asura"}, "5367": {"price": 60, "server": "masamune"}, "2004": {"price": 800, "server": "asura"}, "1827": {"price": 3000, "server": "anima"}, "3771": {"price": 3000, "server": "titan"}, "3537": {"price": 2604, "server": "chocobo"}, "5276": {"price": 20, "server": "anima"}, "4308": {"price": 1200, "server": "hades"}, "2672": {"price": 1006, "server": "titan"}, "5277": {"price": 80, "server": "masamune"}, "3559": {"price": 1460, "server": "pandaemonium"}, "3788": {"price": 500, "server": "pandaemonium"}, "2523": {"price": 498, "server": "titan"}, "2331": {"price": 3000, "server": "masamune"}, "2537": {"price": 1921, "server": "asura"}, "2318": {"price": 499, "server": "chocobo"}, "1609": {"price": 4000, "server": "hades"}, "1694": {"price": 2001, "server": "titan"}, "2241": {"price": 100, "server": "asura"}, "2239": {"price": 1000, "server": "ixion"}, "2498": {"price": 500, "server": "anima"}, "3557": {"price": 1009, "server": "chocobo"}, "2712": {"price": 700, "server": "pandaemonium"}, "2472": {"price": 1323, "server": "chocobo"}, "4433": {"price": 4000, "server": "titan"}, "2061": {"price": 15000, "server": "hades"}, "4430": {"price": 400, "server": "ixion"}, "2111": {"price": 10000, "server": "masamune"}, "3800": {"price": 1000, "server": "titan"}, "3336": {"price": 1000, "server": "asura"}, "3053": {"price": 2999, "server": "masamune"}, "3568": {"price": 2999, "server": "masamune"}, "2700": {"price": 900, "server": "titan"}, "3052": {"price": 2800, "server": "masamune"}, "1963": {"price": 6000, "server": "masamune"}, "4597": {"price": 90, "server": "chocobo"}, "4595": {"price": 20, "server": "pandaemonium"}, "4576": {"price": 100, "server": "ixion"}, "4746": {"price": 10, "server": "chocobo"}, "4697": {"price": 200, "server": "anima"}, "4662": {"price": 590, "server": "masamune"}, "4698": {"price": 12, "server": "chocobo"}, "4709": {"price": 52, "server": "titan"}, "4710": {"price": 500, "server": "ixion"}, "2342": {"price": 1000, "server": "asura"}, "1605": {"price": 7000, "server": "anima"}, "1684": {"price": 800, "server": "hades"}, "5057": {"price": 25, "server": "titan"}, "2433": {"price": 4001, "server": "hades"}, "5092": {"price": 1, "server": "titan"}, "2393": {"price": 350, "server": "masamune"}, "2419": {"price": 1010, "server": "chocobo"}, "1753": {"price": 10000, "server": "pandaemonium"}, "1686": {"price": 1500, "server": "titan"}, "2420": {"price": 160, "server": "hades"}, "2370": {"price": 14, "server": "hades"}, "2673": {"price": 296, "server": "anima"}, "2496": {"price": 3000, "server": "ixion"}, "3775": {"price": 306, "server": "ixion"}, "2680": {"price": 10000, "server": "anima"}, "3045": {"price": 1000, "server": "ixion"}, "2497": {"price": 350, "server": "pandaemonium"}, "2495": {"price": 1008, "server": "chocobo"}, "2470": {"price": 5000, "server": "titan"}, "3544": {"price": 100, "server": "titan"}, "2236": {"price": 20000, "server": "masamune"}, "3563": {"price": 429, "server": "anima"}, "2471": {"price": 300, "server": "asura"}, "4855": {"price": 1, "server": "chocobo"}, "4661": {"price": 30, "server": "ixion"}, "4641": {"price": 50, "server": "chocobo"}, "4651": {"price": 150, "server": "anima"}, "4667": {"price": 98, "server": "pandaemonium"}, "4640": {"price": 300, "server": "hades"}, "4666": {"price": 50, "server": "masamune"}, "4682": {"price": 300, "server": "anima"}, "4858": {"price": 1, "server": "masamune"}, "4690": {"price": 100, "server": "chocobo"}, "4198": {"price": 1, "server": "chocobo"}, "4204": {"price": 1500, "server": "hades"}, "2108": {"price": 500, "server": "masamune"}, "2445": {"price": 1400, "server": "chocobo"}, "4309": {"price": 4400, "server": "anima"}, "2668": {"price": 2200, "server": "masamune"}, "4095": {"price": 4100, "server": "masamune"}, "2685": {"price": 5000, "server": "asura"}, "2444": {"price": 800, "server": "titan"}, "4431": {"price": 570, "server": "masamune"}, "2687": {"price": 2000, "server": "asura"}, "2658": {"price": 150, "server": "chocobo"}, "2670": {"price": 3000, "server": "chocobo"}, "2665": {"price": 120, "server": "pandaemonium"}, "3539": {"price": 99, "server": "asura"}, "3543": {"price": 2490, "server": "chocobo"}, "2666": {"price": 2000, "server": "asura"}, "3023": {"price": 2010, "server": "titan"}, "3341": {"price": 1015, "server": "titan"}, "3041": {"price": 1815, "server": "anima"}, "3325": {"price": 10, "server": "anima"}, "3561": {"price": 3000, "server": "ixion"}, "3064": {"price": 25, "server": "masamune"}, "1960": {"price": 3000, "server": "titan"}, "4555": {"price": 1, "server": "titan"}, "2146": {"price": 800, "server": "masamune"}, "4551": {"price": 1, "server": "masamune"}, "5471": {"price": 90, "server": "asura"}, "7015": {"price": 2, "server": "asura"}, "1961": {"price": 2000, "server": "anima"}, "2149": {"price": 9000, "server": "anima"}, "4596": {"price": 4, "server": "asura"}, "2147": {"price": 4000, "server": "ixion"}, "4598": {"price": 3, "server": "pandaemonium"}, "4594": {"price": 20, "server": "masamune"}, "1820": {"price": 300, "server": "asura"}, "3763": {"price": 202, "server": "ixion"}, "3742": {"price": 1000, "server": "titan"}, "1892": {"price": 1000, "server": "asura"}, "2228": {"price": 20, "server": "pandaemonium"}, "1997": {"price": 100, "server": "ixion"}, "1891": {"price": 4, "server": "ixion"}, "2219": {"price": 1000, "server": "hades"}, "5361": {"price": 7, "server": "masamune"}, "1821": {"price": 6, "server": "ixion"}, "1604": {"price": 200, "server": "hades"}, "1996": {"price": 3000, "server": "asura"}, "2631": {"price": 1000, "server": "titan"}, "3516": {"price": 500, "server": "anima"}, "3740": {"price": 1000, "server": "titan"}, "4092": {"price": 3, "server": "pandaemonium"}, "1682": {"price": 580, "server": "ixion"}, "3765": {"price": 299, "server": "masamune"}, "3741": {"price": 1000, "server": "anima"}, "4304": {"price": 500, "server": "ixion"}, "5275": {"price": 2, "server": "anima"}, "3534": {"price": 100, "server": "ixion"}, "2654": {"price": 300, "server": "asura"}, "3530": {"price": 102, "server": "masamune"}, "2246": {"price": 100, "server": "ixion"}, "1836": {"price": 200, "server": "asura"}, "1627": {"price": 180, "server": "pandaemonium"}, "1845": {"price": 1450, "server": "hades"}, "2011": {"price": 1028, "server": "asura"}, "1637": {"price": 1980, "server": "hades"}, "1915": {"price": 301, "server": "pandaemonium"}, "1917": {"price": 2000, "server": "masamune"}, "1847": {"price": 2000, "server": "anima"}, "1838": {"price": 1000, "server": "asura"}, "1850": {"price": 100, "server": "pandaemonium"}, "2026": {"price": 7500, "server": "ixion"}, "1920": {"price": 4000, "server": "titan"}, "3870": {"price": 10051, "server": "ixion"}, "1862": {"price": 4392, "server": "anima"}, "2039": {"price": 8500, "server": "titan"}, "2464": {"price": 6000, "server": "asura"}, "1925": {"price": 13999, "server": "anima"}, "2413": {"price": 7400, "server": "titan"}, "1855": {"price": 1900, "server": "titan"}, "1867": {"price": 10000, "server": "pandaemonium"}, "3908": {"price": 10074, "server": "titan"}, "5374": {"price": 70, "server": "titan"}, "1942": {"price": 10104, "server": "masamune"}, "1937": {"price": 2000, "server": "hades"}, "2250": {"price": 700, "server": "titan"}, "4106": {"price": 2500, "server": "hades"}, "3347": {"price": 5021, "server": "pandaemonium"}, "1697": {"price": 400, "server": "hades"}, "3100": {"price": 941, "server": "hades"}, "2767": {"price": 3000, "server": "masamune"}, "1708": {"price": 359, "server": "titan"}, "5280": {"price": 81, "server": "pandaemonium"}, "3611": {"price": 2800, "server": "hades"}, "4333": {"price": 7500, "server": "hades"}, "4314": {"price": 5014, "server": "masamune"}, "3616": {"price": 1000, "server": "masamune"}, "3851": {"price": 1000, "server": "hades"}, "5282": {"price": 145, "server": "anima"}, "3138": {"price": 4300, "server": "titan"}, "3625": {"price": 4300, "server": "titan"}, "3426": {"price": 6400, "server": "titan"}, "3423": {"price": 5000, "server": "pandaemonium"}, "3866": {"price": 3046, "server": "chocobo"}, "3177": {"price": 10000, "server": "pandaemonium"}, "5284": {"price": 15, "server": "titan"}, "3668": {"price": 2000, "server": "ixion"}, "4153": {"price": 4000, "server": "titan"}, "1728": {"price": 3000, "server": "anima"}, "3885": {"price": 7400, "server": "titan"}, "3904": {"price": 7400, "server": "titan"}, "5285": {"price": 101, "server": "anima"}, "2546": {"price": 1900, "server": "masamune"}, "5056": {"price": 5, "server": "hades"}, "5091": {"price": 50, "server": "anima"}, "1750": {"price": 100, "server": "asura"}, "2315": {"price": 200, "server": "chocobo"}, "1602": {"price": 400, "server": "pandaemonium"}, "2507": {"price": 101, "server": "pandaemonium"}, "1603": {"price": 200, "server": "ixion"}, "2417": {"price": 150, "server": "pandaemonium"}, "2481": {"price": 100, "server": "anima"}, "2392": {"price": 93, "server": "ixion"}, "2520": {"price": 600, "server": "ixion"}, "2397": {"price": 35000, "server": "titan"}, "1625": {"price": 1120, "server": "ixion"}, "2421": {"price": 500, "server": "ixion"}, "2346": {"price": 11111, "server": "ixion"}, "2320": {"price": 437, "server": "chocobo"}, "2485": {"price": 91, "server": "ixion"}, "1633": {"price": 10001, "server": "hades"}, "2321": {"price": 3000, "server": "titan"}, "2527": {"price": 1806, "server": "pandaemonium"}, "2436": {"price": 3000, "server": "masamune"}, "2539": {"price": 22996, "server": "chocobo"}, "2565": {"price": 11148, "server": "pandaemonium"}, "2494": {"price": 499, "server": "masamune"}, "5071": {"price": 200, "server": "anima"}, "2226": {"price": 1000, "server": "asura"}, "2468": {"price": 400, "server": "masamune"}, "3011": {"price": 305, "server": "ixion"}, "2664": {"price": 2100, "server": "titan"}, "2662": {"price": 5, "server": "asura"}, "3767": {"price": 1500, "server": "ixion"}, "2230": {"price": 3000, "server": "hades"}, "2656": {"price": 280, "server": "chocobo"}, "5058": {"price": 280, "server": "asura"}, "3352": {"price": 1400, "server": "titan"}, "2753": {"price": 21000, "server": "masamune"}, "2473": {"price": 400, "server": "ixion"}, "3068": {"price": 3000, "server": "anima"}, "3096": {"price": 1500, "server": "hades"}, "2260": {"price": 2000, "server": "anima"}, "2257": {"price": 716, "server": "pandaemonium"}, "3833": {"price": 10000, "server": "pandaemonium"}, "2501": {"price": 400, "server": "asura"}, "2765": {"price": 4300, "server": "titan"}, "3825": {"price": 5000, "server": "hades"}, "4650": {"price": 100, "server": "masamune"}, "4849": {"price": 1, "server": "hades"}, "4639": {"price": 1, "server": "anima"}, "4728": {"price": 51, "server": "pandaemonium"}, "4852": {"price": 1, "server": "titan"}, "4681": {"price": 80, "server": "chocobo"}, "4689": {"price": 21, "server": "chocobo"}, "4745": {"price": 21, "server": "chocobo"}, "4854": {"price": 1, "server": "anima"}, "4657": {"price": 3, "server": "ixion"}, "4731": {"price": 150, "server": "masamune"}, "4867": {"price": 50, "server": "chocobo"}, "4749": {"price": 70, "server": "asura"}, "4718": {"price": 700, "server": "masamune"}, "4732": {"price": 50, "server": "chocobo"}, "4711": {"price": 302, "server": "anima"}, "4860": {"price": 8, "server": "chocobo"}, "4712": {"price": 103, "server": "masamune"}, "4827": {"price": 39, "server": "masamune"}, "4700": {"price": 20, "server": "asura"}, "4670": {"price": 500, "server": "masamune"}, "4669": {"price": 10, "server": "anima"}, "5489": {"price": 1, "server": "masamune"}, "2143": {"price": 499, "server": "masamune"}, "5470": {"price": 14, "server": "pandaemonium"}, "5503": {"price": 7, "server": "hades"}, "4564": {"price": 23, "server": "masamune"}, "1958": {"price": 499, "server": "masamune"}, "4565": {"price": 1, "server": "chocobo"}, "5487": {"price": 2, "server": "asura"}, "1959": {"price": 6004, "server": "pandaemonium"}, "5510": {"price": 80, "server": "pandaemonium"}, "5515": {"price": 1, "server": "pandaemonium"}, "2144": {"price": 505, "server": "titan"}, "5484": {"price": 45, "server": "hades"}, "5512": {"price": 12, "server": "pandaemonium"}, "2156": {"price": 5000, "server": "titan"}, "1965": {"price": 800, "server": "pandaemonium"}, "2160": {"price": 144, "server": "anima"}, "4552": {"price": 3, "server": "titan"}, "4599": {"price": 8, "server": "hades"}, "4603": {"price": 5, "server": "hades"}, "5505": {"price": 701, "server": "chocobo"}, "5478": {"price": 1, "server": "anima"}, "4600": {"price": 1, "server": "hades"}, "5472": {"price": 100, "server": "hades"}, "3307": {"price": 1000, "server": "titan"}, "3309": {"price": 100, "server": "asura"}, "2996": {"price": 20, "server": "titan"}, "3515": {"price": 1000, "server": "anima"}, "3000": {"price": 248, "server": "asura"}, "2629": {"price": 1795, "server": "chocobo"}, "2999": {"price": 198, "server": "titan"}, "3015": {"price": 500, "server": "ixion"}, "3313": {"price": 970, "server": "ixion"}, "3001": {"price": 200, "server": "masamune"}, "3316": {"price": 2005, "server": "chocobo"}, "3008": {"price": 5, "server": "ixion"}, "3066": {"price": 2026, "server": "hades"}, "2734": {"price": 1500, "server": "hades"}, "3349": {"price": 4026, "server": "ixion"}, "3351": {"price": 7200, "server": "masamune"}, "3379": {"price": 8000, "server": "hades"}, "3106": {"price": 2044, "server": "pandaemonium"}, "3601": {"price": 12000, "server": "asura"}, "3607": {"price": 4000, "server": "pandaemonium"}, "3372": {"price": 8000, "server": "hades"}, "3831": {"price": 1000, "server": "hades"}, "5062": {"price": 19, "server": "titan"}, "4091": {"price": 103, "server": "hades"}, "2056": {"price": 200, "server": "hades"}, "1681": {"price": 150, "server": "anima"}, "2106": {"price": 400, "server": "asura"}, "5086": {"price": 20, "server": "pandaemonium"}, "4197": {"price": 500, "server": "titan"}, "1683": {"price": 300, "server": "hades"}, "4306": {"price": 1000, "server": "chocobo"}, "4422": {"price": 1000, "server": "asura"}, "4093": {"price": 600, "server": "anima"}, "2443": {"price": 170, "server": "ixion"}, "4439": {"price": 815, "server": "hades"}, "4450": {"price": 3000, "server": "masamune"}, "2731": {"price": 5018, "server": "anima"}, "4317": {"price": 1000, "server": "hades"}, "4222": {"price": 200, "server": "asura"}, "2118": {"price": 500, "server": "pandaemonium"}, "2737": {"price": 5000, "server": "anima"}, "4454": {"price": 1999, "server": "pandaemonium"}, "4113": {"price": 8000, "server": "titan"}, "2449": {"price": 350, "server": "asura"}, "4332": {"price": 10000, "server": "chocobo"}, "4218": {"price": 800, "server": "hades"}, "1643": {"price": 2000, "server": "hades"}, "2437": {"price": 3500, "server": "masamune"}, "2488": {"price": 2000, "server": "asura"}, "2375": {"price": 5300, "server": "titan"}, "2424": {"price": 156, "server": "hades"}, "2514": {"price": 2565, "server": "anima"}, "2542": {"price": 4083, "server": "ixion"}, "2388": {"price": 3000, "server": "masamune"}, "2363": {"price": 5000, "server": "asura"}, "2516": {"price": 2092, "server": "asura"}, "2376": {"price": 183, "server": "hades"}, "2337": {"price": 7092, "server": "anima"}, "2389": {"price": 10600, "server": "titan"}, "2377": {"price": 10600, "server": "titan"}, "2338": {"price": 10600, "server": "titan"}, "2543": {"price": 8500, "server": "titan"}, "5079": {"price": 980, "server": "ixion"}, "5065": {"price": 40, "server": "ixion"}, "3386": {"price": 4000, "server": "masamune"}, "3622": {"price": 12500, "server": "ixion"}, "2502": {"price": 7400, "server": "titan"}, "3847": {"price": 5000, "server": "titan"}, "2827": {"price": 5000, "server": "anima"}, "3858": {"price": 6400, "server": "titan"}, "2476": {"price": 6400, "server": "titan"}, "3623": {"price": 4000, "server": "pandaemonium"}, "2817": {"price": 6400, "server": "titan"}, "2802": {"price": 5300, "server": "titan"}, "2504": {"price": 10600, "server": "titan"}, "5074": {"price": 685, "server": "hades"}, "3180": {"price": 18000, "server": "asura"}, "3887": {"price": 7400, "server": "titan"}, "3883": {"price": 3000, "server": "titan"}, "5059": {"price": 600, "server": "anima"}, "4702": {"price": 43, "server": "asura"}, "4686": {"price": 499, "server": "masamune"}, "4701": {"price": 70, "server": "hades"}, "4663": {"price": 49, "server": "titan"}, "4724": {"price": 150, "server": "anima"}, "4719": {"price": 193, "server": "asura"}, "4757": {"price": 2, "server": "anima"}, "4646": {"price": 150, "server": "hades"}, "4747": {"price": 4, "server": "chocobo"}, "4671": {"price": 100, "server": "titan"}, "4733": {"price": 50, "server": "pandaemonium"}, "4713": {"price": 50, "server": "masamune"}, "4655": {"price": 5, "server": "masamune"}, "4703": {"price": 100, "server": "masamune"}, "4694": {"price": 145, "server": "pandaemonium"}, "4750": {"price": 45, "server": "anima"}, "4727": {"price": 5, "server": "titan"}, "1971": {"price": 6400, "server": "titan"}, "4580": {"price": 110, "server": "anima"}, "4579": {"price": 110, "server": "anima"}, "2169": {"price": 1000, "server": "hades"}, "4582": {"price": 250, "server": "masamune"}, "4583": {"price": 51, "server": "anima"}, "4553": {"price": 4, "server": "asura"}, "5486": {"price": 92, "server": "titan"}, "4567": {"price": 410, "server": "pandaemonium"}, "5479": {"price": 1, "server": "pandaemonium"}, "2174": {"price": 2000, "server": "titan"}, "5517": {"price": 2, "server": "masamune"}, "4587": {"price": 200, "server": "asura"}, "4569": {"price": 500, "server": "asura"}, "4606": {"price": 15, "server": "chocobo"}, "4586": {"price": 320, "server": "pandaemonium"}, "4584": {"price": 210, "server": "titan"}, "4604": {"price": 15, "server": "asura"}, "2805": {"price": 37, "server": "anima"}, "3399": {"price": 4300, "server": "titan"}, "2779": {"price": 5038, "server": "masamune"}, "3144": {"price": 7800, "server": "hades"}, "3140": {"price": 800, "server": "chocobo"}, "3397": {"price": 2000, "server": "masamune"}, "3421": {"price": 3384, "server": "asura"}, "3162": {"price": 7000, "server": "pandaemonium"}, "2816": {"price": 5500, "server": "masamune"}, "3172": {"price": 5080, "server": "asura"}, "3413": {"price": 5000, "server": "asura"}, "2814": {"price": 3000, "server": "chocobo"}, "3456": {"price": 12200, "server": "ixion"}, "2852": {"price": 7400, "server": "titan"}, "3187": {"price": 400, "server": "ixion"}, "3201": {"price": 3500, "server": "asura"}, "3185": {"price": 4000, "server": "pandaemonium"}, "2854": {"price": 3000, "server": "ixion"}, "4143": {"price": 1390, "server": "masamune"}, "4465": {"price": 9998, "server": "pandaemonium"}, "2078": {"price": 1000, "server": "titan"}, "4343": {"price": 2531, "server": "titan"}, "4337": {"price": 4027, "server": "titan"}, "4232": {"price": 4030, "server": "pandaemonium"}, "4485": {"price": 8000, "server": "hades"}, "4247": {"price": 1131, "server": "chocobo"}, "4147": {"price": 1000, "server": "pandaemonium"}, "4361": {"price": 4999, "server": "masamune"}, "2125": {"price": 10000, "server": "asura"}, "4237": {"price": 430, "server": "masamune"}, "4369": {"price": 8000, "server": "hades"}, "2876": {"price": 4500, "server": "anima"}, "4363": {"price": 1000, "server": "masamune"}, "2453": {"price": 1190, "server": "chocobo"}, "4508": {"price": 1000, "server": "hades"}, "4371": {"price": 500, "server": "pandaemonium"}, "4870": {"price": 99, "server": "hades"}, "4869": {"price": 30, "server": "ixion"}, "4776": {"price": 60, "server": "ixion"}, "4871": {"price": 10, "server": "chocobo"}, "4872": {"price": 91, "server": "pandaemonium"}, "4876": {"price": 1, "server": "pandaemonium"}, "4873": {"price": 1000, "server": "anima"}, "4874": {"price": 500, "server": "masamune"}, "4877": {"price": 200, "server": "hades"}, "4879": {"price": 31, "server": "asura"}, "4878": {"price": 150, "server": "titan"}, "4881": {"price": 100, "server": "hades"}, "4884": {"price": 200, "server": "masamune"}, "5460": {"price": 39, "server": "masamune"}, "4880": {"price": 200, "server": "pandaemonium"}, "4948": {"price": 20, "server": "ixion"}, "4958": {"price": 88, "server": "hades"}, "4943": {"price": 45, "server": "hades"}, "4945": {"price": 91, "server": "anima"}, "4964": {"price": 1000, "server": "hades"}, "4967": {"price": 201, "server": "hades"}, "4959": {"price": 70, "server": "masamune"}, "4961": {"price": 1000, "server": "titan"}, "4896": {"price": 100, "server": "pandaemonium"}, "4895": {"price": 100, "server": "masamune"}, "4892": {"price": 1000, "server": "ixion"}, "4894": {"price": 9000, "server": "masamune"}, "4976": {"price": 500, "server": "asura"}, "4986": {"price": 200, "server": "asura"}, "4981": {"price": 50, "server": "ixion"}, "5544": {"price": 300, "server": "pandaemonium"}, "4988": {"price": 400, "server": "ixion"}, "4997": {"price": 90, "server": "masamune"}, "4937": {"price": 45, "server": "titan"}, "4984": {"price": 501, "server": "titan"}, "5004": {"price": 3500, "server": "ixion"}, "5006": {"price": 300, "server": "pandaemonium"}, "4989": {"price": 1000, "server": "masamune"}, "5003": {"price": 600, "server": "masamune"}, "5366": {"price": 194, "server": "hades"}, "10604": {"price": 20000, "server": "titan"}, "10610": {"price": 10246, "server": "asura"}, "10611": {"price": 9999, "server": "anima"}, "11911": {"price": 900, "server": "anima"}, "12011": {"price": 18042, "server": "masamune"}, "10636": {"price": 10000, "server": "masamune"}, "11936": {"price": 20000, "server": "chocobo"}, "12581": {"price": 445, "server": "chocobo"}, "12015": {"price": 11000, "server": "chocobo"}, "10613": {"price": 24780, "server": "chocobo"}, "10799": {"price": 10164, "server": "pandaemonium"}, "12583": {"price": 30, "server": "anima"}, "11929": {"price": 20330, "server": "hades"}, "10608": {"price": 9800, "server": "pandaemonium"}, "10740": {"price": 18000, "server": "chocobo"}, "12006": {"price": 18000, "server": "masamune"}, "10810": {"price": 5000, "server": "chocobo"}, "12563": {"price": 302, "server": "pandaemonium"}, "10671": {"price": 2525, "server": "masamune"}, "10811": {"price": 9800, "server": "pandaemonium"}, "11990": {"price": 7000, "server": "titan"}, "10833": {"price": 20173, "server": "anima"}, "10742": {"price": 2000, "server": "chocobo"}, "12027": {"price": 17800, "server": "ixion"}, "10897": {"price": 5000, "server": "pandaemonium"}, "12565": {"price": 3, "server": "chocobo"}, "10731": {"price": 30000, "server": "titan"}, "10926": {"price": 5000, "server": "masamune"}, "10961": {"price": 9000, "server": "pandaemonium"}, "10586": {"price": 29990, "server": "masamune"}, "10592": {"price": 28671, "server": "ixion"}, "12518": {"price": 600, "server": "chocobo"}, "10623": {"price": 29295, "server": "hades"}, "10617": {"price": 22000, "server": "titan"}, "11943": {"price": 200, "server": "chocobo"}, "11888": {"price": 499, "server": "pandaemonium"}, "11872": {"price": 913, "server": "chocobo"}, "10630": {"price": 30000, "server": "hades"}, "12525": {"price": 1450, "server": "hades"}, "10601": {"price": 25000, "server": "titan"}, "11877": {"price": 400, "server": "ixion"}, "12526": {"price": 470, "server": "hades"}, "11906": {"price": 25000, "server": "hades"}, "10626": {"price": 29800, "server": "pandaemonium"}, "10719": {"price": 20000, "server": "titan"}, "12528": {"price": 570, "server": "pandaemonium"}, "10664": {"price": 5082, "server": "pandaemonium"}, "10665": {"price": 30000, "server": "anima"}, "11895": {"price": 20000, "server": "hades"}, "11899": {"price": 19999, "server": "masamune"}, "12524": {"price": 485, "server": "anima"}, "10714": {"price": 5157, "server": "ixion"}, "10679": {"price": 20000, "server": "pandaemonium"}, "10667": {"price": 9000, "server": "chocobo"}, "10841": {"price": 20181, "server": "chocobo"}, "10687": {"price": 10164, "server": "anima"}, "10702": {"price": 20285, "server": "pandaemonium"}, "10752": {"price": 28000, "server": "anima"}, "12530": {"price": 706, "server": "asura"}, "12845": {"price": 999, "server": "masamune"}, "12866": {"price": 312, "server": "chocobo"}, "12861": {"price": 109, "server": "titan"}, "12895": {"price": 700, "server": "anima"}, "12850": {"price": 312, "server": "titan"}, "12867": {"price": 212, "server": "chocobo"}, "12859": {"price": 440, "server": "masamune"}, "12863": {"price": 15, "server": "chocobo"}, "12869": {"price": 200, "server": "pandaemonium"}, "12890": {"price": 150, "server": "ixion"}, "12843": {"price": 500, "server": "asura"}, "12856": {"price": 313, "server": "asura"}, "12892": {"price": 38, "server": "ixion"}, "12864": {"price": 200, "server": "masamune"}, "12851": {"price": 800, "server": "ixion"}, "12601": {"price": 500, "server": "chocobo"}, "10652": {"price": 20000, "server": "titan"}, "5506": {"price": 1500, "server": "titan"}, "10647": {"price": 20000, "server": "masamune"}, "12616": {"price": 1412, "server": "hades"}, "12604": {"price": 180, "server": "titan"}, "5507": {"price": 2003, "server": "chocobo"}, "10654": {"price": 5000, "server": "pandaemonium"}, "12602": {"price": 1500, "server": "chocobo"}, "12605": {"price": 2, "server": "chocobo"}, "10637": {"price": 23500, "server": "titan"}, "12623": {"price": 330, "server": "masamune"}, "12603": {"price": 400, "server": "pandaemonium"}, "10651": {"price": 5000, "server": "titan"}, "12608": {"price": 50, "server": "anima"}, "12588": {"price": 150, "server": "hades"}, "10824": {"price": 2000, "server": "chocobo"}, "11036": {"price": 7888, "server": "chocobo"}, "10762": {"price": 20271, "server": "anima"}, "10951": {"price": 10000, "server": "masamune"}, "11979": {"price": 15000, "server": "pandaemonium"}, "10931": {"price": 5000, "server": "pandaemonium"}, "11957": {"price": 10000, "server": "hades"}, "10896": {"price": 9000, "server": "chocobo"}, "10911": {"price": 17000, "server": "pandaemonium"}, "12596": {"price": 121, "server": "titan"}, "10806": {"price": 23990, "server": "chocobo"}, "12592": {"price": 170, "server": "masamune"}, "12005": {"price": 25325, "server": "ixion"}, "10842": {"price": 10189, "server": "pandaemonium"}, "11983": {"price": 18000, "server": "masamune"}, "11048": {"price": 7900, "server": "chocobo"}, "10640": {"price": 20000, "server": "titan"}, "10659": {"price": 10000, "server": "asura"}, "11891": {"price": 19000, "server": "titan"}, "12519": {"price": 1900, "server": "hades"}, "10972": {"price": 19900, "server": "chocobo"}, "11008": {"price": 29000, "server": "titan"}, "10924": {"price": 18000, "server": "masamune"}, "12521": {"price": 400, "server": "titan"}, "12018": {"price": 5000, "server": "titan"}, "10661": {"price": 9298, "server": "asura"}, "11034": {"price": 28000, "server": "hades"}, "11894": {"price": 14000, "server": "ixion"}, "10885": {"price": 21700, "server": "chocobo"}, "12718": {"price": 400, "server": "chocobo"}, "12722": {"price": 40, "server": "chocobo"}, "12720": {"price": 993, "server": "masamune"}, "12729": {"price": 2300, "server": "masamune"}, "12740": {"price": 500, "server": "anima"}, "12732": {"price": 5000, "server": "hades"}, "12734": {"price": 1000, "server": "titan"}, "12736": {"price": 370, "server": "masamune"}, "12782": {"price": 1500, "server": "masamune"}, "12789": {"price": 10000, "server": "pandaemonium"}, "12741": {"price": 1000, "server": "chocobo"}, "12791": {"price": 104, "server": "pandaemonium"}, "12818": {"price": 200, "server": "titan"}, "12773": {"price": 1000, "server": "masamune"}, "18041": {"price": 8000, "server": "ixion"}, "19516": {"price": 700, "server": "anima"}, "19925": {"price": 130, "server": "masamune"}, "18192": {"price": 2001, "server": "pandaemonium"}, "18193": {"price": 10624, "server": "hades"}, "19730": {"price": 19000, "server": "anima"}, "19543": {"price": 7500, "server": "masamune"}, "5372": {"price": 180, "server": "masamune"}, "18353": {"price": 15000, "server": "pandaemonium"}, "18504": {"price": 8657, "server": "hades"}, "19738": {"price": 10000, "server": "pandaemonium"}, "19558": {"price": 1524, "server": "asura"}, "19749": {"price": 15000, "server": "masamune"}, "19928": {"price": 80, "server": "chocobo"}, "18661": {"price": 13500, "server": "hades"}, "19618": {"price": 20000, "server": "anima"}, "19993": {"price": 450, "server": "masamune"}, "18067": {"price": 19229, "server": "pandaemonium"}, "18221": {"price": 17000, "server": "pandaemonium"}, "19735": {"price": 19700, "server": "ixion"}, "18231": {"price": 15000, "server": "hades"}, "18379": {"price": 25355, "server": "pandaemonium"}, "19636": {"price": 5000, "server": "anima"}, "19995": {"price": 300, "server": "hades"}, "18549": {"price": 3362, "server": "hades"}, "19643": {"price": 21000, "server": "hades"}, "18526": {"price": 32500, "server": "hades"}, "18675": {"price": 12000, "server": "anima"}, "18698": {"price": 30600, "server": "pandaemonium"}, "18713": {"price": 22000, "server": "ixion"}, "18033": {"price": 30000, "server": "masamune"}, "19510": {"price": 20000, "server": "masamune"}, "19939": {"price": 80, "server": "masamune"}, "18194": {"price": 29500, "server": "masamune"}, "19545": {"price": 20000, "server": "masamune"}, "19943": {"price": 150, "server": "masamune"}, "18347": {"price": 10584, "server": "asura"}, "19548": {"price": 19800, "server": "titan"}, "19565": {"price": 556, "server": "titan"}, "18514": {"price": 6570, "server": "ixion"}, "19571": {"price": 15000, "server": "asura"}, "19947": {"price": 340, "server": "anima"}, "19512": {"price": 4070, "server": "hades"}, "18055": {"price": 30000, "server": "asura"}, "18204": {"price": 9208, "server": "hades"}, "18207": {"price": 10344, "server": "chocobo"}, "19941": {"price": 5, "server": "titan"}, "18371": {"price": 15355, "server": "anima"}, "19534": {"price": 500, "server": "anima"}, "18363": {"price": 27800, "server": "anima"}, "18518": {"price": 20000, "server": "titan"}, "19945": {"price": 400, "server": "hades"}, "18533": {"price": 19800, "server": "chocobo"}, "18672": {"price": 24000, "server": "hades"}, "18699": {"price": 28700, "server": "chocobo"}, "18679": {"price": 33333, "server": "anima"}, "19841": {"price": 99, "server": "hades"}, "19808": {"price": 24, "server": "hades"}, "19811": {"price": 424, "server": "hades"}, "19838": {"price": 2000, "server": "asura"}, "19816": {"price": 1025, "server": "ixion"}, "19846": {"price": 30, "server": "anima"}, "19843": {"price": 40, "server": "titan"}, "19817": {"price": 25, "server": "chocobo"}, "19813": {"price": 226, "server": "titan"}, "19839": {"price": 99, "server": "chocobo"}, "19807": {"price": 26, "server": "asura"}, "19814": {"price": 2000, "server": "hades"}, "19819": {"price": 1500, "server": "chocobo"}, "19901": {"price": 40, "server": "chocobo"}, "18043": {"price": 30000, "server": "titan"}, "19904": {"price": 14, "server": "masamune"}, "18200": {"price": 21999, "server": "hades"}, "19894": {"price": 26, "server": "asura"}, "19885": {"price": 400, "server": "hades"}, "19902": {"price": 20, "server": "masamune"}, "19883": {"price": 22, "server": "hades"}, "19906": {"price": 205, "server": "masamune"}, "19884": {"price": 200, "server": "masamune"}, "18511": {"price": 26657, "server": "pandaemonium"}, "19909": {"price": 85, "server": "pandaemonium"}, "19888": {"price": 1892, "server": "pandaemonium"}, "18668": {"price": 10000, "server": "asura"}, "19903": {"price": 48, "server": "hades"}, "18088": {"price": 28800, "server": "ixion"}, "19613": {"price": 22500, "server": "ixion"}, "18075": {"price": 9980, "server": "masamune"}, "18243": {"price": 32000, "server": "asura"}, "19977": {"price": 200, "server": "titan"}, "18220": {"price": 15000, "server": "hades"}, "18374": {"price": 15000, "server": "masamune"}, "19640": {"price": 10000, "server": "titan"}, "19981": {"price": 80, "server": "masamune"}, "18538": {"price": 5000, "server": "titan"}, "19642": {"price": 19500, "server": "asura"}, "18548": {"price": 10000, "server": "asura"}, "18691": {"price": 10000, "server": "pandaemonium"}, "18710": {"price": 8600, "server": "chocobo"}, "19652": {"price": 19991, "server": "pandaemonium"}, "18094": {"price": 5000, "server": "titan"}, "18107": {"price": 6000, "server": "chocobo"}, "19511": {"price": 10000, "server": "anima"}, "18235": {"price": 12000, "server": "hades"}, "18261": {"price": 9900, "server": "ixion"}, "19940": {"price": 200, "server": "ixion"}, "18359": {"price": 643, "server": "hades"}, "19532": {"price": 471, "server": "pandaemonium"}, "18367": {"price": 10000, "server": "hades"}, "18513": {"price": 20000, "server": "hades"}, "19944": {"price": 3, "server": "masamune"}, "18574": {"price": 20000, "server": "chocobo"}, "18666": {"price": 20000, "server": "asura"}, "18671": {"price": 25500, "server": "chocobo"}, "18722": {"price": 28000, "server": "hades"}, "20070": {"price": 5000, "server": "chocobo"}, "20083": {"price": 4980, "server": "pandaemonium"}, "20090": {"price": 1000, "server": "asura"}, "20146": {"price": 105, "server": "titan"}, "20165": {"price": 100, "server": "asura"}, "20160": {"price": 4980, "server": "titan"}, "20120": {"price": 800, "server": "ixion"}, "20138": {"price": 406, "server": "hades"}, "20023": {"price": 12000, "server": "asura"}, "20198": {"price": 50, "server": "asura"}, "20193": {"price": 10000, "server": "ixion"}, "20211": {"price": 2500, "server": "anima"}, "20105": {"price": 1500, "server": "asura"}, "27689": {"price": 21, "server": "masamune"}, "27087": {"price": 12621, "server": "hades"}, "27203": {"price": 8000, "server": "anima"}, "25791": {"price": 29800, "server": "ixion"}, "25792": {"price": 27638, "server": "masamune"}, "25796": {"price": 17385, "server": "chocobo"}, "27691": {"price": 410, "server": "masamune"}, "27112": {"price": 26500, "server": "chocobo"}, "27219": {"price": 11500, "server": "hades"}, "26117": {"price": 29500, "server": "ixion"}, "27135": {"price": 19999, "server": "masamune"}, "26112": {"price": 24341, "server": "asura"}, "26276": {"price": 23500, "server": "ixion"}, "27230": {"price": 20042, "server": "masamune"}, "27227": {"price": 23000, "server": "pandaemonium"}, "27738": {"price": 194, "server": "titan"}, "25655": {"price": 22000, "server": "ixion"}, "27209": {"price": 19285, "server": "asura"}, "25809": {"price": 1800, "server": "ixion"}, "25820": {"price": 18000, "server": "hades"}, "25846": {"price": 16800, "server": "chocobo"}, "27740": {"price": 240, "server": "ixion"}, "25990": {"price": 28690, "server": "hades"}, "26015": {"price": 23302, "server": "masamune"}, "26133": {"price": 32000, "server": "ixion"}, "27190": {"price": 10356, "server": "asura"}, "26146": {"price": 16300, "server": "asura"}, "26288": {"price": 4420, "server": "anima"}, "26311": {"price": 19000, "server": "asura"}, "26320": {"price": 10000, "server": "pandaemonium"}, "27706": {"price": 411, "server": "hades"}, "25643": {"price": 24990, "server": "pandaemonium"}, "27096": {"price": 20000, "server": "asura"}, "25790": {"price": 7000, "server": "ixion"}, "25789": {"price": 20702, "server": "anima"}, "25788": {"price": 20000, "server": "hades"}, "27711": {"price": 400, "server": "ixion"}, "27098": {"price": 20000, "server": "masamune"}, "27118": {"price": 17500, "server": "chocobo"}, "26113": {"price": 20000, "server": "anima"}, "26124": {"price": 30000, "server": "hades"}, "27137": {"price": 25770, "server": "chocobo"}, "26281": {"price": 20000, "server": "hades"}, "26275": {"price": 17761, "server": "pandaemonium"}, "27152": {"price": 20000, "server": "masamune"}, "25645": {"price": 7000, "server": "pandaemonium"}, "27084": {"price": 10000, "server": "asura"}, "25646": {"price": 8377, "server": "masamune"}, "27708": {"price": 50, "server": "anima"}, "25813": {"price": 25000, "server": "chocobo"}, "25808": {"price": 3200, "server": "hades"}, "26002": {"price": 16361, "server": "masamune"}, "25968": {"price": 478, "server": "pandaemonium"}, "27104": {"price": 19999, "server": "masamune"}, "27713": {"price": 180, "server": "masamune"}, "26125": {"price": 29000, "server": "anima"}, "26150": {"price": 30500, "server": "hades"}, "26287": {"price": 7698, "server": "masamune"}, "26296": {"price": 9900, "server": "titan"}, "26285": {"price": 25255, "server": "chocobo"}, "27838": {"price": 70, "server": "ixion"}, "27853": {"price": 28, "server": "chocobo"}, "27854": {"price": 85, "server": "chocobo"}, "27857": {"price": 500, "server": "hades"}, "27856": {"price": 80, "server": "asura"}, "27855": {"price": 200, "server": "ixion"}, "27843": {"price": 560, "server": "chocobo"}, "27865": {"price": 50, "server": "titan"}, "27861": {"price": 390, "server": "pandaemonium"}, "27866": {"price": 190, "server": "ixion"}, "27870": {"price": 150, "server": "ixion"}, "27872": {"price": 129, "server": "masamune"}, "27873": {"price": 100, "server": "anima"}, "27877": {"price": 745, "server": "pandaemonium"}, "27878": {"price": 99, "server": "pandaemonium"}, "27766": {"price": 50, "server": "anima"}, "25638": {"price": 18000, "server": "chocobo"}, "25639": {"price": 15000, "server": "titan"}, "25798": {"price": 20000, "server": "anima"}, "27768": {"price": 300, "server": "ixion"}, "27960": {"price": 600, "server": "anima"}, "27775": {"price": 705, "server": "masamune"}, "25959": {"price": 20000, "server": "asura"}, "27957": {"price": 80, "server": "ixion"}, "27778": {"price": 100, "server": "titan"}, "26118": {"price": 22000, "server": "asura"}, "27958": {"price": 130, "server": "chocobo"}, "27788": {"price": 195, "server": "asura"}, "26279": {"price": 24721, "server": "asura"}, "27790": {"price": 900, "server": "asura"}, "27746": {"price": 20, "server": "ixion"}, "25661": {"price": 35000, "server": "asura"}, "27161": {"price": 21000, "server": "hades"}, "25825": {"price": 19500, "server": "titan"}, "25833": {"price": 13000, "server": "anima"}, "25836": {"price": 9000, "server": "hades"}, "27752": {"price": 2, "server": "asura"}, "25978": {"price": 24000, "server": "ixion"}, "27173": {"price": 8000, "server": "anima"}, "26145": {"price": 8000, "server": "pandaemonium"}, "26162": {"price": 11000, "server": "ixion"}, "27186": {"price": 26000, "server": "hades"}, "26289": {"price": 4698, "server": "hades"}, "26310": {"price": 15420, "server": "asura"}, "26316": {"price": 10410, "server": "ixion"}, "27802": {"price": 13, "server": "anima"}, "27082": {"price": 19000, "server": "masamune"}, "25691": {"price": 10200, "server": "chocobo"}, "25802": {"price": 26000, "server": "ixion"}, "25853": {"price": 7293, "server": "chocobo"}, "25859": {"price": 29000, "server": "pandaemonium"}, "27710": {"price": 399, "server": "anima"}, "25957": {"price": 24722, "server": "hades"}, "27213": {"price": 19990, "server": "asura"}, "26120": {"price": 19000, "server": "chocobo"}, "26185": {"price": 10230, "server": "masamune"}, "26172": {"price": 15000, "server": "hades"}, "26282": {"price": 29500, "server": "ixion"}, "26336": {"price": 18000, "server": "pandaemonium"}, "26338": {"price": 24000, "server": "titan"}, "27430": {"price": 3007, "server": "ixion"}, "27462": {"price": 300, "server": "ixion"}, "27518": {"price": 7000, "server": "pandaemonium"}, "27447": {"price": 1500, "server": "hades"}, "27530": {"price": 3000, "server": "asura"}, "27527": {"price": 5000, "server": "pandaemonium"}, "27475": {"price": 20, "server": "titan"}, "27571": {"price": 8, "server": "ixion"}, "27555": {"price": 1350, "server": "titan"}, "27441": {"price": 6800, "server": "titan"}, "27483": {"price": 700, "server": "anima"}, "27498": {"price": 295, "server": "anima"}, "27504": {"price": 9000, "server": "anima"}, "36196": {"price": 299, "server": "ixion"}, "35334": {"price": 29780, "server": "ixion"}, "34285": {"price": 20326, "server": "masamune"}, "34297": {"price": 36326, "server": "anima"}, "36198": {"price": 300, "server": "pandaemonium"}, "35351": {"price": 32000, "server": "ixion"}, "34533": {"price": 24000, "server": "titan"}, "35378": {"price": 28770, "server": "chocobo"}, "34689": {"price": 17500, "server": "masamune"}, "35461": {"price": 11326, "server": "masamune"}, "34096": {"price": 29980, "server": "titan"}, "35320": {"price": 20000, "server": "anima"}, "34245": {"price": 35900, "server": "hades"}, "34235": {"price": 39999, "server": "asura"}, "34398": {"price": 24899, "server": "hades"}, "35358": {"price": 25000, "server": "masamune"}, "36171": {"price": 180, "server": "asura"}, "35382": {"price": 25000, "server": "masamune"}, "34682": {"price": 29980, "server": "ixion"}, "35396": {"price": 10780, "server": "titan"}, "36168": {"price": 500, "server": "chocobo"}, "34107": {"price": 37000, "server": "titan"}, "34252": {"price": 14000, "server": "masamune"}, "34251": {"price": 16000, "server": "asura"}, "36170": {"price": 150, "server": "ixion"}, "35347": {"price": 19000, "server": "ixion"}, "34570": {"price": 35000, "server": "ixion"}, "35369": {"price": 23000, "server": "pandaemonium"}, "34732": {"price": 20000, "server": "masamune"}, "34706": {"price": 20000, "server": "masamune"}, "36182": {"price": 468, "server": "ixion"}, "34150": {"price": 12000, "server": "asura"}, "34247": {"price": 50000, "server": "masamune"}, "34291": {"price": 20000, "server": "titan"}, "36184": {"price": 500, "server": "anima"}, "34438": {"price": 19980, "server": "ixion"}, "34544": {"price": 35000, "server": "ixion"}, "35367": {"price": 25000, "server": "masamune"}, "34692": {"price": 29000, "server": "masamune"}, "34747": {"price": 32995, "server": "pandaemonium"}, "36247": {"price": 2000, "server": "chocobo"}, "35408": {"price": 12980, "server": "chocobo"}, "34264": {"price": 20429, "server": "anima"}, "34271": {"price": 29715, "server": "hades"}, "36249": {"price": 400, "server": "masamune"}, "34401": {"price": 30000, "server": "asura"}, "34582": {"price": 33429, "server": "titan"}, "35433": {"price": 29000, "server": "ixion"}, "34729": {"price": 34000, "server": "anima"}, "35466": {"price": 34626, "server": "asura"}, "36208": {"price": 200, "server": "masamune"}, "34127": {"price": 29500, "server": "chocobo"}, "34280": {"price": 20000, "server": "ixion"}, "34276": {"price": 1715, "server": "ixion"}, "36210": {"price": 100, "server": "titan"}, "35414": {"price": 19924, "server": "ixion"}, "34563": {"price": 10000, "server": "pandaemonium"}, "35429": {"price": 20000, "server": "anima"}, "34705": {"price": 19500, "server": "pandaemonium"}, "34723": {"price": 29000, "server": "pandaemonium"}, "36237": {"price": 99, "server": "ixion"}, "34090": {"price": 10000, "server": "titan"}, "34241": {"price": 30000, "server": "masamune"}, "36228": {"price": 96, "server": "pandaemonium"}, "34391": {"price": 34780, "server": "ixion"}, "36114": {"price": 200, "server": "anima"}, "34540": {"price": 28860, "server": "anima"}, "36115": {"price": 195, "server": "hades"}, "34691": {"price": 30000, "server": "pandaemonium"}, "36108": {"price": 300, "server": "anima"}, "36078": {"price": 120, "server": "asura"}, "36037": {"price": 99, "server": "masamune"}, "36040": {"price": 130, "server": "hades"}, "36043": {"price": 500, "server": "chocobo"}, "36045": {"price": 400, "server": "masamune"}, "36047": {"price": 160, "server": "hades"}, "36052": {"price": 100, "server": "chocobo"}, "36054": {"price": 200, "server": "ixion"}, "36058": {"price": 400, "server": "titan"}, "36060": {"price": 140, "server": "asura"}, "36395": {"price": 4980, "server": "pandaemonium"}, "36551": {"price": 1500, "server": "hades"}, "36409": {"price": 2000, "server": "hades"}, "36527": {"price": 1000, "server": "pandaemonium"}, "36434": {"price": 5000, "server": "anima"}, "36555": {"price": 780, "server": "anima"}, "36471": {"price": 800, "server": "titan"}, "36586": {"price": 1600, "server": "masamune"}, "36485": {"price": 9000, "server": "ixion"}, "36541": {"price": 170, "server": "ixion"}, "44019": {"price": 2000, "server": "ixion"}, "43328": {"price": 20326, "server": "masamune"}, "44020": {"price": 2500, "server": "hades"}, "42008": {"price": 10000, "server": "hades"}, "44021": {"price": 2500, "server": "chocobo"}, "43231": {"price": 20000, "server": "chocobo"}, "42302": {"price": 49000, "server": "pandaemonium"}, "43258": {"price": 45000, "server": "masamune"}, "42455": {"price": 30000, "server": "asura"}, "43345": {"price": 7800, "server": "ixion"}, "41855": {"price": 50000, "server": "hades"}, "43209": {"price": 50000, "server": "masamune"}, "43998": {"price": 2812, "server": "pandaemonium"}, "41992": {"price": 20000, "server": "asura"}, "43233": {"price": 20000, "server": "ixion"}, "42153": {"price": 49000, "server": "asura"}, "42308": {"price": 30000, "server": "anima"}, "43261": {"price": 40000, "server": "anima"}, "42471": {"price": 52000, "server": "asura"}, "43278": {"price": 35000, "server": "hades"}, "43997": {"price": 1312, "server": "pandaemonium"}, "41857": {"price": 37261, "server": "chocobo"}, "42019": {"price": 20000, "server": "masamune"}, "42016": {"price": 21000, "server": "hades"}, "43999": {"price": 2800, "server": "ixion"}, "43227": {"price": 20000, "server": "titan"}, "42350": {"price": 70790, "server": "chocobo"}, "42321": {"price": 50000, "server": "hades"}, "42496": {"price": 72000, "server": "hades"}, "42483": {"price": 20390, "server": "masamune"}, "44008": {"price": 1800, "server": "pandaemonium"}, "41854": {"price": 29709, "server": "hades"}, "44009": {"price": 1300, "server": "asura"}, "42006": {"price": 30000, "server": "hades"}, "44010": {"price": 1800, "server": "masamune"}, "43226": {"price": 20709, "server": "masamune"}, "42325": {"price": 50000, "server": "hades"}, "42373": {"price": 69000, "server": "hades"}, "42458": {"price": 44000, "server": "ixion"}, "42504": {"price": 64000, "server": "hades"}, "44058": {"price": 5300, "server": "anima"}, "41903": {"price": 28300, "server": "hades"}, "42024": {"price": 20000, "server": "chocobo"}, "42036": {"price": 52399, "server": "hades"}, "44060": {"price": 8900, "server": "ixion"}, "43296": {"price": 10000, "server": "titan"}, "42334": {"price": 49000, "server": "pandaemonium"}, "43310": {"price": 47000, "server": "masamune"}, "42503": {"price": 80430, "server": "asura"}, "42487": {"price": 50000, "server": "pandaemonium"}, "44029": {"price": 1500, "server": "anima"}, "43285": {"price": 40000, "server": "masamune"}, "44030": {"price": 780, "server": "ixion"}, "42043": {"price": 28000, "server": "hades"}, "44031": {"price": 1600, "server": "ixion"}, "42184": {"price": 75000, "server": "asura"}, "42347": {"price": 85555, "server": "hades"}, "43312": {"price": 28000, "server": "masamune"}, "42506": {"price": 57498, "server": "chocobo"}, "42505": {"price": 60000, "server": "chocobo"}, "44049": {"price": 2800, "server": "anima"}, "41856": {"price": 50000, "server": "pandaemonium"}, "41997": {"price": 50000, "server": "chocobo"}, "44047": {"price": 900, "server": "chocobo"}, "42164": {"price": 40000, "server": "ixion"}, "44013": {"price": 1101, "server": "titan"}, "44169": {"price": 900, "server": "hades"}, "42306": {"price": 50000, "server": "titan"}, "42459": {"price": 45000, "server": "asura"}, "44161": {"price": 1500, "server": "ixion"}, "43972": {"price": 1100, "server": "hades"}, "44073": {"price": 2000, "server": "anima"}, "44074": {"price": 999, "server": "pandaemonium"}, "43974": {"price": 500, "server": "anima"}, "44093": {"price": 800, "server": "chocobo"}, "44088": {"price": 993, "server": "masamune"}, "44105": {"price": 700, "server": "chocobo"}, "44102": {"price": 800, "server": "chocobo"}, "44097": {"price": 800, "server": "chocobo"}, "44076": {"price": 2000, "server": "anima"}, "43676": {"price": 6900, "server": "hades"}, "43804": {"price": 1800, "server": "hades"}, "43692": {"price": 11000, "server": "ixion"}, "43811": {"price": 1100, "server": "hades"}, "43702": {"price": 4999, "server": "anima"}, "43808": {"price": 2000, "server": "anima"}, "43739": {"price": 12000, "server": "anima"}, "43837": {"price": 1200, "server": "pandaemonium"}, "1176": {"price": 56000, "server": "hades"}, "1219": {"price": 2000, "server": "asura"}, "1217": {"price": 98980, "server": "chocobo"}, "1228": {"price": 630, "server": "titan"}, "1177": {"price": 127999, "server": "masamune"}, "1170": {"price": 2612, "server": "anima"}, "1227": {"price": 980, "server": "titan"}, "1188": {"price": 83600, "server": "titan"}, "1152": {"price": 2980, "server": "chocobo"}, "1224": {"price": 970, "server": "masamune"}, "1223": {"price": 500, "server": "anima"}, "1173": {"price": 19800, "server": "hades"}, "1172": {"price": 58428, "server": "anima"}, "1211": {"price": 50780, "server": "chocobo"}, "1184": {"price": 1000, "server": "asura"}, "1203": {"price": 78000, "server": "titan"}, "827": {"price": 90, "server": "titan"}, "905": {"price": 200, "server": "titan"}, "1060": {"price": 500, "server": "titan"}, "1214": {"price": 99000, "server": "chocobo"}, "1162": {"price": 4200, "server": "ixion"}, "1174": {"price": 4000, "server": "pandaemonium"}, "1225": {"price": 1899, "server": "masamune"}, "1180": {"price": 2212, "server": "ixion"}, "888": {"price": 278, "server": "titan"}, "813": {"price": 1003, "server": "titan"}, "1206": {"price": 94000, "server": "anima"}, "1231": {"price": 2700, "server": "anima"}, "1218": {"price": 80000, "server": "chocobo"}, "1207": {"price": 75000, "server": "ixion"}, "1232": {"price": 12900, "server": "pandaemonium"}, "1190": {"price": 12899, "server": "chocobo"}, "1234": {"price": 10008, "server": "pandaemonium"}, "1233": {"price": 2800, "server": "asura"}, "1205": {"price": 73715, "server": "anima"}, "1202": {"price": 1400, "server": "hades"}, "1182": {"price": 2800, "server": "chocobo"}, "1139": {"price": 490, "server": "ixion"}, "1135": {"price": 400, "server": "asura"}, "1213": {"price": 832, "server": "chocobo"}, "1215": {"price": 1602, "server": "titan"}, "1204": {"price": 2094, "server": "anima"}, "30": {"price": 2900, "server": "masamune"}, "1194": {"price": 14000, "server": "asura"}, "32": {"price": 399, "server": "chocobo"}, "391": {"price": 480, "server": "chocobo"}, "221": {"price": 50, "server": "chocobo"}, "496": {"price": 1200, "server": "asura"}, "1150": {"price": 3680, "server": "chocobo"}, "212": {"price": 222, "server": "chocobo"}, "1167": {"price": 43000, "server": "titan"}, "1169": {"price": 49999, "server": "chocobo"}, "1168": {"price": 69709, "server": "pandaemonium"}, "1216": {"price": 995, "server": "asura"}, "1220": {"price": 2999, "server": "chocobo"}, "1064": {"price": 1199, "server": "chocobo"}, "1160": {"price": 98000, "server": "masamune"}, "1183": {"price": 59779, "server": "anima"}, "1210": {"price": 2800, "server": "pandaemonium"}, "1163": {"price": 29780, "server": "hades"}, "1237": {"price": 7400, "server": "titan"}, "1159": {"price": 19296, "server": "hades"}, "1212": {"price": 84000, "server": "ixion"}, "1154": {"price": 3000, "server": "asura"}, "1137": {"price": 329, "server": "masamune"}, "1230": {"price": 10000, "server": "anima"}, "1200": {"price": 1604, "server": "titan"}, "1171": {"price": 37000, "server": "chocobo"}, "1195": {"price": 30000, "server": "masamune"}, "23": {"price": 169, "server": "asura"}, "1209": {"price": 90000, "server": "asura"}, "407": {"price": 999, "server": "pandaemonium"}, "1181": {"price": 50000, "server": "titan"}, "1084": {"price": 899, "server": "pandaemonium"}, "1198": {"price": 139998, "server": "pandaemonium"}, "1127": {"price": 195, "server": "hades"}, "1221": {"price": 3998, "server": "hades"}, "855": {"price": 29, "server": "masamune"}, "1005": {"price": 600, "server": "anima"}, "1114": {"price": 500, "server": "pandaemonium"}, "87": {"price": 10000, "server": "anima"}, "93": {"price": 29800, "server": "anima"}, "264": {"price": 602, "server": "titan"}, "1199": {"price": 40000, "server": "hades"}, "1157": {"price": 83280, "server": "chocobo"}, "1161": {"price": 62666, "server": "chocobo"}, "1185": {"price": 77999, "server": "chocobo"}, "1236": {"price": 19999, "server": "pandaemonium"}, "269": {"price": 19960, "server": "chocobo"}, "394": {"price": 27000, "server": "anima"}, "1165": {"price": 77000, "server": "anima"}, "1208": {"price": 57500, "server": "chocobo"}, "1186": {"price": 70000, "server": "chocobo"}, "1076": {"price": 1500, "server": "chocobo"}, "1061": {"price": 30000, "server": "titan"}, "1196": {"price": 84899, "server": "chocobo"}, "1062": {"price": 30000, "server": "chocobo"}, "628": {"price": 19999, "server": "anima"}, "1065": {"price": 32550, "server": "chocobo"}, "1066": {"price": 51780, "server": "chocobo"}, "1187": {"price": 110000, "server": "asura"}, "1067": {"price": 32750, "server": "chocobo"}, "1068": {"price": 51779, "server": "chocobo"}, "1069": {"price": 39998, "server": "chocobo"}, "1070": {"price": 37750, "server": "chocobo"}, "1071": {"price": 41780, "server": "chocobo"}, "1072": {"price": 50780, "server": "chocobo"}, "1073": {"price": 47500, "server": "chocobo"}, "278": {"price": 200, "server": "ixion"}, "1229": {"price": 4250, "server": "masamune"}, "719": {"price": 1800, "server": "ixion"}, "954": {"price": 25400, "server": "titan"}, "1100": {"price": 2000, "server": "pandaemonium"}, "646": {"price": 1000, "server": "anima"}, "665": {"price": 300, "server": "ixion"}, "353": {"price": 50, "server": "masamune"}, "1192": {"price": 60700, "server": "asura"}, "206": {"price": 95, "server": "asura"}, "784": {"price": 1400, "server": "chocobo"}, "1054": {"price": 280, "server": "asura"}, "785": {"price": 2500, "server": "chocobo"}, "371": {"price": 1800, "server": "masamune"}, "582": {"price": 1000, "server": "pandaemonium"}, "738": {"price": 2000, "server": "pandaemonium"}, "1197": {"price": 118000, "server": "pandaemonium"}, "1175": {"price": 63699, "server": "masamune"}, "464": {"price": 28000, "server": "masamune"}, "472": {"price": 19000, "server": "masamune"}, "870": {"price": 1400, "server": "anima"}, "475": {"price": 39000, "server": "masamune"}, "229": {"price": 170, "server": "anima"}, "748": {"price": 1350, "server": "masamune"}, "874": {"price": 799, "server": "asura"}, "1074": {"price": 51780, "server": "chocobo"}, "1075": {"price": 38780, "server": "chocobo"}, "1077": {"price": 42000, "server": "chocobo"}, "1078": {"price": 48779, "server": "chocobo"}, "1094": {"price": 1400, "server": "anima"}, "1079": {"price": 60000, "server": "chocobo"}, "235": {"price": 10003, "server": "chocobo"}, "73": {"price": 32890, "server": "chocobo"}, "682": {"price": 2200, "server": "masamune"}, "1201": {"price": 68000, "server": "anima"}, "1238": {"price": 18000, "server": "ixion"}}';
+p={
+  "5371": {
+    "price": 450
+  },
+  "5364": {
+    "price": 60
+  },
+  "5367": {
+    "price": 77
+  },
+  "1827": {
+    "price": 29800
+  },
+  "5276": {
+    "price": 80
+  },
+  "4308": {
+    "price": 3900
+  },
+  "5277": {
+    "price": 180
+  },
+  "2239": {
+    "price": 10000
+  },
+  "4597": {
+    "price": 107
+  },
+  "5477": {
+    "price": 500
+  },
+  "4709": {
+    "price": 800
+  },
+  "1605": {
+    "price": 20000
+  },
+  "5057": {
+    "price": 100
+  },
+  "2497": {
+    "price": 9800
+  },
+  "2445": {
+    "price": 1400
+  },
+  "3064": {
+    "price": 20000
+  },
+  "5471": {
+    "price": 100
+  },
+  "2147": {
+    "price": 8013
+  },
+  "3742": {
+    "price": 9999
+  },
+  "5361": {
+    "price": 10
+  },
+  "1604": {
+    "price": 100005
+  },
+  "3740": {
+    "price": 1000
+  },
+  "1917": {
+    "price": 36000
+  },
+  "1862": {
+    "price": 38000
+  },
+  "2039": {
+    "price": 38000
+  },
+  "1925": {
+    "price": 35000
+  },
+  "1942": {
+    "price": 42999
+  },
+  "1937": {
+    "price": 37000
+  },
+  "5280": {
+    "price": 139
+  },
+  "3616": {
+    "price": 25000
+  },
+  "5282": {
+    "price": 310
+  },
+  "5284": {
+    "price": 29
+  },
+  "5285": {
+    "price": 490
+  },
+  "5056": {
+    "price": 170
+  },
+  "5071": {
+    "price": 190
+  },
+  "2468": {
+    "price": 8000
+  },
+  "2662": {
+    "price": 2900
+  },
+  "5058": {
+    "price": 602
+  },
+  "3825": {
+    "price": 7000
+  },
+  "4650": {
+    "price": 1000
+  },
+  "4849": {
+    "price": 20
+  },
+  "4852": {
+    "price": 10
+  },
+  "4749": {
+    "price": 55
+  },
+  "4860": {
+    "price": 9
+  },
+  "5489": {
+    "price": 91
+  },
+  "4564": {
+    "price": 30
+  },
+  "5487": {
+    "price": 45
+  },
+  "5510": {
+    "price": 150
+  },
+  "4552": {
+    "price": 200
+  },
+  "4599": {
+    "price": 48
+  },
+  "5505": {
+    "price": 1500
+  },
+  "5472": {
+    "price": 178
+  },
+  "2996": {
+    "price": 500
+  },
+  "3001": {
+    "price": 100000000
+  },
+  "1681": {
+    "price": 12000
+  },
+  "5086": {
+    "price": 70
+  },
+  "4332": {
+    "price": 14990
+  },
+  "5065": {
+    "price": 449
+  },
+  "2502": {
+    "price": 19999
+  },
+  "2802": {
+    "price": 49879
+  },
+  "5059": {
+    "price": 500
+  },
+  "4713": {
+    "price": 10000
+  },
+  "4567": {
+    "price": 990
+  },
+  "5517": {
+    "price": 152
+  },
+  "4606": {
+    "price": 15
+  },
+  "3413": {
+    "price": 3800
+  },
+  "4870": {
+    "price": 101
+  },
+  "4997": {
+    "price": 98
+  },
+  "10611": {
+    "price": 31775
+  },
+  "10636": {
+    "price": 39000
+  },
+  "10810": {
+    "price": 29900
+  },
+  "12563": {
+    "price": 402
+  },
+  "10742": {
+    "price": 30288
+  },
+  "12518": {
+    "price": 585
+  },
+  "12525": {
+    "price": 1500
+  },
+  "11877": {
+    "price": 957
+  },
+  "12526": {
+    "price": 660
+  },
+  "12528": {
+    "price": 2900
+  },
+  "12524": {
+    "price": 350
+  },
+  "10667": {
+    "price": 19999
+  },
+  "12601": {
+    "price": 999
+  },
+  "5506": {
+    "price": 2222
+  },
+  "12604": {
+    "price": 782
+  },
+  "5507": {
+    "price": 2800
+  },
+  "12602": {
+    "price": 2400
+  },
+  "12603": {
+    "price": 690
+  },
+  "12588": {
+    "price": 500
+  },
+  "12596": {
+    "price": 400
+  },
+  "12592": {
+    "price": 112
+  },
+  "12519": {
+    "price": 1700
+  },
+  "12521": {
+    "price": 1350
+  },
+  "12736": {
+    "price": 850
+  },
+  "12791": {
+    "price": 1400
+  },
+  "12773": {
+    "price": 6000
+  },
+  "19925": {
+    "price": 500
+  },
+  "18192": {
+    "price": 9200
+  },
+  "5372": {
+    "price": 268
+  },
+  "18231": {
+    "price": 8000
+  },
+  "19995": {
+    "price": 800
+  },
+  "18526": {
+    "price": 14000
+  },
+  "19939": {
+    "price": 99
+  },
+  "19943": {
+    "price": 800
+  },
+  "18371": {
+    "price": 10000
+  },
+  "19945": {
+    "price": 1300
+  },
+  "19817": {
+    "price": 600
+  },
+  "19885": {
+    "price": 1000
+  },
+  "19902": {
+    "price": 105
+  },
+  "19884": {
+    "price": 210
+  },
+  "19981": {
+    "price": 75
+  },
+  "18107": {
+    "price": 9251
+  },
+  "20146": {
+    "price": 3000
+  },
+  "20165": {
+    "price": 806
+  },
+  "20120": {
+    "price": 10000
+  },
+  "27689": {
+    "price": 20
+  },
+  "27691": {
+    "price": 500
+  },
+  "27738": {
+    "price": 2005
+  },
+  "25809": {
+    "price": 11640
+  },
+  "27706": {
+    "price": 400
+  },
+  "27711": {
+    "price": 800
+  },
+  "27708": {
+    "price": 800
+  },
+  "25808": {
+    "price": 1487
+  },
+  "25968": {
+    "price": 51390
+  },
+  "27713": {
+    "price": 400
+  },
+  "27838": {
+    "price": 500
+  },
+  "27843": {
+    "price": 500
+  },
+  "25638": {
+    "price": 25000
+  },
+  "27960": {
+    "price": 600
+  },
+  "27775": {
+    "price": 1000
+  },
+  "27778": {
+    "price": 969
+  },
+  "27790": {
+    "price": 2400
+  },
+  "27746": {
+    "price": 350
+  },
+  "26289": {
+    "price": 4400
+  },
+  "25853": {
+    "price": 22000
+  },
+  "26172": {
+    "price": 20000
+  },
+  "34285": {
+    "price": 30326
+  },
+  "34297": {
+    "price": 12000
+  },
+  "36198": {
+    "price": 990
+  },
+  "36171": {
+    "price": 400
+  },
+  "34682": {
+    "price": 27780
+  },
+  "36168": {
+    "price": 700
+  },
+  "34251": {
+    "price": 50715
+  },
+  "35347": {
+    "price": 50780
+  },
+  "34570": {
+    "price": 46429
+  },
+  "35369": {
+    "price": 39579
+  },
+  "34732": {
+    "price": 47999
+  },
+  "34706": {
+    "price": 47800
+  },
+  "36182": {
+    "price": 800
+  },
+  "34150": {
+    "price": 19000
+  },
+  "34247": {
+    "price": 53780
+  },
+  "34291": {
+    "price": 62000
+  },
+  "36184": {
+    "price": 1300
+  },
+  "34438": {
+    "price": 36995
+  },
+  "35367": {
+    "price": 50000
+  },
+  "34692": {
+    "price": 50780
+  },
+  "34747": {
+    "price": 49999
+  },
+  "36247": {
+    "price": 3400
+  },
+  "35408": {
+    "price": 30428
+  },
+  "34264": {
+    "price": 56800
+  },
+  "34271": {
+    "price": 14715
+  },
+  "36249": {
+    "price": 700
+  },
+  "34401": {
+    "price": 33000
+  },
+  "34582": {
+    "price": 41780
+  },
+  "35433": {
+    "price": 48000
+  },
+  "34729": {
+    "price": 19000
+  },
+  "35466": {
+    "price": 60000
+  },
+  "36208": {
+    "price": 980
+  },
+  "34127": {
+    "price": 29800
+  },
+  "34280": {
+    "price": 30429
+  },
+  "34276": {
+    "price": 29800
+  },
+  "36210": {
+    "price": 604
+  },
+  "35414": {
+    "price": 34980
+  },
+  "34563": {
+    "price": 50715
+  },
+  "35429": {
+    "price": 50000
+  },
+  "34705": {
+    "price": 42999
+  },
+  "34723": {
+    "price": 43715
+  },
+  "36237": {
+    "price": 380
+  },
+  "34090": {
+    "price": 20709
+  },
+  "34241": {
+    "price": 32000
+  },
+  "36228": {
+    "price": 436
+  },
+  "34391": {
+    "price": 32780
+  },
+  "36114": {
+    "price": 300
+  },
+  "34540": {
+    "price": 32780
+  },
+  "36115": {
+    "price": 397
+  },
+  "34691": {
+    "price": 32780
+  },
+  "36108": {
+    "price": 595
+  },
+  "36078": {
+    "price": 350
+  },
+  "36037": {
+    "price": 610
+  },
+  "36040": {
+    "price": 130
+  },
+  "36047": {
+    "price": 530
+  },
+  "36052": {
+    "price": 340
+  },
+  "36054": {
+    "price": 30
+  },
+  "36060": {
+    "price": 530
+  },
+  "36409": {
+    "price": 14999
+  },
+  "44019": {
+    "price": 1450
+  },
+  "44020": {
+    "price": 2500
+  },
+  "42008": {
+    "price": 39000
+  },
+  "44021": {
+    "price": 2812
+  },
+  "43231": {
+    "price": 34800
+  },
+  "42302": {
+    "price": 28888
+  },
+  "42455": {
+    "price": 30000
+  },
+  "43345": {
+    "price": 7500
+  },
+  "41855": {
+    "price": 50000
+  },
+  "43998": {
+    "price": 2000
+  },
+  "41992": {
+    "price": 28000
+  },
+  "43233": {
+    "price": 72000
+  },
+  "42153": {
+    "price": 60000
+  },
+  "42308": {
+    "price": 67000
+  },
+  "43261": {
+    "price": 47499
+  },
+  "42471": {
+    "price": 83900
+  },
+  "43278": {
+    "price": 49999
+  },
+  "43997": {
+    "price": 980
+  },
+  "41857": {
+    "price": 37000
+  },
+  "42019": {
+    "price": 40000
+  },
+  "42016": {
+    "price": 19000
+  },
+  "43999": {
+    "price": 2112
+  },
+  "43227": {
+    "price": 48000
+  },
+  "42350": {
+    "price": 70690
+  },
+  "42321": {
+    "price": 84999
+  },
+  "42496": {
+    "price": 67890
+  },
+  "42483": {
+    "price": 93999
+  },
+  "44008": {
+    "price": 800
+  },
+  "41854": {
+    "price": 56780
+  },
+  "44009": {
+    "price": 500
+  },
+  "42006": {
+    "price": 59000
+  },
+  "44010": {
+    "price": 1407
+  },
+  "42325": {
+    "price": 105000
+  },
+  "42373": {
+    "price": 102788
+  },
+  "42458": {
+    "price": 30000
+  },
+  "42504": {
+    "price": 62000
+  },
+  "44058": {
+    "price": 7900
+  },
+  "41903": {
+    "price": 32000
+  },
+  "42024": {
+    "price": 29999
+  },
+  "44060": {
+    "price": 7800
+  },
+  "43296": {
+    "price": 62500
+  },
+  "42334": {
+    "price": 84799
+  },
+  "43310": {
+    "price": 86000
+  },
+  "42503": {
+    "price": 119000
+  },
+  "42487": {
+    "price": 97999
+  },
+  "44029": {
+    "price": 700
+  },
+  "43285": {
+    "price": 65890
+  },
+  "44030": {
+    "price": 900
+  },
+  "42043": {
+    "price": 23899
+  },
+  "44031": {
+    "price": 1250
+  },
+  "42184": {
+    "price": 63500
+  },
+  "42347": {
+    "price": 85550
+  },
+  "43312": {
+    "price": 70000
+  },
+  "42506": {
+    "price": 69299
+  },
+  "42505": {
+    "price": 64715
+  },
+  "44049": {
+    "price": 3005
+  },
+  "41856": {
+    "price": 60000
+  },
+  "41997": {
+    "price": 73000
+  },
+  "44047": {
+    "price": 1332
+  },
+  "42164": {
+    "price": 67899
+  },
+  "44013": {
+    "price": 1990
+  },
+  "44169": {
+    "price": 900
+  },
+  "42306": {
+    "price": 98000
+  },
+  "42459": {
+    "price": 60000
+  },
+  "44161": {
+    "price": 1095
+  },
+  "43972": {
+    "price": 1400
+  },
+  "44073": {
+    "price": 3000
+  },
+  "44074": {
+    "price": 1500
+  },
+  "43974": {
+    "price": 800
+  },
+  "44093": {
+    "price": 1300
+  },
+  "44088": {
+    "price": 500
+  },
+  "44105": {
+    "price": 720
+  },
+  "44102": {
+    "price": 500
+  },
+  "44097": {
+    "price": 300
+  },
+  "44076": {
+    "price": 3800
+  },
+  "43676": {
+    "price": 5900
+  },
+  "43804": {
+    "price": 1800
+  },
+  "43692": {
+    "price": 10000
+  },
+  "43811": {
+    "price": 2500
+  },
+  "43702": {
+    "price": 8000
+  },
+  "43808": {
+    "price": 1700
+  },
+  "43739": {
+    "price": 5000
+  },
+  "43837": {
+    "price": 4000
+  },
+  "43769": {
+    "price": 12000
+  }
+};
