@@ -302,19 +302,13 @@ const urlParams = new URLSearchParams(window.location.search);
 					}},
 					{title:"Level", field:"lvl", resizable:true, headerFilter:"input", hozAlign:"right"},
 					{title:"Server", field:"server", resizable:true, headerFilter:"input" },
-					{title:"Price", field:"price", resizable:true, hozAlign:"right"{
+					{title:"Price", field:"price", resizable:true, hozAlign:"right", formatter:function(cell, formatterParams){
 						var value = cell.getValue();
 						return value;
 					} },
 					{title:"Ø Reward", field:"reward", resizable:true, hozAlign:"right", visible:false },
-					{title:"Profit", field:"profit", resizable:true, hozAlign:"right"{
-  var value = cell.getValue();
-  return value === "-" ? value : Math.round(value).toLocaleString();
-}},
-{title:"PPA", field:"ppa", resizable:true, hozAlign:"right", formatter:function(cell, formatterParams){
-  var value = cell.getValue();
-  return value === "-" ? value : Math.round(value).toLocaleString();
-}}
+					{title:"Profit", field:"profit", resizable:true, hozAlign:"right" },
+					{title:"PPA", field:"ppa", resizable:true, hozAlign:"right" },
 					],
 					layout:"fitDataTable",
 					pagination:"local",       //paginate the data
@@ -327,6 +321,7 @@ const urlParams = new URLSearchParams(window.location.search);
 					placeholder:"All Rows Moved",
 				  
 				  });
+
       
       
 				};
