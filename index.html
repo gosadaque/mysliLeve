@@ -218,6 +218,7 @@ const urlParams = new URLSearchParams(window.location.search);
 			scriptTag2.src = scriptPath;
 		  scriptTag2.onload = function() {
 			var prices = JSON.parse(p);
+			  console.log("Loaded prices:", prices);
 			// Der Pfad zur JavaScript-Datei, die die Variable enthält
 			var scriptPath = 'jsons/ainfo.js';
 		  
