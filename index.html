@@ -261,7 +261,7 @@ const urlParams = new URLSearchParams(window.location.search);
   tupel.reward = allLeves[i]["lv_gil"];
 
   if (lowestPrice !== null) {
-    tupel.profit = (allLeves[i]["lv_gil"] * allLeves[i]["lv_time"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"])*-1;
+    tupel.profit = allLeves[i]["lv_gil"] * allLeves[i]["lv_time"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"];
     tupel.ppa = tupel.profit / allLeves[i]["lv_allowance"];
   } else {
     tupel.profit = "-";
