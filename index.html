@@ -306,9 +306,9 @@ const urlParams = new URLSearchParams(window.location.search);
 						var value = cell.getValue();
 						return value;
 					} },
-					{title:"Ø Reward", field:"reward", resizable:true, hozAlign:"right", visible:false },
-					{title:"Profit", field:"profit", resizable:true, hozAlign:"right" },
-					{title:"PPA", field:"ppa", resizable:true, hozAlign:"right" },
+					{title:"Ø Reward", field:"reward", resizable:true, sorter:"number", hozAlign:"right", visible:false },
+					{title:"Profit", field:"profit", resizable:true, sorter:"number", hozAlign:"right" },
+					{title:"PPA", field:"ppa", resizable:true, sorter:"number", hozAlign:"right" },
 					],
 					layout:"fitDataTable",
 					pagination:"local",       //paginate the data
