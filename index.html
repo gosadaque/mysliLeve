@@ -241,31 +241,35 @@ const urlParams = new URLSearchParams(window.location.search);
     tupel.job="<img src='img/" + allLeves[i]["lv_job"] + ".webp' width='15' height='15' alt='" + allLeves[i]["lv_job"] + "'> "+ allLeves[i]["lv_job"];
     tupel.lvl=allLeves[i]["lv_lvl"];
     var lowestServer = "-";
-    var lowestPrice = Infinity;
-    if (prices[i]) {
-      lowestPrice = prices[i]["price"];
-      lowestServer = prices[i]["server"];
-    }
-    lowestServer=lowestServer.charAt(0).toUpperCase()+lowestServer.slice(1);
-    tupel.server=lowestServer;
-    tupel.price="<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>"
-    if(lowestPrice === Infinity) {
-      tupel.price=tupel.price + "-";
-    } else {
-      tupel.price=tupel.price + lowestPrice;
-    }
-    tupel.price=tupel.price + " <img src='img/universalis.webp'  width='14' height='15' alt='Universalis'></a>";
-    tupel.reward=allLeves[i]["lv_gil"];
-    if(lowestPrice === Infinity) {
-      tupel.profit = 0;
-      tupel.ppa = 0;
-    } else {
-      tupel.profit = allLeves[i]["lv_gil"] * allLeves[i]["lv_time"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"];
-      tupel.ppa = tupel.profit / allLeves[i]["lv_allowance"];
-    }
-    
-    tabledata.push(tupel);
+  var lowestPrice = null; // Change this to null instead of Infinity
+
+  if (prices[i]) {
+    lowestPrice = prices[i]["price"];
+    lowestServer = prices[i]["server"];
   }
+  lowestServer = lowestServer.charAt(0).toUpperCase() + lowestServer.slice(1);
+  tupel.server = lowestServer;
+
+  tupel.price = "<a href='https://universalis.app/market/" + allLeves[i]["lv_item_id"] + "' target='_blank'>";
+  if (lowestPrice === null) {
+    tupel.price += "-";
+  } else {
+    tupel.price += lowestPrice;
+  }
+  tupel.price += " <img src='img/universalis.webp'  width='14' height='15' alt='Universalis'></a>";
+
+  tupel.reward = allLeves[i]["lv_gil"];
+
+  if (lowestPrice === null) {
+    tupel.profit = "-";
+    tupel.ppa = "-";
+  } else {
+    tupel.profit = allLeves[i]["lv_gil"] * allLeves[i]["lv_time"] - lowestPrice * allLeves[i]["lv_item_count"] * allLeves[i]["lv_time"];
+    tupel.ppa = tupel.profit / allLeves[i]["lv_allowance"];
+  }
+
+  tabledata.push(tupel);
+}
 				  
 				  
 				  var table = new Tabulator("#leve-table", {
