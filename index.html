@@ -248,7 +248,7 @@ const urlParams = new URLSearchParams(window.location.search);
   // Use the lv_item_id to look up the price
   if (prices[allLeves[i]["lv_item_id"]] && typeof prices[allLeves[i]["lv_item_id"]]["price"] === 'number') {
     lowestPrice = prices[allLeves[i]["lv_item_id"]]["price"];
-    lowestServer = prices[allLeves[i]["lv_item_id"]]["server"] || "-";
+    lowestServer = prices[allLeves[i]["lv_item_id"]]["w"] || "-";
     lowestServer = lowestServer.charAt(0).toUpperCase() + lowestServer.slice(1);
   }
 
