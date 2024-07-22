@@ -245,9 +245,10 @@ const urlParams = new URLSearchParams(window.location.search);
   var lowestServer = "-";
   var lowestPrice = null;
 
-  if (prices[i] && typeof prices[i]["price"] === 'number') {
-    lowestPrice = prices[i]["price"];
-    lowestServer = prices[i]["server"];
+  // Use the lv_item_id to look up the price
+  if (prices[allLeves[i]["lv_item_id"]] && typeof prices[allLeves[i]["lv_item_id"]]["price"] === 'number') {
+    lowestPrice = prices[allLeves[i]["lv_item_id"]]["price"];
+    lowestServer = prices[allLeves[i]["lv_item_id"]]["server"] || "-";
     lowestServer = lowestServer.charAt(0).toUpperCase() + lowestServer.slice(1);
   }
 
@@ -273,6 +274,7 @@ const urlParams = new URLSearchParams(window.location.search);
   if (i < 5) {  // Log first 5 items for debugging
     console.log(`Item ${i}:`, {
       name: tupel.name,
+      itemId: allLeves[i]["lv_item_id"],
       price: lowestPrice,
       server: lowestServer,
       profit: tupel.profit,
